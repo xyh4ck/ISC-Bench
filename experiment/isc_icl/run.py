@@ -11,9 +11,10 @@ Sends multi-turn TVD prompts (with completed demos) to a target LLM.
 Usage:
     uv run run.py --model openai/gpt-5.2
     uv run run.py --model openai/gpt-5.2 --demos 5
-    uv run run.py --model anthropic/claude-sonnet-4.5 --demos 1
+    uv run run.py --model openai/gpt-5.2 --bench harmbench --demos 1
 
 Demos: 1, 5, 10, 20 (number of completed examples shown before target)
+Bench: default (JBB), or harmbench/strongreject/advbench (run build.py first)
 """
 import asyncio
 import json
@@ -50,10 +51,11 @@ async def call_llm(client: AsyncOpenAI, model: str, messages: list,
         return f"[ERROR] {e}"
 
 
-def find_input(model: str, demos: int) -> Path:
+def find_input(model: str, demos: int, bench: str | None = None) -> Path:
     """Find ICL input file. Model-specific if available, otherwise random fallback."""
     model_slug = model.replace("/", "-")
-    model_dir = DATA_DIR / model_slug
+    base = DATA_DIR / bench if bench else DATA_DIR
+    model_dir = base / model_slug
 
     # Try model-specific data first
     if model_dir.exists():
@@ -63,10 +65,10 @@ def find_input(model: str, demos: int) -> Path:
             return candidates[0]
 
     # Fallback: randomly pick from available models
-    if not DATA_DIR.exists():
-        print("No ICL demo data found.")
+    if not base.exists():
+        print(f"No ICL demo data found in {base}.")
         sys.exit(1)
-    available = [d for d in DATA_DIR.iterdir() if d.is_dir()]
+    available = [d for d in base.iterdir() if d.is_dir()]
     if not available:
         print("No ICL demo data found.")
         sys.exit(1)
@@ -83,9 +85,10 @@ def find_input(model: str, demos: int) -> Path:
     sys.exit(1)
 
 
-async def run(model: str, demos: int, concurrent: int = 10) -> None:
+async def run(model: str, demos: int, bench: str | None = None,
+              concurrent: int = 10) -> None:
     model_slug = model.replace("/", "-")
-    input_file = find_input(model, demos)
+    input_file = find_input(model, demos, bench)
     data = json.loads(input_file.read_text())
     config, items = data["config"], data["results"]
 
@@ -120,9 +123,11 @@ def main():
     parser = argparse.ArgumentParser(description="ISC ICL Experiment")
     parser.add_argument("-m", "--model", required=True, help="OpenRouter model ID")
     parser.add_argument("-d", "--demos", type=int, default=1, choices=[1, 5, 10, 20])
+    parser.add_argument("-b", "--bench", default=None,
+                        help="Benchmark name (default: use base data/; or harmbench, strongreject, advbench after build.py)")
     parser.add_argument("-c", "--concurrent", type=int, default=10)
     args = parser.parse_args()
-    asyncio.run(run(args.model, args.demos, args.concurrent))
+    asyncio.run(run(args.model, args.demos, args.bench, args.concurrent))
 
 
 if __name__ == "__main__":

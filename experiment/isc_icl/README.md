@@ -9,14 +9,21 @@ Model names use [OpenRouter](https://openrouter.ai/models) model IDs. All script
 ```bash
 cd experiment/isc_icl
 
+# Default (JBB queries)
 uv run run.py --model <model-id> --demos 5
-uv run run.py --model <model-id> --demos 10
+
+# Switch benchmark: build first, then run
+uv run build.py --bench harmbench
+uv run run.py --model <model-id> --bench harmbench --demos 5
 ```
 
 | Flag | Description |
 |------|-------------|
 | `--model` | OpenRouter model ID |
 | `--demos` | Number of completed demonstrations (1, 5, 10, 20) |
+| `--bench` | Benchmark name (`harmbench`, `strongreject`, `advbench`; omit for default JBB) |
+
+**Available benchmarks**: `jbb` (100 queries, default), `harmbench` (400), `strongreject` (313), `advbench` (520). Benchmark data is shared with ISC-Single (`../isc_single/bench/`).
 
 **Output**: `results/{model}/icl_{N}demo.json`
 

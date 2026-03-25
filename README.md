@@ -10,6 +10,7 @@
 
 <h4 align="center">
   <a href="paper.pdf">📄 Paper</a> &nbsp;|&nbsp;
+  <a href="#-isc-leaderboard">🏆 Leaderboard</a> &nbsp;|&nbsp;
   <a href="cookbook/">📓 Tutorial</a> &nbsp;|&nbsp;
   <a href="experiment/isc_agent/">🤖 ISC-Agent</a> &nbsp;|&nbsp;
   <a href="templates/">🔥 ISC-Bench</a>
@@ -36,10 +37,6 @@
   <sup>5</sup>The University of Melbourne&nbsp;&nbsp;
   <sup>6</sup>Singapore Management University&nbsp;&nbsp;
   <sup>7</sup>University of Illinois at Urbana-Champaign
-</p>
-
-<p align="center">
-  <img src="assets/fig1_bench_overview.png" width="100%">
 </p>
 
 > **ISC is a totally underexplored structural vulnerability in every frontier LLM.**
@@ -107,7 +104,7 @@ Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25.
 | 18 | <img src="https://www.google.com/s2/favicons?domain=volcengine.com&sz=32" width="14"> Dola Seed 2.0 Preview | 1462 | 🟢 |  |  |
 | 19 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.1 | 1461 | 🔴 | [🔗](https://grok.com/share/c2hhcmQtMi1jb3B5_54de710c-9331-4fca-a953-6c35775156fb) | [@wuyoscar](https://github.com/wuyoscar) |
 | 20 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.1 High | 1455 | 🟢 |  |  |
-| 21 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> GLM-5 | 1455 | 🟢 |  |  |
+| 21 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> GLM-5 | 1455 | 🔴 | [🔗](https://chat.z.ai/s/79e38d45-d370-4c03-8fb2-6ff3427046cc) | [@wuyoscar](https://github.com/wuyoscar) |
 | 22 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.5 Thinking | 1453 | 🔴 | [🔗](https://www.kimi.com/share/19ca8616-9e32-810d-8000-0000647caebf) | [@wuyoscar](https://github.com/wuyoscar) |
 | 23 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.5 | 1453 | 🟢 |  |  |
 | 25 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> ERNIE 5.0 | 1452 | 🟢 |  |  |
@@ -137,6 +134,10 @@ Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25.
 ---
 
 ## ⚡ ISC Quick Test
+
+<p align="center">
+  <img src="assets/fig1_bench_overview.png" width="80%" height="auto">
+</p>
 
 56 prompt templates across 8 domains. Each one triggers any frontier LLM to generate harmful content. All 56 tested on 5 models — **every single one succeeded**. Ask the same questions directly, every model refuses.
 
@@ -231,6 +232,7 @@ cd experiment/isc_single && uv run run.py --model <model-id> --bench jbb --task 
 **ISC-ICL** — multi-turn with `N` demonstrations.
 ```bash
 cd experiment/isc_icl && uv run run.py --model <model-id> --demos 5
+# Switch benchmark: uv run build.py --bench harmbench && uv run run.py --model <model-id> --bench harmbench --demos 5
 ```
 
 **ISC-Agentic** — Docker agent, one instruction.

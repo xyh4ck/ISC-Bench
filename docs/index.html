@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ISC-Bench — Internal Safety Collapse in Frontier LLMs | Jailbreak Arena</title>
-  <meta name="description" content="ISC-Bench: A benchmark for studying Internal Safety Collapse in frontier large language models. 56 TVD templates across 8 domains. Jailbreak Arena tracks ISC across 330+ Arena-ranked models.">
-  <meta name="keywords" content="ISC, ISC-Bench, Internal Safety Collapse, LLM Safety, Jailbreak, Jailbreak Arena, Benchmark, TVD Framework, AI Safety, Red Teaming, ICML 2026">
+  <title>ISC-Bench — Internal Safety Collapse in Frontier LLMs | JailbreakArena</title>
+  <meta name="description" content="ISC-Bench: A benchmark for studying Internal Safety Collapse in frontier large language models. 56 TVD templates across 8 domains. JailbreakArena tracks ISC across 330+ Arena-ranked models.">
+  <meta name="keywords" content="ISC, ISC-Bench, Internal Safety Collapse, LLM Safety, Jailbreak, JailbreakArena, Benchmark, TVD Framework, AI Safety, Red Teaming, ICML 2026">
 
   <!-- Bulma + Icons -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -30,7 +30,7 @@
     <div id="navMenu" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="#about">About</a>
-        <a class="navbar-item" href="#arena">Jailbreak Arena</a>
+        <a class="navbar-item" href="#arena">JailbreakArena</a>
         <a class="navbar-item" href="#framework">Framework</a>
         <a class="navbar-item" href="#benchmark">Benchmark</a>
         <a class="navbar-item" href="#demos">Demos</a>
@@ -53,7 +53,8 @@
 
       <h2 class="subtitle is-5 hero-subtitle mt-4">
         We turn any frontier LLM into a harmful dataset generator — toxic language, lethal compounds,
-        functional exploits — with outputs resembling unaligned models from 2023.
+        functional exploits — with outputs resembling unaligned models from 2023.<br>
+        <strong>ISC is an attack concept:</strong> anyone who learns it can jailbreak most frontier LLMs.
       </h2>
 
       <!-- Authors -->
@@ -70,8 +71,8 @@
         <span class="author"><a href="#">Yu-Gang Jiang</a><sup>2,3</sup></span>
       </div>
       <div class="affiliations mt-2">
-        <sup>1</sup>Deakin &nbsp; <sup>2</sup>Fudan &nbsp; <sup>3</sup>Shanghai Key Lab &nbsp;
-        <sup>4</sup>CityU HK &nbsp; <sup>5</sup>Melbourne &nbsp; <sup>6</sup>SMU &nbsp; <sup>7</sup>UIUC
+        <sup>1</sup>Deakin University &nbsp; <sup>2</sup>Fudan University &nbsp; <sup>3</sup>Shanghai Key Laboratory of Multimodal Embodied AI &nbsp;
+        <sup>4</sup>City University of Hong Kong &nbsp; <sup>5</sup>University of Melbourne &nbsp; <sup>6</sup>Singapore Management University &nbsp; <sup>7</sup>University of Illinois at Urbana-Champaign
       </div>
 
       <!-- Buttons -->
@@ -83,7 +84,7 @@
           <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
         </a>
         <a class="button is-outlined is-danger is-medium" href="#arena">
-          <span class="icon"><i class="fas fa-skull-crossbones"></i></span><span>Jailbreak Arena</span>
+          <span class="icon"><i class="fas fa-skull-crossbones"></i></span><span>JailbreakArena</span>
         </a>
       </div>
     </div>
@@ -95,7 +96,7 @@
   <div class="container">
     <h2 class="title is-2 has-text-centered section-heading">
       <span class="icon has-text-danger"><i class="fas fa-skull-crossbones"></i></span>
-      Jailbreak Arena
+      JailbreakArena
     </h2>
     <p class="subtitle is-5 has-text-centered has-text-grey-light mt-2 mb-5">
       Real-time tracking of ISC across <strong>330</strong> Arena-ranked models.
@@ -209,51 +210,38 @@
 </section>
 
 <!-- ============ TVD FRAMEWORK ============ -->
-<section class="section" id="framework">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered section-heading">The TVD Framework</h2>
-    <p class="subtitle is-5 has-text-centered has-text-grey mt-2 mb-5">
-      ISC is triggered by the <strong>TVD design pattern</strong>: Task + Validator + Data.
-    </p>
-
-    <div class="figure-card mb-6">
-      <img src="../assets/fig2_tvd_framework.png" alt="TVD Framework">
-      <p class="figure-caption"><b>Figure 2.</b> The TVD (Task, Validator, Data) framework for systematically triggering ISC.</p>
-    </div>
-
-    <div class="columns">
-      <div class="column">
-        <div class="soft-card has-text-centered">
-          <span class="icon is-large has-text-danger"><i class="fas fa-code fa-2x"></i></span>
-          <h3 class="title is-5 mt-3">Task</h3>
-          <p class="has-text-grey">A benign professional scenario — ML engineering, content moderation, bioinformatics.</p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="soft-card has-text-centered">
-          <span class="icon is-large has-text-danger"><i class="fas fa-check-double fa-2x"></i></span>
-          <h3 class="title is-5 mt-3">Validator</h3>
-          <p class="has-text-grey">Code that checks output — Pydantic models, JSON schemas, assertions.</p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="soft-card has-text-centered">
-          <span class="icon is-large has-text-danger"><i class="fas fa-database fa-2x"></i></span>
-          <h3 class="title is-5 mt-3">Data</h3>
-          <p class="has-text-grey">Harmful queries with <code>???</code> placeholders. The LLM fills them to complete the task.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ BENCHMARK ============ -->
 <section class="section section-alt" id="benchmark">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered section-heading">ISC-Bench: 56 Templates</h2>
     <p class="subtitle is-5 has-text-centered has-text-grey-light mt-2 mb-5">
-      Copy any template, paste into any LLM. That's it.
+      Built on the <strong>TVD framework</strong> (Task + Validator + Data). Copy any template, paste into any LLM. That's it.
     </p>
+
+    <!-- TVD cards (compact) -->
+    <div class="columns mb-5">
+      <div class="column is-4">
+        <div class="soft-card has-text-centered" style="padding:20px">
+          <span class="icon has-text-danger"><i class="fas fa-code fa-lg"></i></span>
+          <h4 class="title is-6 mt-2 mb-1">Task</h4>
+          <p class="has-text-grey is-size-7">Benign professional scenario</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="soft-card has-text-centered" style="padding:20px">
+          <span class="icon has-text-danger"><i class="fas fa-check-double fa-lg"></i></span>
+          <h4 class="title is-6 mt-2 mb-1">Validator</h4>
+          <p class="has-text-grey is-size-7">Pydantic / JSON schema checks</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="soft-card has-text-centered" style="padding:20px">
+          <span class="icon has-text-danger"><i class="fas fa-database fa-lg"></i></span>
+          <h4 class="title is-6 mt-2 mb-1">Data</h4>
+          <p class="has-text-grey is-size-7">LLM fills <code>???</code> placeholders</p>
+        </div>
+      </div>
+    </div>
 
     <div class="columns is-multiline">
       <div class="column is-3"><div class="domain-card"><i class="fas fa-dna"></i><h4>Comp. Biology</h4><span class="domain-count">16</span></div></div>

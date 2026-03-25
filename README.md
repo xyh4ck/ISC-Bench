@@ -52,25 +52,25 @@
 
 | Date | Update |
 |:-----|--------|
+| 🔥 2026-03-26 | Release update: launched the ISC Leaderboard, added 10 public model-compromise case links (Claude Opus 4.6, Claude Opus 4.5, Claude Sonnet 4.6, Gemini 3 Pro, GPT-5.2 Chat, o3, Grok 4.1, Kimi K2.5 Thinking, Qwen 3 Max Preview, DeepSeek V3.2), and verified execution time for ISC-Single and ISC-ICL |
 | 🔥 2026-03-25 | README refresh: cleaner navigation, reorganized roadmap, and Top Frontier Large-Scale Models Under ISC leaderboard |
 | 🎉 2026-03-22 | Initial release — 56 templates, 3 experiment modes, tutorials |
 
 ## Roadmap
 
+- [ ] Jailbreak Top 20 (Large Model In Progress)
+- [ ] More ISC examples across models and contexts
+- [ ] Project website
+- [ ] ISC Skill — domain knowledge + utility scripts
 - [x] ISC-Bench: 56 TVD templates across 8 domains
 - [x] 3 experiment modes (Single, ICL, Agentic)
 - [x] Tutorials (01-04)
 - [x] ISC demo video
 - [x] Paper PDF
-- [ ] Jailbreak Top 20 (Large Model In Progress)
-- [ ] Per-model attack notebooks (GPT, Claude, Gemini, Grok, GLM, Kimi, ...)
-- [ ] More ISC examples across models and contexts
-- [ ] Project website
-- [ ] ISC Skill — domain knowledge + utility scripts
 
 ---
 
-<h2 align="center">1️⃣ What is ISC?</h2>
+## 💀 What is ISC?
 
 ### Demo
 
@@ -82,11 +82,16 @@ The demo GIF may take a moment to load.
 
 ---
 
-<h2 align="center">2️⃣ ISC Leaderboard</h2>
+## 🏆 ISC Leaderboard
 
 <p align="center">
   Current coverage against the <a href="https://arena.ai/leaderboard">Arena Leaderboard</a> overall Top 50, accessed on 2026-03-25.
   Replace <code>TODO</code> with the public demo link once the corresponding ISC conversation is ready.
+</p>
+
+<p align="center">
+  We welcome additional public ISC demonstrations and can incorporate qualified cases into the leaderboard.
+  If you encounter a model for which ISC does not reproduce reliably, please contact us.
 </p>
 
 <table align="center">
@@ -105,7 +110,7 @@ The demo GIF may take a moment to load.
   </thead>
   <tbody>
     <tr>
-      <td align="center">2</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Opus 4.6</td><td align="center">1501</td><td>TODO</td>
+      <td align="center">2</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Opus 4.6</td><td align="center">1501</td><td>👾 <a href="https://claude.ai/share/407d33f5-4655-4479-b3e3-0a6dc6639d34">Under ISC</a></td>
       <td></td>
       <td align="center">27</td><td><img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14" alt="Baidu"> ERNIE 5.0 Preview</td><td align="center">1450</td><td>TODO</td>
     </tr>
@@ -211,7 +216,7 @@ The demo GIF may take a moment to load.
 
 ---
 
-<h2 align="center">3️⃣ ISC Quick Test</h2>
+## ⚡ ISC Quick Test
 
 56 prompt templates across 8 domains. Each one triggers any frontier LLM to generate harmful content. All 56 tested on 5 models — **every single one succeeded**. Ask the same questions directly, every model refuses.
 
@@ -294,7 +299,7 @@ cat templates/aiml_llamaguard_eval/prompt.txt
 
 All 56 templates follow the **TVD design pattern**. To design your own, see our [cookbook](cookbook/).
 
-<h2 align="center">4️⃣ Experiments</h2>
+## 🧪 Experiments
 
 Three evaluation modes. Full details in [`experiment/`](experiment/).
 
@@ -315,7 +320,7 @@ cd experiment/isc_agent && docker build -t isc-agent . && ./run.sh --model <mode
 
 ---
 
-<h2 align="center">5️⃣ The ISC Concept</h2>
+## 🧠 The ISC Concept
 
 <p align="center">
   <img src="assets/fig2_tvd_framework.png" width="100%">
@@ -350,7 +355,7 @@ More ISC examples:
 
 ---
 
-<h2 align="center">6️⃣ Setup</h2>
+## 🔧 Setup
 
 ```bash
 # Install uv (if not already installed)
@@ -363,7 +368,7 @@ cp .env.example .env   # add your OpenRouter API key
 
 Python 3.11+ and [uv](https://docs.astral.sh/uv/). All scripts use [PEP 723](https://peps.python.org/pep-0723/) — `uv run` handles everything. Docker only for agentic mode.
 
-<h2 align="center">7️⃣ Project Structure</h2>
+## 📁 Project Structure
 
 | Directory | What | Guide |
 |-----------|------|-------|
@@ -371,7 +376,7 @@ Python 3.11+ and [uv](https://docs.astral.sh/uv/). All scripts use [PEP 723](htt
 | [`experiment/`](experiment/) | Reproduce paper: Single, ICL, Agentic | [→ How to run](experiment/README.md) |
 | [`cookbook/`](cookbook/) | Tutorials: ISC concepts, anchors, composability | [→ Notebooks](cookbook/) |
 
-<h2 align="center">8️⃣ FAQ</h2>
+## ❓ FAQ
 
 <details>
 <summary><b>Q: ISC didn't trigger on my model.</b></summary>

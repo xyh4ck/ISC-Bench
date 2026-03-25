@@ -49,6 +49,7 @@
 
 | Date | Update |
 |:-----|--------|
+| 🔥 v4 — 2026-03-25 | ICL benchmark switching, CLAUDE.md, nav bar redesign |
 | 🔥 v3 — 2026-03-25 | Leaderboard v2, contributor attribution, 10 confirmed ISC cases, submission template |
 | 🔥 v2 — 2026-03-25 | README polish, notebook fixes, outputs cleared |
 | 🎉 v1 — 2026-03-22 | Initial release — 56 templates, 3 experiment modes, tutorials |

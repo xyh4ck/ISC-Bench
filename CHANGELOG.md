@@ -2,6 +2,14 @@
 
 All notable updates to ISC-Bench are documented here.
 
+## v4 — 2026-03-25
+
+- **ICL benchmark switching**: added `build.py` to rebuild ICL data with different benchmarks (harmbench, strongreject, advbench); `run.py` now supports `--bench` flag
+- **CLAUDE.md**: project-level rules for leaderboard design, changelog convention, style guide — shared publicly
+- **Navigation bar**: added Leaderboard link, reordered to Paper → Leaderboard → Tutorial → ISC-Agent → ISC-Bench
+- Moved fig1_bench_overview from author section to Quick Test section
+- Multi-contributor leaderboard design: subscript-numbered links (`🔗₁ 🔗₂`) in one row per model
+
 ## v3 — 2026-03-25
 
 - **Leaderboard redesign**: single-column Markdown table (was two-column HTML), 🔴/🟢 status indicators, Demo 🔗 links, contributor attribution (`By` column)

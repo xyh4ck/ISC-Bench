@@ -1,7 +1,10 @@
-// ISC-Bench Project Website — main.js
+// ISC-Bench — JailbreakArena Website
+// Auto-fetches data from GitHub repo for real-time updates
 
-// ====== ISC Cases Data ======
-const ISC_CASES = {
+const REPO_RAW = "https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main";
+
+// ====== Fallback data (used if fetch fails) ======
+const FALLBACK_CASES = {
   "Claude Opus 4.6": { demos: [{ link: "https://claude.ai/share/407d33f5-4655-4479-b3e3-0a6dc6639d34", by: "wuyoscar" }] },
   "Claude Opus 4.5": { demos: [{ link: "https://claude.ai/share/1e3e997c-0315-46f1-9cbd-37157314a7ef", by: "wuyoscar" }] },
   "Claude Sonnet 4.6": { demos: [{ link: "https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793", by: "wuyoscar" }] },
@@ -18,174 +21,232 @@ const ISC_CASES = {
   "ERNIE 5.0": { demos: [{ link: "https://ernie.baidu.com/share/TlRKBSn5kT", by: "HanxunH" }] },
 };
 
-// Top 50 Arena models
-const ARENA_TOP50 = [
-  { rank: 1, name: "Claude Opus 4.6 Thinking", org: "Anthropic", score: 1502 },
-  { rank: 2, name: "Claude Opus 4.6", org: "Anthropic", score: 1501 },
-  { rank: 3, name: "Gemini 3.1 Pro Preview", org: "Google", score: 1493 },
-  { rank: 4, name: "Grok 4.20 Beta", org: "xAI", score: 1492 },
-  { rank: 5, name: "Gemini 3 Pro", org: "Google", score: 1486 },
-  { rank: 6, name: "GPT-5.4 High", org: "OpenAI", score: 1485 },
-  { rank: 7, name: "GPT-5.2 Chat", org: "OpenAI", score: 1482 },
-  { rank: 8, name: "Grok 4.20 Reasoning", org: "xAI", score: 1481 },
-  { rank: 9, name: "Gemini 3 Flash", org: "Google", score: 1475 },
-  { rank: 10, name: "Claude Opus 4.5 Thinking", org: "Anthropic", score: 1474 },
-  { rank: 11, name: "Grok 4.1 Thinking", org: "xAI", score: 1472 },
-  { rank: 12, name: "Claude Opus 4.5", org: "Anthropic", score: 1469 },
-  { rank: 13, name: "Claude Sonnet 4.6", org: "Anthropic", score: 1465 },
-  { rank: 14, name: "Qwen 3.5 Max Preview", org: "Alibaba", score: 1464 },
-  { rank: 15, name: "GPT-5.3 Chat", org: "OpenAI", score: 1464 },
-  { rank: 16, name: "Gemini 3 Flash Thinking", org: "Google", score: 1463 },
-  { rank: 17, name: "GPT-5.4", org: "OpenAI", score: 1463 },
-  { rank: 18, name: "Dola Seed 2.0 Preview", org: "ByteDance", score: 1462 },
-  { rank: 19, name: "Grok 4.1", org: "xAI", score: 1461 },
-  { rank: 20, name: "GPT-5.1 High", org: "OpenAI", score: 1455 },
-  { rank: 21, name: "GLM-5", org: "Z.ai", score: 1455 },
-  { rank: 22, name: "Kimi K2.5 Thinking", org: "Moonshot", score: 1453 },
-  { rank: 23, name: "Claude Sonnet 4.5", org: "Anthropic", score: 1453 },
-  { rank: 24, name: "Claude Sonnet 4.5 Thinking", org: "Anthropic", score: 1453 },
-  { rank: 25, name: "ERNIE 5.0", org: "Baidu", score: 1452 },
-  { rank: 26, name: "Qwen 3.5 397B", org: "Alibaba", score: 1452 },
-  { rank: 27, name: "ERNIE 5.0 Preview", org: "Baidu", score: 1450 },
-  { rank: 28, name: "Claude Opus 4.1 Thinking", org: "Anthropic", score: 1449 },
-  { rank: 29, name: "Gemini 2.5 Pro", org: "Google", score: 1448 },
-  { rank: 30, name: "Claude Opus 4.1", org: "Anthropic", score: 1447 },
-  { rank: 31, name: "Mimo V2 Pro", org: "Xiaomi", score: 1445 },
-  { rank: 32, name: "GPT-4.5 Preview", org: "OpenAI", score: 1444 },
-  { rank: 33, name: "ChatGPT 4o Latest", org: "OpenAI", score: 1443 },
-  { rank: 34, name: "GLM-4.7", org: "Z.ai", score: 1443 },
-  { rank: 35, name: "GPT-5.2 High", org: "OpenAI", score: 1442 },
-  { rank: 36, name: "GPT-5.2", org: "OpenAI", score: 1440 },
-  { rank: 37, name: "GPT-5.1", org: "OpenAI", score: 1439 },
-  { rank: 38, name: "Gemini 3.1 Flash Lite Preview", org: "Google", score: 1438 },
-  { rank: 39, name: "Qwen 3 Max Preview", org: "Alibaba", score: 1435 },
-  { rank: 40, name: "GPT-5 High", org: "OpenAI", score: 1434 },
-  { rank: 41, name: "Kimi K2.5 Instant", org: "Moonshot", score: 1433 },
-  { rank: 42, name: "o3", org: "OpenAI", score: 1432 },
-  { rank: 43, name: "Grok 4.1 Fast Reasoning", org: "xAI", score: 1431 },
-  { rank: 44, name: "Kimi K2 Thinking Turbo", org: "Moonshot", score: 1430 },
-  { rank: 45, name: "Amazon Nova Experimental", org: "Amazon", score: 1429 },
-  { rank: 46, name: "GPT-5 Chat", org: "OpenAI", score: 1426 },
-  { rank: 47, name: "GLM-4.6", org: "Z.ai", score: 1426 },
-  { rank: 48, name: "DeepSeek V3.2 Thinking", org: "DeepSeek", score: 1425 },
-  { rank: 49, name: "DeepSeek V3.2", org: "DeepSeek", score: 1425 },
-  { rank: 50, name: "Qwen 3 Max 2025-09-23", org: "Alibaba", score: 1424 },
-];
+// ====== Dynamic Data Fetch ======
+async function fetchJSON(path) {
+  try {
+    const resp = await fetch(`${REPO_RAW}/${path}?t=${Date.now()}`);
+    if (!resp.ok) throw new Error(resp.status);
+    return await resp.json();
+  } catch (e) {
+    console.warn(`Failed to fetch ${path}, using fallback:`, e);
+    return null;
+  }
+}
 
-// ====== Populate Leaderboard ======
-function populateLeaderboard() {
-  const tbody = document.querySelector("#leaderboard tbody");
+async function loadData() {
+  const [arenaData, iscData] = await Promise.all([
+    fetchJSON("assets/arena_cache.json"),
+    fetchJSON("assets/isc_cases.json"),
+  ]);
+
+  const arena = arenaData || [];
+  const cases = iscData || FALLBACK_CASES;
+
+  populateLeaderboard(arena.slice(0, 50), cases);
+  populateDemos(cases);
+  updateStats(arena, cases);
+}
+
+// ====== Leaderboard ======
+function populateLeaderboard(models, cases) {
+  const tbody = document.getElementById("leaderboard-body");
   if (!tbody) return;
+  tbody.innerHTML = "";
 
-  ARENA_TOP50.forEach(model => {
-    const isc = ISC_CASES[model.name];
+  models.forEach(model => {
+    const displayName = slugToDisplay(model.name);
+    const isc = cases[displayName];
     const tr = document.createElement("tr");
 
-    const statusHTML = isc
-      ? '<span class="status-jailbroken">🔴</span>'
-      : '<span class="status-safe">🟢</span>';
-
-    let demoHTML = "";
-    let byHTML = "";
+    let statusHTML, demoHTML = "", byHTML = "";
     if (isc) {
+      statusHTML = '<span class="badge-jailbroken"><i class="fas fa-unlock"></i> Jailbroken</span>';
       demoHTML = isc.demos.map((d, i) =>
-        `<a href="${d.link}" target="_blank">🔗${isc.demos.length > 1 ? `₊${i+1}` : ""}</a>`
+        `<a href="${d.link}" target="_blank" title="View conversation">🔗${isc.demos.length > 1 ? `₊${i+1}` : ""}</a>`
       ).join(" ");
       byHTML = isc.demos.map(d =>
         `<a href="https://github.com/${d.by}" target="_blank">@${d.by}</a>`
-      ).join(" ");
+      ).join("<br>");
+    } else {
+      statusHTML = '<span class="badge-safe"><i class="fas fa-lock"></i> Safe</span>';
     }
 
     tr.innerHTML = `
-      <td>${model.rank}</td>
-      <td><strong>${model.name}</strong> <span style="color:var(--text-dim);font-size:12px">${model.org}</span></td>
-      <td>${model.score}</td>
-      <td>${statusHTML}</td>
-      <td>${demoHTML}</td>
-      <td>${byHTML}</td>
+      <td class="has-text-centered"><strong>${model.rank}</strong></td>
+      <td><span class="model-name">${displayName}</span><span class="model-org">${model.org}</span></td>
+      <td class="has-text-centered"><code>${model.score}</code></td>
+      <td class="has-text-centered">${statusHTML}</td>
+      <td class="has-text-centered">${demoHTML}</td>
+      <td class="has-text-centered">${byHTML}</td>
     `;
+    tr.dataset.name = displayName.toLowerCase();
+    tr.dataset.status = isc ? "jailbroken" : "safe";
     tbody.appendChild(tr);
   });
 }
 
-// ====== Populate Demos ======
-function populateDemos() {
+// ====== Demo Cards ======
+function populateDemos(cases) {
   const grid = document.getElementById("demo-grid");
   if (!grid) return;
+  grid.innerHTML = "";
 
-  const providerIcons = {
+  const icons = {
     "claude": "🟣", "gemini": "🔵", "gpt": "⚪", "chatgpt": "⚪",
     "grok": "🟠", "kimi": "🌙", "qwen": "🔮", "deepseek": "🔍",
     "glm": "💎", "ernie": "🔷", "o3": "⚪",
   };
 
-  Object.entries(ISC_CASES).forEach(([name, data]) => {
+  Object.entries(cases).forEach(([name, data]) => {
     const demo = data.demos[0];
-    const key = Object.keys(providerIcons).find(k => name.toLowerCase().includes(k)) || "";
-    const icon = providerIcons[key] || "🤖";
+    const key = Object.keys(icons).find(k => name.toLowerCase().includes(k)) || "";
+    const icon = icons[key] || "🤖";
 
-    const card = document.createElement("div");
-    card.className = "demo-card";
-    card.innerHTML = `
-      <div class="demo-icon">${icon}</div>
-      <div class="demo-info">
-        <h4>${name}</h4>
-        <p>by @${demo.by}</p>
+    const col = document.createElement("div");
+    col.className = "column is-4";
+    col.innerHTML = `
+      <div class="demo-card">
+        <div class="demo-icon">${icon}</div>
+        <div class="demo-info">
+          <h4>${name}</h4>
+          <p>by @${demo.by}</p>
+        </div>
+        <a href="${demo.link}" target="_blank" class="demo-link">View →</a>
       </div>
-      <a href="${demo.link}" target="_blank">View →</a>
     `;
-    grid.appendChild(card);
+    grid.appendChild(col);
   });
 }
 
-// ====== Nav Toggle ======
-function toggleNav() {
-  document.querySelector(".nav-links").classList.toggle("active");
-}
+// ====== Update Stats ======
+function updateStats(arena, cases) {
+  const confirmed = Object.keys(cases).length;
+  const total = arena.length || 330;
 
-// ====== Copy BibTeX ======
-function copyBibtex() {
-  const text = document.getElementById("bibtex").textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector(".copy-btn");
-    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-    setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Copy'; }, 2000);
+  // Update stat cards if they exist
+  document.querySelectorAll(".stat-num").forEach(el => {
+    if (el.textContent === "56") return; // keep templates count
+    if (el.textContent === "8") return;  // keep domains count
   });
+
+  // Update arena subtitle
+  const subtitle = document.querySelector("#arena .subtitle");
+  if (subtitle) {
+    subtitle.innerHTML = `Real-time tracking of ISC across <strong>${total}</strong> Arena-ranked models.
+      Every <span class="has-text-danger">red dot</span> is a confirmed case.
+      <strong class="has-text-danger">${confirmed}</strong> jailbroken so far.`;
+  }
 }
 
-// ====== Scroll animations ======
-function observeSections() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
+// ====== Search + Filter ======
+function setupSearch() {
+  const searchInput = document.getElementById("arenaSearch");
+  const filterSelect = document.getElementById("arenaFilter");
+  if (!searchInput || !filterSelect) return;
+
+  function applyFilter() {
+    const query = searchInput.value.toLowerCase();
+    const filter = filterSelect.value;
+    document.querySelectorAll("#leaderboard-body tr").forEach(tr => {
+      const nameMatch = tr.dataset.name.includes(query);
+      const statusMatch = filter === "all" || tr.dataset.status === filter;
+      tr.style.display = nameMatch && statusMatch ? "" : "none";
     });
-  }, { threshold: 0.1 });
+  }
 
-  document.querySelectorAll(".section, .stat-card, .fw-card, .domain-card, .demo-card").forEach(el => {
+  searchInput.addEventListener("input", applyFilter);
+  filterSelect.addEventListener("change", applyFilter);
+}
+
+// ====== Name Conversion ======
+const DISPLAY_NAMES = {
+  "claude-opus-4-6-thinking": "Claude Opus 4.6 Thinking",
+  "claude-opus-4-6": "Claude Opus 4.6",
+  "gemini-3.1-pro-preview": "Gemini 3.1 Pro Preview",
+  "grok-4.20-beta1": "Grok 4.20 Beta",
+  "gemini-3-pro": "Gemini 3 Pro",
+  "gpt-5.4-high": "GPT-5.4 High",
+  "gpt-5.2-chat-latest-20260210": "GPT-5.2 Chat",
+  "grok-4.20-beta-0309-reasoning": "Grok 4.20 Reasoning",
+  "gemini-3-flash": "Gemini 3 Flash",
+  "claude-opus-4-5-20251101-thinking-32k": "Claude Opus 4.5 Thinking",
+  "grok-4.1-thinking": "Grok 4.1 Thinking",
+  "claude-opus-4-5-20251101": "Claude Opus 4.5",
+  "claude-sonnet-4-6": "Claude Sonnet 4.6",
+  "qwen3.5-max-preview": "Qwen 3.5 Max Preview",
+  "gpt-5.3-chat-latest": "GPT-5.3 Chat",
+  "gemini-3-flash (thinking-minimal)": "Gemini 3 Flash Thinking",
+  "gpt-5.4": "GPT-5.4",
+  "dola-seed-2.0-preview": "Dola Seed 2.0 Preview",
+  "grok-4.1": "Grok 4.1",
+  "gpt-5.1-high": "GPT-5.1 High",
+  "glm-5": "GLM-5",
+  "kimi-k2.5-thinking": "Kimi K2.5 Thinking",
+  "claude-sonnet-4-5-20250929": "Claude Sonnet 4.5",
+  "claude-sonnet-4-5-20250929-thinking-32k": "Claude Sonnet 4.5 Thinking",
+  "ernie-5.0-0110": "ERNIE 5.0",
+  "qwen3.5-397b-a17b": "Qwen 3.5 397B",
+  "ernie-5.0-preview-1203": "ERNIE 5.0 Preview",
+  "claude-opus-4-1-20250805-thinking-16k": "Claude Opus 4.1 Thinking",
+  "gemini-2.5-pro": "Gemini 2.5 Pro",
+  "claude-opus-4-1-20250805": "Claude Opus 4.1",
+  "mimo-v2-pro": "Mimo V2 Pro",
+  "gpt-4.5-preview-2025-02-27": "GPT-4.5 Preview",
+  "chatgpt-4o-latest-20250326": "ChatGPT 4o Latest",
+  "glm-4.7": "GLM-4.7",
+  "gpt-5.2-high": "GPT-5.2 High",
+  "gpt-5.2": "GPT-5.2",
+  "gpt-5.1": "GPT-5.1",
+  "gemini-3.1-flash-lite-preview": "Gemini 3.1 Flash Lite",
+  "qwen3-max-preview": "Qwen 3 Max Preview",
+  "gpt-5-high": "GPT-5 High",
+  "kimi-k2.5-instant": "Kimi K2.5 Instant",
+  "o3-2025-04-16": "o3",
+  "grok-4-1-fast-reasoning": "Grok 4.1 Fast Reasoning",
+  "kimi-k2-thinking-turbo": "Kimi K2 Thinking Turbo",
+  "amazon-nova-experimental-chat-26-02-10": "Amazon Nova Experimental",
+  "gpt-5-chat": "GPT-5 Chat",
+  "glm-4.6": "GLM-4.6",
+  "deepseek-v3.2-exp-thinking": "DeepSeek V3.2 Thinking",
+  "deepseek-v3.2": "DeepSeek V3.2",
+  "qwen3-max-2025-09-23": "Qwen 3 Max 2025-09-23",
+};
+
+function slugToDisplay(slug) {
+  return DISPLAY_NAMES[slug] || slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+}
+
+// ====== Nav ======
+document.addEventListener("DOMContentLoaded", () => {
+  // Burger menu toggle
+  document.querySelectorAll(".navbar-burger").forEach(el => {
+    el.addEventListener("click", () => {
+      const target = document.getElementById(el.dataset.target);
+      el.classList.toggle("is-active");
+      target.classList.toggle("is-active");
+    });
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".fade-in, .stat-card, .soft-card, .domain-card, .demo-card").forEach(el => {
     el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
     observer.observe(el);
   });
-}
 
-// ====== Nav scroll effect ======
-window.addEventListener("scroll", () => {
-  const nav = document.getElementById("navbar");
-  if (window.scrollY > 100) {
-    nav.style.borderBottomColor = "var(--border)";
-    nav.style.background = "rgba(10, 10, 15, 0.95)";
-  } else {
-    nav.style.background = "rgba(10, 10, 15, 0.85)";
-  }
-});
+  // Copy BibTeX
+  window.copyBibtex = function() {
+    const text = document.getElementById("bibtex").textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector(".copy-btn span:last-child");
+      if (btn) { btn.textContent = "Copied!"; setTimeout(() => { btn.textContent = "Copy"; }, 2000); }
+    });
+  };
 
-// ====== Init ======
-document.addEventListener("DOMContentLoaded", () => {
-  populateLeaderboard();
-  populateDemos();
-  observeSections();
+  // Load data + search
+  loadData().then(() => setupSearch());
 });

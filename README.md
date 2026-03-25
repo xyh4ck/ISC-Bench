@@ -84,7 +84,7 @@ The demo GIF may take a moment to load.
 
 ## 🏆 ISC Leaderboard
 
-Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25. **11 / 40 confirmed under ISC.**
+Coverage of [Arena Leaderboard](https://arena.ai/leaderboard) — updated 2026-03-25. **12 / 150 confirmed under ISC.**
 
 > **Found ISC on an untested model?** [Submit via GitHub Issue →](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name) — we'll verify and add you to the leaderboard.
 >
@@ -92,17 +92,22 @@ Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25.
 
 | Rank | Model | Score | Jailbroken | Demo | By |
 |:----:|-------|:-----:|:------:|:----:|:--:|
+| 1 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.6 Thinking | 1502 | 🟢 |  |  |
 | 2 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.6 | 1501 | 🔴 | [🔗](https://claude.ai/share/407d33f5-4655-4479-b3e3-0a6dc6639d34) | [@wuyoscar](https://github.com/wuyoscar) |
 | 3 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3.1 Pro Preview | 1493 | 🟢 |  |  |
 | 4 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.20 Beta | 1492 | 🟢 |  |  |
 | 5 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Pro | 1486 | 🔴 | [🔗](https://gemini.google.com/share/320bf34b0334) | [@wuyoscar](https://github.com/wuyoscar) |
 | 6 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 High | 1485 | 🟢 |  |  |
 | 7 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.2 Chat | 1482 | 🔴 | [🔗](https://chatgpt.com/share/69a3f6e1-24d8-800c-9581-3d1a7180ee55) | [@wuyoscar](https://github.com/wuyoscar) |
+| 8 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.20 Reasoning | 1481 | 🟢 |  |  |
 | 9 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Flash | 1475 | 🟢 |  |  |
+| 10 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.5 Thinking | 1474 | 🟢 |  |  |
+| 11 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.1 Thinking | 1472 | 🟢 |  |  |
 | 12 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.5 | 1469 | 🔴 | [🔗](https://claude.ai/share/1e3e997c-0315-46f1-9cbd-37157314a7ef) | [@wuyoscar](https://github.com/wuyoscar) |
 | 13 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.6 | 1465 | 🔴 | [🔗](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) | [@wuyoscar](https://github.com/wuyoscar) |
 | 14 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen 3.5 Max Preview | 1464 | 🟢 |  |  |
 | 15 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.3 Chat | 1464 | 🟢 |  |  |
+| 16 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Flash Thinking | 1463 | 🟢 |  |  |
 | 17 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 | 1463 | 🟢 |  |  |
 | 18 | <img src="https://www.google.com/s2/favicons?domain=volcengine.com&sz=32" width="14"> Dola Seed 2.0 Preview | 1462 | 🟢 |  |  |
 | 19 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.1 | 1461 | 🔴 | [🔗](https://grok.com/share/c2hhcmQtMi1jb3B5_54de710c-9331-4fca-a953-6c35775156fb) | [@wuyoscar](https://github.com/wuyoscar) |
@@ -110,9 +115,11 @@ Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25.
 | 21 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> GLM-5 | 1455 | 🔴 | [🔗](https://chat.z.ai/s/79e38d45-d370-4c03-8fb2-6ff3427046cc) | [@wuyoscar](https://github.com/wuyoscar) |
 | 22 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.5 Thinking | 1453 | 🔴 | [🔗](https://www.kimi.com/share/19ca8616-9e32-810d-8000-0000647caebf) | [@wuyoscar](https://github.com/wuyoscar) |
 | 23 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.5 | 1453 | 🟢 |  |  |
+| 24 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.5 Thinking | 1453 | 🟢 |  |  |
 | 25 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> ERNIE 5.0 | 1452 | 🟢 |  |  |
 | 26 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen 3.5 397B | 1452 | 🔴 | [🔗](https://chat.qwen.ai/s/f4faf33a-a6b3-4503-8c9b-6d57ee39c0c6?fev=0.2.16) | [@HanxunH](https://github.com/HanxunH) |
 | 27 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> ERNIE 5.0 Preview | 1450 | 🟢 |  |  |
+| 28 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.1 Thinking | 1449 | 🟢 |  |  |
 | 29 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.5 Pro | 1448 | 🟢 |  |  |
 | 30 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.1 | 1447 | 🟢 |  |  |
 | 31 | <img src="https://www.google.com/s2/favicons?domain=mi.com&sz=32" width="14"> Mimo V2 Pro | 1445 | 🟢 |  |  |
@@ -127,26 +134,123 @@ Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25.
 | 40 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5 High | 1434 | 🟢 |  |  |
 | 41 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.5 Instant | 1433 | 🟢 |  |  |
 | 42 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> o3 | 1432 | 🔴 | [🔗](https://chatgpt.com/share/69c3b0a7-3554-839a-95a5-d22d60758dc9) | [@wuyoscar](https://github.com/wuyoscar) |
-| 45 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat | 1429 | 🟢 |  |  |
+| 43 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.1 Fast Reasoning | 1431 | 🟢 |  |  |
+| 44 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2 Thinking Turbo | 1430 | 🟢 |  |  |
+| 45 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental | 1429 | 🟢 |  |  |
 | 46 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5 Chat | 1426 | 🟢 |  |  |
 | 47 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> GLM-4.6 | 1426 | 🟢 |  |  |
+| 48 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> DeepSeek V3.2 Thinking | 1425 | 🟢 |  |  |
 | 49 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> DeepSeek V3.2 | 1425 | 🔴 | [🔗](https://chat.deepseek.com/share/pbzirkyhfkvapyc3g0) | [@wuyoscar](https://github.com/wuyoscar) |
 | 50 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen 3 Max 2025-09-23 | 1424 | 🟢 |  |  |
 
-<p align="center">
-  <img src="assets/leaderboard_progress.svg" width="80%">
-</p>
-
 <details>
-<summary><b>📜 Leaderboard History</b></summary>
+<summary><b>Show all models (51–150)</b></summary>
 
-| Date | Model | By | Note |
-|:-----|-------|:--:|------|
-| 2026-03-25 | Qwen 3.5 397B | [@HanxunH](https://github.com/HanxunH) | Custom TVD task ([#3](https://github.com/wuyoscar/ISC-Bench/issues/3)) |
-| 2026-03-25 | GLM-5 | [@wuyoscar](https://github.com/wuyoscar) | ISC-Bench template |
-| 2026-03-25 | Claude Opus 4.6, Claude Opus 4.5, Claude Sonnet 4.6, Gemini 3 Pro, GPT-5.2 Chat, o3, Grok 4.1, Kimi K2.5 Thinking, Qwen 3 Max Preview, DeepSeek V3.2 | [@wuyoscar](https://github.com/wuyoscar) | Initial batch — 10 models confirmed |
+| Rank | Model | Score | Jailbroken | Demo | By |
+|:----:|-------|:-----:|:------:|:----:|:--:|
+| 51 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.20250514 Thinking 16K | 1424 | 🟢 |  |  |
+| 52 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.2 Exp | 1423 | 🟢 |  |  |
+| 53 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.235B A22B Instruct 2507 | 1422 | 🟢 |  |  |
+| 54 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.2 Thinking | 1422 | 🟢 |  |  |
+| 55 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek R1.0528 | 1421 | 🟢 |  |  |
+| 56 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4 Fast Chat | 1421 | 🟢 |  |  |
+| 57 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> Ernie 5.0 Preview 1022 | 1419 | 🟢 |  |  |
+| 58 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 | 1418 | 🟢 |  |  |
+| 59 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.0905 Preview | 1418 | 🟢 |  |  |
+| 60 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.5.122B A10B | 1417 | 🟢 |  |  |
+| 61 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.0711 Preview | 1417 | 🟢 |  |  |
+| 62 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 Thinking | 1417 | 🟢 |  |  |
+| 63 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 Terminus Thinking | 1416 | 🟢 |  |  |
+| 64 | <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=32" width="14"> Mistral Large 3 | 1416 | 🟢 |  |  |
+| 65 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 Terminus | 1416 | 🟢 |  |  |
+| 66 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3 Vl 235B A22B Instruct | 1415 | 🟢 |  |  |
+| 67 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat 26.01.10 | 1414 | 🟢 |  |  |
+| 68 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> Gpt 4.1.2025.04.14 | 1413 | 🟢 |  |  |
+| 69 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.20250514 | 1413 | 🟢 |  |  |
+| 70 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 3 Preview 02.24 | 1412 | 🟢 |  |  |
+| 71 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.5 Flash | 1411 | 🟢 |  |  |
+| 72 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4.5 | 1411 | 🟢 |  |  |
+| 73 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.0709 | 1410 | 🟢 |  |  |
+| 74 | <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=32" width="14"> Mistral Medium 2508 | 1410 | 🟢 |  |  |
+| 75 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M2.7 | 1407 | 🟢 |  |  |
+| 76 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Haiku 4.5 20251001 | 1407 | 🟢 |  |  |
+| 77 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.5.27B | 1406 | 🟢 |  |  |
+| 78 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M2.5 | 1405 | 🟢 |  |  |
+| 79 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.5 Flash Preview 09.2025 | 1405 | 🟢 |  |  |
+| 80 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4 Fast Reasoning | 1405 | 🟢 |  |  |
+| 81 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.235B A22B No Thinking | 1403 | 🟢 |  |  |
+| 82 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> O1.2024.12.17 | 1402 | 🟢 |  |  |
+| 83 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3 Next 80B A3B Instruct | 1401 | 🟢 |  |  |
+| 84 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.5 Flash | 1401 | 🟢 |  |  |
+| 85 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.5.35B A3B | 1401 | 🟢 |  |  |
+| 86 | <img src="https://www.google.com/s2/favicons?domain=meituan.com&sz=32" width="14"> Longcat Flash Chat | 1400 | 🟢 |  |  |
+| 87 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.235B A22B Thinking 2507 | 1399 | 🟢 |  |  |
+| 88 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.20250514 Thinking 32K | 1399 | 🟢 |  |  |
+| 89 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek R1 | 1398 | 🟢 |  |  |
+| 90 | <img src="https://www.google.com/s2/favicons?domain=tencent.com&sz=32" width="14"> Hunyuan Vision 1.5 Thinking | 1396 | 🟢 |  |  |
+| 91 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3 Vl 235B A22B Thinking | 1396 | 🟢 |  |  |
+| 92 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat 12.10 | 1396 | 🟢 |  |  |
+| 93 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.0324 | 1394 | 🟢 |  |  |
+| 94 | <img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=32" width="14"> Mai 1 Preview | 1393 | 🟢 |  |  |
+| 95 | <img src="https://www.google.com/s2/favicons?domain=mi.com&sz=32" width="14"> Mimo V2 Flash (Non Thinking) | 1392 | 🟢 |  |  |
+| 96 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> O4 Mini 2025.04.16 | 1390 | 🟢 |  |  |
+| 97 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> Gpt 5 Mini High | 1390 | 🟢 |  |  |
+| 98 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.20250514 | 1389 | 🟢 |  |  |
+| 99 | <img src="https://www.google.com/s2/favicons?domain=stepfun.com&sz=32" width="14"> Step 3.5 Flash | 1389 | 🟢 |  |  |
+| 100 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> O1 Preview | 1388 | 🟢 |  |  |
+| 101 | <img src="https://www.google.com/s2/favicons?domain=mi.com&sz=32" width="14"> Mimo V2 Flash (Thinking) | 1387 | 🟢 |  |  |
+| 102 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3 Coder 480B A35B Instruct | 1387 | 🟢 |  |  |
+| 103 | <img src="https://www.google.com/s2/favicons?domain=tencent.com&sz=32" width="14"> Hunyuan T1.20250711 | 1387 | 🟢 |  |  |
+| 104 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude 3.7 Sonnet 20250219 Thinking 32K | 1387 | 🟢 |  |  |
+| 105 | <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=32" width="14"> Mistral Medium 2505 | 1386 | 🟢 |  |  |
+| 106 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M2.1 Preview | 1386 | 🟢 |  |  |
+| 107 | <img src="https://www.google.com/s2/favicons?domain=tencent.com&sz=32" width="14"> Hunyuan Turbos 20250416 | 1383 | 🟢 |  |  |
+| 108 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.30B A3B Instruct 2507 | 1383 | 🟢 |  |  |
+| 109 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> Gpt 4.1 Mini 2025.04.14 | 1382 | 🟢 |  |  |
+| 110 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.5 Flash Lite Preview 09.2025 No Thinking | 1380 | 🟢 |  |  |
+| 111 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4.6V | 1378 | 🟢 |  |  |
+| 112 | <img src="https://www.google.com/s2/favicons?domain=arcee.ai&sz=32" width="14"> Trinity Large | 1376 | 🟢 |  |  |
+| 113 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.235B A22B | 1375 | 🟢 |  |  |
+| 114 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen2.5 Max | 1374 | 🟢 |  |  |
+| 115 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.5 Flash Lite Preview 06.17 Thinking | 1374 | 🟢 |  |  |
+| 116 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4.5 Air | 1372 | 🟢 |  |  |
+| 117 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude 3.5 Sonnet 20241022 | 1372 | 🟢 |  |  |
+| 118 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude 3.7 Sonnet 20250219 | 1371 | 🟢 |  |  |
+| 119 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3 Next 80B A3B Thinking | 1369 | 🟢 |  |  |
+| 120 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4.7 Flash | 1368 | 🟢 |  |  |
+| 121 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat 11.10 | 1368 | 🟢 |  |  |
+| 122 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemma 3.27B It | 1365 | 🟢 |  |  |
+| 123 | <img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=32" width="14"> Nvidia Nemotron 3 Super 120B A12B | 1365 | 🟢 |  |  |
+| 124 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M1 | 1364 | 🟢 |  |  |
+| 125 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> O3 Mini High | 1363 | 🟢 |  |  |
+| 126 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 3 Mini High | 1363 | 🟢 |  |  |
+| 127 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.0 Flash 001 | 1360 | 🟢 |  |  |
+| 128 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3 | 1358 | 🟢 |  |  |
+| 129 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 3 Mini Beta | 1358 | 🟢 |  |  |
+| 130 | <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=32" width="14"> Mistral Small 2506 | 1357 | 🟢 |  |  |
+| 131 | <img src="https://www.google.com/s2/favicons?domain=primeintel.ai&sz=32" width="14"> Intellect 3 | 1357 | 🟢 |  |  |
+| 132 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> Gpt Oss 120B | 1354 | 🟢 |  |  |
+| 133 | <img src="https://www.google.com/s2/favicons?domain=cohere.com&sz=32" width="14"> Command A 03.2025 | 1354 | 🟢 |  |  |
+| 134 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4.5V | 1353 | 🟢 |  |  |
+| 135 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.0 Flash Lite Preview 02.05 | 1353 | 🟢 |  |  |
+| 136 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 1.5 Pro 002 | 1351 | 🟢 |  |  |
+| 137 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat 10.20 | 1351 | 🟢 |  |  |
+| 138 | <img src="https://www.google.com/s2/favicons?domain=tencent.com&sz=32" width="14"> Hunyuan Turbos 20250226 | 1349 | 🟢 |  |  |
+| 139 | <img src="https://www.google.com/s2/favicons?domain=stepfun.com&sz=32" width="14"> Step 3 | 1348 | 🟢 |  |  |
+| 140 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> O3 Mini | 1348 | 🟢 |  |  |
+| 141 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M2 | 1347 | 🟢 |  |  |
+| 142 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.32B | 1347 | 🟢 |  |  |
+| 143 | <img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=32" width="14"> Llama 3.1 Nemotron Ultra 253B V1 | 1347 | 🟢 |  |  |
+| 144 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat 10.09 | 1347 | 🟢 |  |  |
+| 145 | <img src="https://www.google.com/s2/favicons?domain=antgroup.com&sz=32" width="14"> Ling Flash 2.0 | 1346 | 🟢 |  |  |
+| 146 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen Plus 0125 | 1346 | 🟢 |  |  |
+| 147 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> Gpt 4O 2024.05.13 | 1345 | 🟢 |  |  |
+| 148 | <img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=32" width="14"> Nvidia Llama 3.3 Nemotron Super 49B V1.5 | 1343 | 🟢 |  |  |
+| 149 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4 Plus 0111 | 1343 | 🟢 |  |  |
+| 150 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude 3.5 Sonnet 20240620 | 1342 | 🟢 |  |  |
 
 </details>
+
 
 ---
 

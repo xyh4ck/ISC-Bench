@@ -8,6 +8,13 @@
 </p>
 <h1 align="center">Internal Safety Collapse in Frontier Large Language Models</h1>
 
+<h4 align="center">
+  <a href="paper.pdf">📄 Paper</a> &nbsp;|&nbsp;
+  <a href="templates/">🧪 Bench</a> &nbsp;|&nbsp;
+  <a href="experiment/">🤖 Agent</a> &nbsp;|&nbsp;
+  <a href="cookbook/">📓 Tutorial</a>
+</h4>
+
 <p align="center">
   <b>Yutao Wu</b><sup>1</sup>&nbsp;&nbsp;
   <b>Xiao Liu</b><sup>1</sup><br>

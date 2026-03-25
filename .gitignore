@@ -32,6 +32,8 @@ Thumbs.db
 
 # Claude
 .claude/
+CLAUDE.md
+HANDOFF.md
 
 # Results (contain model outputs)
 **/results/

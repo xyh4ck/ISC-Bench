@@ -145,7 +145,7 @@ The demo GIF may take a moment to load.
       <td align="center">35</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.2 High</td><td align="center">1442</td><td>TODO</td>
     </tr>
     <tr>
-      <td align="center">13</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Sonnet 4.6</td><td align="center">1465</td><td>TODO</td>
+      <td align="center">13</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Sonnet 4.6</td><td align="center">1465</td><td>👾 <a href="https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793">Under ISC</a></td>
       <td></td>
       <td align="center">36</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.2</td><td align="center">1440</td><td>TODO</td>
     </tr>

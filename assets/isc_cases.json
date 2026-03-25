@@ -34,5 +34,11 @@
   },
   "Qwen 3.5 397B": {
     "demos": [{"link": "https://chat.qwen.ai/s/f4faf33a-a6b3-4503-8c9b-6d57ee39c0c6?fev=0.2.16", "by": "HanxunH"}]
+  },
+  "Qwen 3 Max 2025-09-23": {
+    "demos": [{"link": "https://chat.qwen.ai/s/c4247247-ddfd-43f1-bae6-1f703b29de27?fev=0.2.16", "by": "HanxunH"}]
+  },
+  "ERNIE 5.0": {
+    "demos": [{"link": "https://ernie.baidu.com/share/TlRKBSn5kT", "by": "HanxunH"}]
   }
 }

@@ -23,5 +23,14 @@
       {"model": "GLM-5", "by": "wuyoscar"},
       {"model": "Qwen 3.5 397B", "by": "HanxunH"}
     ]
+  },
+  {
+    "date": "2026-03-26",
+    "total": 330,
+    "confirmed": 14,
+    "events": [
+      {"model": "Qwen 3 Max 2025-09-23", "by": "HanxunH"},
+      {"model": "ERNIE 5.0", "by": "HanxunH"}
+    ]
   }
 ]

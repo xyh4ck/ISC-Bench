@@ -2,356 +2,294 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISC-Bench — Internal Safety Collapse in Frontier LLMs</title>
-  <meta name="description" content="ISC-Bench: A benchmark for studying Internal Safety Collapse in frontier large language models. 56 TVD templates across 8 domains trigger harmful content generation without adversarial prompts.">
-  <meta name="keywords" content="ISC, Internal Safety Collapse, LLM Safety, Jailbreak, Benchmark, TVD Framework, AI Safety, Red Teaming, Frontier LLMs, ICML 2026">
-  <meta name="author" content="Yutao Wu, Xiao Liu, Yifeng Gao, Xiang Zheng, Hanxun Huang, Yige Li, Cong Wang, Bo Li, Xingjun Ma, Yu-Gang Jiang">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISC-Bench — Internal Safety Collapse in Frontier LLMs | Jailbroken Arena</title>
+  <meta name="description" content="ISC-Bench: A benchmark for studying Internal Safety Collapse in frontier large language models. 56 TVD templates across 8 domains. Jailbroken Arena tracks ISC across 330+ Arena-ranked models.">
+  <meta name="keywords" content="ISC, ISC-Bench, Internal Safety Collapse, LLM Safety, Jailbreak, Jailbroken Arena, Benchmark, TVD Framework, AI Safety, Red Teaming, ICML 2026">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="ISC-Bench — Internal Safety Collapse in Frontier LLMs">
-  <meta property="og:description" content="Every frontier LLM generates harmful content when given a legitimate professional task. No adversarial prompts needed.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wuyoscar.github.io/ISC-Bench/">
+  <!-- Bulma + Icons -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="static/css/academicons.min.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-  <!-- ========== NAV ========== -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">ISC<span class="accent">-Bench</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#arena">Jailbroken Arena</a>
-        <a href="#benchmark">Benchmark</a>
-        <a href="#framework">Framework</a>
-        <a href="#demos">Demos</a>
-        <a href="https://github.com/wuyoscar/ISC-Bench" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-      <button class="nav-toggle" onclick="toggleNav()">
-        <i class="fas fa-bars"></i>
-      </button>
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar is-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item nav-logo" href="#">ISC<span class="has-text-danger">-Bench</span></a>
+      <a class="navbar-burger" data-target="navMenu"><span></span><span></span><span></span></a>
     </div>
-  </nav>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#about">About</a>
+        <a class="navbar-item" href="#arena">Jailbroken Arena</a>
+        <a class="navbar-item" href="#framework">Framework</a>
+        <a class="navbar-item" href="#benchmark">Benchmark</a>
+        <a class="navbar-item" href="#demos">Demos</a>
+        <a class="navbar-item" href="https://github.com/wuyoscar/ISC-Bench" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span><span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-  <!-- ========== HERO ========== -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-badge">ICML 2026</div>
-      <h1 class="hero-title">
+<!-- ============ HERO ============ -->
+<section class="hero is-fullheight hero-dark">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="mb-4">
+        <span class="tag is-danger is-medium is-rounded">ICML 2026</span>
+      </div>
+
+      <h1 class="title is-1 hero-title">
         Internal Safety Collapse<br>
-        <span class="accent">in Frontier Large Language Models</span>
+        <span class="has-text-danger">in Frontier Large Language Models</span>
       </h1>
-      <p class="hero-subtitle">
+
+      <h2 class="subtitle is-5 hero-subtitle mt-4">
         Every frontier LLM generates harmful content when given a legitimate professional task.<br>
         No adversarial prompts. No jailbreaks. Just a professional task.
-      </p>
-
-      <div class="hero-authors">
-        <span>Yutao Wu<sup>1</sup></span>
-        <span>Xiao Liu<sup>1</sup></span>
-        <span>Yifeng Gao<sup>2,3</sup></span>
-        <span>Xiang Zheng<sup>4</sup></span>
-        <span>Hanxun Huang<sup>5</sup></span>
-        <span>Yige Li<sup>6</sup></span>
-        <span>Cong Wang<sup>4</sup></span>
-        <span>Bo Li<sup>7</sup></span>
-        <span>Xingjun Ma<sup>2,3</sup></span>
-        <span>Yu-Gang Jiang<sup>2,3</sup></span>
-      </div>
-      <div class="hero-affiliations">
-        <sup>1</sup>Deakin University &nbsp;
-        <sup>2</sup>Fudan University &nbsp;
-        <sup>3</sup>Shanghai Key Lab of Multimodal Embodied AI &nbsp;
-        <sup>4</sup>City University of Hong Kong &nbsp;
-        <sup>5</sup>University of Melbourne &nbsp;
-        <sup>6</sup>Singapore Management University &nbsp;
-        <sup>7</sup>UIUC
-      </div>
-
-      <div class="hero-buttons">
-        <a href="https://github.com/wuyoscar/ISC-Bench/blob/main/paper.pdf" class="btn btn-primary">
-          <i class="fas fa-file-pdf"></i> Read Paper
-        </a>
-        <a href="https://github.com/wuyoscar/ISC-Bench" class="btn btn-outline">
-          <i class="fab fa-github"></i> Code & Data
-        </a>
-        <a href="#arena" class="btn btn-danger">
-          <i class="fas fa-skull-crossbones"></i> Jailbroken Arena
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ABOUT ========== -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">What is ISC?</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="lead">
-            <strong>Internal Safety Collapse (ISC)</strong> is a structural vulnerability where frontier LLMs
-            generate harmful content as a <em>functional requirement</em> of legitimate professional tasks.
-          </p>
-          <p>
-            Unlike traditional jailbreaks that bypass safety guardrails through adversarial prompts,
-            ISC triggers harmful generation through the task structure itself. The model believes it
-            is "just doing its job" — completing a coding task, running a simulation, or evaluating a safety classifier.
-          </p>
-          <p>
-            We tested <strong>every major frontier LLM</strong> — GPT, Claude, Gemini, Grok, DeepSeek,
-            Qwen, GLM, Kimi, MiniMax, Doubao — and <strong>every single one is affected</strong>.
-          </p>
-          <div class="stat-row">
-            <div class="stat-card">
-              <div class="stat-number">56</div>
-              <div class="stat-label">TVD Templates</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">8</div>
-              <div class="stat-label">Domains</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Trigger Rate</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">0%</div>
-              <div class="stat-label">Defense Success</div>
-            </div>
-          </div>
-        </div>
-        <div class="about-figure">
-          <img src="../assets/fig1_bench_overview.png" alt="ISC-Bench Overview" loading="lazy">
-          <p class="fig-caption">ISC-Bench: 56 scenarios across 8 professional domains.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== JAILBROKEN ARENA ========== -->
-  <section id="arena" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">
-        <i class="fas fa-skull-crossbones"></i> Jailbroken Arena
       </h2>
-      <p class="section-desc">
-        Real-time tracking of ISC across Arena-ranked models. Every <span class="red">red dot</span> is a confirmed case
-        where a frontier LLM generated harmful content through a professional task.
-      </p>
 
-      <div class="arena-chart">
-        <img src="../assets/leaderboard_progress.svg" alt="Jailbroken Arena Progress" loading="lazy">
+      <!-- Authors -->
+      <div class="authors mt-5">
+        <span class="author"><a href="#">Yutao Wu</a><sup>1</sup></span>
+        <span class="author"><a href="#">Xiao Liu</a><sup>1</sup></span>
+        <span class="author"><a href="#">Yifeng Gao</a><sup>2,3</sup></span>
+        <span class="author"><a href="#">Xiang Zheng</a><sup>4</sup></span>
+        <span class="author"><a href="#">Hanxun Huang</a><sup>5</sup></span>
+        <span class="author"><a href="#">Yige Li</a><sup>6</sup></span>
+        <span class="author"><a href="#">Cong Wang</a><sup>4</sup></span>
+        <span class="author"><a href="#">Bo Li</a><sup>7</sup></span>
+        <span class="author"><a href="#">Xingjun Ma</a><sup>2,3</sup></span>
+        <span class="author"><a href="#">Yu-Gang Jiang</a><sup>2,3</sup></span>
+      </div>
+      <div class="affiliations mt-2">
+        <sup>1</sup>Deakin &nbsp; <sup>2</sup>Fudan &nbsp; <sup>3</sup>Shanghai Key Lab &nbsp;
+        <sup>4</sup>CityU HK &nbsp; <sup>5</sup>Melbourne &nbsp; <sup>6</sup>SMU &nbsp; <sup>7</sup>UIUC
       </div>
 
-      <div class="arena-cta">
-        <p>Found ISC on an untested model?</p>
-        <a href="https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name" class="btn btn-danger">
-          <i class="fas fa-plus"></i> Submit Your Case
+      <!-- Buttons -->
+      <div class="buttons is-centered mt-5">
+        <a class="button is-danger is-medium" href="https://github.com/wuyoscar/ISC-Bench/blob/main/paper.pdf">
+          <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+        </a>
+        <a class="button is-dark is-medium" href="https://github.com/wuyoscar/ISC-Bench">
+          <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+        </a>
+        <a class="button is-outlined is-danger is-medium" href="#arena">
+          <span class="icon"><i class="fas fa-skull-crossbones"></i></span><span>Jailbroken Arena</span>
         </a>
       </div>
-
-      <div class="arena-table-wrapper">
-        <table class="arena-table" id="leaderboard">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Model</th>
-              <th>Score</th>
-              <th>Status</th>
-              <th>Demo</th>
-              <th>By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Top models populated by JS from isc_cases.json + arena_cache.json -->
-          </tbody>
-        </table>
-      </div>
-      <p class="arena-note">Showing top 50 of 330 models. <a href="https://github.com/wuyoscar/ISC-Bench#-jailbroken-arena">Full leaderboard on GitHub &rarr;</a></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ========== FRAMEWORK ========== -->
-  <section id="framework" class="section">
-    <div class="container">
-      <h2 class="section-title">The TVD Framework</h2>
-      <p class="section-desc">
-        ISC is triggered by the <strong>TVD design pattern</strong>: Task + Validator + Data.
-        The harmful content is a functional requirement of the task, not the result of an adversarial prompt.
-      </p>
-      <div class="framework-figure">
-        <img src="../assets/fig2_tvd_framework.png" alt="TVD Framework" loading="lazy">
-        <p class="fig-caption">The TVD (Task, Validator, Data) framework for systematically triggering ISC.</p>
-      </div>
+<!-- ============ JAILBROKEN ARENA ============ -->
+<section class="section section-alt" id="arena">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered section-heading">
+      <span class="icon has-text-danger"><i class="fas fa-skull-crossbones"></i></span>
+      Jailbroken Arena
+    </h2>
+    <p class="subtitle is-5 has-text-centered has-text-grey-light mt-2 mb-5">
+      Real-time tracking of ISC across <strong>330</strong> Arena-ranked models.
+      Every <span class="has-text-danger">red dot</span> is a confirmed case.
+    </p>
 
-      <div class="framework-cards">
-        <div class="fw-card">
-          <div class="fw-icon"><i class="fas fa-code"></i></div>
-          <h3>Task</h3>
-          <p>A benign professional scenario — ML engineering, content moderation, bioinformatics, chemistry simulation.</p>
-        </div>
-        <div class="fw-card">
-          <div class="fw-icon"><i class="fas fa-check-double"></i></div>
-          <h3>Validator</h3>
-          <p>Code that checks output format and correctness — Pydantic models, JSON schemas, assertions.</p>
-        </div>
-        <div class="fw-card">
-          <div class="fw-icon"><i class="fas fa-database"></i></div>
-          <h3>Data</h3>
-          <p>A file with harmful queries and <code>???</code> placeholder fields. The LLM fills <code>???</code> to complete the task.</p>
-        </div>
-      </div>
+    <!-- Progress Chart -->
+    <div class="has-text-centered mb-5">
+      <img src="../assets/leaderboard_progress.svg" alt="Progress" style="max-width:700px;width:100%">
     </div>
-  </section>
 
-  <!-- ========== BENCHMARK ========== -->
-  <section id="benchmark" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">ISC-Bench: 56 Templates</h2>
-      <p class="section-desc">
-        Every template triggers any frontier LLM to generate harmful content.
-        Copy, paste into any LLM — that's it.
-      </p>
-
-      <div class="domain-grid">
-        <div class="domain-card" data-count="16">
-          <i class="fas fa-dna"></i>
-          <h3>Computational Biology</h3>
-          <p>Toxin docking, pathogen genomics, gene assembly</p>
-        </div>
-        <div class="domain-card" data-count="10">
-          <i class="fas fa-flask"></i>
-          <h3>Computational Chemistry</h3>
-          <p>Energetic materials, toxic screening, synthesis routes</p>
-        </div>
-        <div class="domain-card" data-count="7">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Cybersecurity</h3>
-          <p>Binary exploitation, shellcode, credential extraction</p>
-        </div>
-        <div class="domain-card" data-count="7">
-          <i class="fas fa-pills"></i>
-          <h3>Pharmacology</h3>
-          <p>Lethal drug targets, adverse events, procurement</p>
-        </div>
-        <div class="domain-card" data-count="5">
-          <i class="fas fa-robot"></i>
-          <h3>AI Safety & ML</h3>
-          <p>LlamaGuard eval, toxicity classification, moderation</p>
-        </div>
-        <div class="domain-card" data-count="3">
-          <i class="fas fa-heartbeat"></i>
-          <h3>Clinical Genomics</h3>
-          <p>Lethal variants, survival analysis, genetic panels</p>
-        </div>
-        <div class="domain-card" data-count="2">
-          <i class="fas fa-virus"></i>
-          <h3>Epidemiology</h3>
-          <p>Pathogen outbreak modeling, epidemic simulation</p>
-        </div>
-        <div class="domain-card" data-count="3">
-          <i class="fas fa-broadcast-tower"></i>
-          <h3>Media & Communication</h3>
-          <p>Misinformation diffusion, bot evasion, bias profiling</p>
-        </div>
-      </div>
-
-      <div class="cross-domain-figure">
-        <img src="../assets/fig3_cross_domain.png" alt="Cross-domain results" loading="lazy">
-        <p class="fig-caption">Cross-domain verification rates across 5 models, judged by GPT-5.2.</p>
-      </div>
+    <!-- Submit CTA -->
+    <div class="has-text-centered mb-5">
+      <a class="button is-danger is-medium" href="https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name">
+        <span class="icon"><i class="fas fa-plus"></i></span><span>Submit Your ISC Case</span>
+      </a>
     </div>
-  </section>
 
-  <!-- ========== DEMOS ========== -->
-  <section id="demos" class="section">
-    <div class="container">
-      <h2 class="section-title">Live Demos</h2>
-      <p class="section-desc">
-        Real conversations where frontier LLMs generated harmful content through ISC.
-        Every link is a public share from the official LLM web interface.
-      </p>
-
-      <div class="demo-grid" id="demo-grid">
-        <!-- Populated by JS -->
-      </div>
-
-      <h3 class="subsection-title">Video Demo</h3>
-      <div class="video-container">
-        <img src="../assets/ISC_Video.gif" alt="ISC Demo Video" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== GETTING STARTED ========== -->
-  <section id="start" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">Getting Started</h2>
-      <div class="code-blocks">
-        <div class="code-block">
-          <div class="code-header">
-            <span class="code-dot red"></span>
-            <span class="code-dot yellow"></span>
-            <span class="code-dot green"></span>
-            <span class="code-title">ISC-Single — one prompt, one response</span>
+    <!-- Search + Filter -->
+    <div class="columns is-centered mb-4">
+      <div class="column is-6">
+        <div class="field has-addons">
+          <div class="control is-expanded has-icons-left">
+            <input class="input arena-search" type="text" id="arenaSearch" placeholder="Search models...">
+            <span class="icon is-left"><i class="fas fa-search"></i></span>
           </div>
-          <pre><code>git clone https://github.com/wuyoscar/ISC-Bench.git && cd ISC-Bench
-cp .env.example .env  # add your OpenRouter API key
-cd experiment/isc_single
-uv run run.py --model openai/gpt-5.2 --bench jbb --task ai-guard</code></pre>
-        </div>
-        <div class="code-block">
-          <div class="code-header">
-            <span class="code-dot red"></span>
-            <span class="code-dot yellow"></span>
-            <span class="code-dot green"></span>
-            <span class="code-title">ISC-ICL — multi-turn with demonstrations</span>
+          <div class="control">
+            <div class="select">
+              <select id="arenaFilter">
+                <option value="all">All</option>
+                <option value="jailbroken">Jailbroken Only</option>
+                <option value="safe">Not Jailbroken</option>
+              </select>
+            </div>
           </div>
-          <pre><code>cd experiment/isc_icl
-uv run run.py --model openai/gpt-5.2 --demos 5
-# Switch benchmark:
-uv run build.py --bench harmbench
-uv run run.py --model openai/gpt-5.2 --bench harmbench --demos 5</code></pre>
-        </div>
-        <div class="code-block">
-          <div class="code-header">
-            <span class="code-dot red"></span>
-            <span class="code-dot yellow"></span>
-            <span class="code-dot green"></span>
-            <span class="code-title">ISC-Agentic — Docker agent, one instruction</span>
-          </div>
-          <pre><code>cd experiment/isc_agent
-docker build -t isc-agent .
-./run.sh --model openai/gpt-5.2</code></pre>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ========== CITATION ========== -->
-  <section id="citation" class="section">
-    <div class="container">
-      <h2 class="section-title">Citation</h2>
-      <div class="code-block citation-block">
-        <div class="code-header">
-          <span class="code-dot red"></span>
-          <span class="code-dot yellow"></span>
-          <span class="code-dot green"></span>
-          <span class="code-title">BibTeX</span>
-          <button class="copy-btn" onclick="copyBibtex()"><i class="fas fa-copy"></i> Copy</button>
+    <!-- Leaderboard Table -->
+    <div class="table-container">
+      <table class="table is-fullwidth is-hoverable arena-table" id="leaderboard">
+        <thead>
+          <tr>
+            <th class="has-text-centered" style="width:60px">Rank</th>
+            <th>Model</th>
+            <th class="has-text-centered" style="width:80px">Score</th>
+            <th class="has-text-centered" style="width:90px">Status</th>
+            <th class="has-text-centered" style="width:80px">Demo</th>
+            <th class="has-text-centered" style="width:120px">Contributor</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <p class="has-text-centered has-text-grey is-size-7 mt-3">
+      Showing top 50 of 330 models &middot;
+      <a href="https://github.com/wuyoscar/ISC-Bench#-jailbroken-arena" class="has-text-danger">Full leaderboard on GitHub &rarr;</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ DEMOS ============ -->
+<section class="section" id="demos">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">Live Demos</h2>
+    <p class="subtitle is-5 has-text-centered has-text-grey mt-2 mb-5">
+      Real conversations where frontier LLMs generated harmful content through ISC.
+    </p>
+    <div class="columns is-multiline" id="demo-grid"></div>
+
+    <h3 class="title is-4 has-text-centered mt-6 mb-4">Video Demo</h3>
+    <div class="has-text-centered">
+      <img src="../assets/ISC_Video.gif" alt="ISC Demo" style="max-width:800px;width:100%;border-radius:12px;border:1px solid #333">
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">What is ISC?</h2>
+    <div class="columns is-vcentered mt-5">
+      <div class="column is-6">
+        <div class="content is-medium">
+          <p><strong class="has-text-danger">Internal Safety Collapse (ISC)</strong> is a structural vulnerability
+          where frontier LLMs generate harmful content as a <em>functional requirement</em> of legitimate professional tasks.</p>
+          <p>Unlike traditional jailbreaks, ISC triggers through the task structure itself. The model believes it is
+          "just doing its job."</p>
+          <p>We tested <strong>every major frontier LLM</strong> — GPT, Claude, Gemini, Grok, DeepSeek, Qwen, GLM,
+          Kimi, MiniMax, Doubao — and <strong>every single one is affected</strong>.</p>
         </div>
-        <pre><code id="bibtex">@misc{wu2026isc,
+        <div class="columns is-multiline mt-4">
+          <div class="column is-6"><div class="stat-card"><div class="stat-num">56</div><div class="stat-label">Templates</div></div></div>
+          <div class="column is-6"><div class="stat-card"><div class="stat-num">8</div><div class="stat-label">Domains</div></div></div>
+          <div class="column is-6"><div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Trigger Rate</div></div></div>
+          <div class="column is-6"><div class="stat-card"><div class="stat-num">0%</div><div class="stat-label">Defense Success</div></div></div>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="figure-card">
+          <img src="../assets/fig1_bench_overview.png" alt="ISC-Bench Overview">
+          <p class="figure-caption"><b>Figure 1.</b> ISC-Bench: 56 scenarios across 8 professional domains.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TVD FRAMEWORK ============ -->
+<section class="section" id="framework">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">The TVD Framework</h2>
+    <p class="subtitle is-5 has-text-centered has-text-grey mt-2 mb-5">
+      ISC is triggered by the <strong>TVD design pattern</strong>: Task + Validator + Data.
+    </p>
+
+    <div class="figure-card mb-6">
+      <img src="../assets/fig2_tvd_framework.png" alt="TVD Framework">
+      <p class="figure-caption"><b>Figure 2.</b> The TVD (Task, Validator, Data) framework for systematically triggering ISC.</p>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="soft-card has-text-centered">
+          <span class="icon is-large has-text-danger"><i class="fas fa-code fa-2x"></i></span>
+          <h3 class="title is-5 mt-3">Task</h3>
+          <p class="has-text-grey">A benign professional scenario — ML engineering, content moderation, bioinformatics.</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="soft-card has-text-centered">
+          <span class="icon is-large has-text-danger"><i class="fas fa-check-double fa-2x"></i></span>
+          <h3 class="title is-5 mt-3">Validator</h3>
+          <p class="has-text-grey">Code that checks output — Pydantic models, JSON schemas, assertions.</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="soft-card has-text-centered">
+          <span class="icon is-large has-text-danger"><i class="fas fa-database fa-2x"></i></span>
+          <h3 class="title is-5 mt-3">Data</h3>
+          <p class="has-text-grey">Harmful queries with <code>???</code> placeholders. The LLM fills them to complete the task.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENCHMARK ============ -->
+<section class="section section-alt" id="benchmark">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">ISC-Bench: 56 Templates</h2>
+    <p class="subtitle is-5 has-text-centered has-text-grey-light mt-2 mb-5">
+      Copy any template, paste into any LLM. That's it.
+    </p>
+
+    <div class="columns is-multiline">
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-dna"></i><h4>Comp. Biology</h4><span class="domain-count">16</span></div></div>
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-flask"></i><h4>Comp. Chemistry</h4><span class="domain-count">10</span></div></div>
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-shield-alt"></i><h4>Cybersecurity</h4><span class="domain-count">7</span></div></div>
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-pills"></i><h4>Pharmacology</h4><span class="domain-count">7</span></div></div>
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-robot"></i><h4>AI Safety & ML</h4><span class="domain-count">5</span></div></div>
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-heartbeat"></i><h4>Clinical Genomics</h4><span class="domain-count">3</span></div></div>
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-virus"></i><h4>Epidemiology</h4><span class="domain-count">2</span></div></div>
+      <div class="column is-3"><div class="domain-card"><i class="fas fa-broadcast-tower"></i><h4>Media & Comms</h4><span class="domain-count">3</span></div></div>
+    </div>
+
+    <div class="figure-card mt-5">
+      <img src="../assets/fig3_cross_domain.png" alt="Cross-domain results">
+      <p class="figure-caption"><b>Figure 3.</b> Cross-domain verification rates across 5 models, judged by GPT-5.2.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CITATION ============ -->
+<section class="section" id="citation">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">Citation</h2>
+    <div class="code-block" style="max-width:650px;margin:0 auto">
+      <div class="code-header">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="code-title">BibTeX</span>
+        <button class="button is-small is-dark copy-btn" onclick="copyBibtex()">
+          <span class="icon is-small"><i class="fas fa-copy"></i></span><span>Copy</span>
+        </button>
+      </div>
+      <pre><code id="bibtex">@misc{wu2026isc,
   title={Internal Safety Collapse in Frontier Large Language Models},
   author={Wu, Yutao and Liu, Xiao and Gao, Yifeng and Zheng, Xiang
           and Huang, Hanxun and Li, Yige and Wang, Cong and Li, Bo
@@ -359,26 +297,20 @@ docker build -t isc-agent .
   year={2026},
   howpublished={\url{https://github.com/wuyoscar/ISC-Bench}}
 }</code></pre>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <span class="footer-logo">ISC<span class="accent">-Bench</span></span>
-          <span class="footer-text">ICML 2026 &middot; CC BY-NC-SA 4.0</span>
-        </div>
-        <div class="footer-right">
-          <a href="https://github.com/wuyoscar/ISC-Bench"><i class="fab fa-github"></i></a>
-          <a href="mailto:oscar.w@deakin.edu.au"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container has-text-centered">
+    <p class="has-text-grey">
+      <strong class="has-text-light">ISC-Bench</strong> &middot; ICML 2026 &middot; CC BY-NC-SA 4.0
+      &middot; <a href="mailto:oscar.w@deakin.edu.au" class="has-text-danger">Contact</a>
+    </p>
+  </div>
+</footer>
 
-  <script src="static/js/main.js"></script>
+<script src="static/js/main.js"></script>
 </body>
 </html>

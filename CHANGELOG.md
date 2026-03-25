@@ -2,6 +2,15 @@
 
 All notable updates to ISC-Bench are documented here.
 
+## v6 — 2026-03-26
+
+- **Project website**: launched at wuyoscar.github.io/ISC-Bench — dark theme, Bulma framework
+- **JailbreakArena** (renamed from Jailbroken Arena): interactive leaderboard with search/filter, auto-fetches data from GitHub
+- **How It Works demo**: video moved to top of website for immediate visibility
+- **14 ISC cases**: added Qwen3-Max (#4) and ERNIE 5.0 (#5) by @HanxunH
+- **ISC-bench-ops skill**: project-scoped Claude Code skill for leaderboard operations
+- Website auto-updates: JS fetches `isc_cases.json` + `arena_cache.json` from GitHub raw
+
 ## v5 — 2026-03-25
 
 - **Jailbroken Arena**: renamed from ISC Leaderboard, expanded to 330 models (was 40)

@@ -52,21 +52,21 @@
 
 | Date | Update |
 |:-----|--------|
+| 🔥 2026-03-26 | Release update: launched the ISC Leaderboard, added 10 public model-compromise case links (Claude Opus 4.6, Claude Opus 4.5, Claude Sonnet 4.6, Gemini 3 Pro, GPT-5.2 Chat, o3, Grok 4.1, Kimi K2.5 Thinking, Qwen 3 Max Preview, DeepSeek V3.2), and verified execution time for ISC-Single and ISC-ICL |
 | 🔥 2026-03-25 | README refresh: cleaner navigation, reorganized roadmap, and Top Frontier Large-Scale Models Under ISC leaderboard |
 | 🎉 2026-03-22 | Initial release — 56 templates, 3 experiment modes, tutorials |
 
 ## Roadmap
 
+- [ ] Jailbreak Top 20 (Large Model In Progress)
+- [ ] More ISC examples across models and contexts
+- [ ] Project website
+- [ ] ISC Skill — domain knowledge + utility scripts
 - [x] ISC-Bench: 56 TVD templates across 8 domains
 - [x] 3 experiment modes (Single, ICL, Agentic)
 - [x] Tutorials (01-04)
 - [x] ISC demo video
 - [x] Paper PDF
-- [ ] Jailbreak Top 20 (Large Model In Progress)
-- [ ] Per-model attack notebooks (GPT, Claude, Gemini, Grok, GLM, Kimi, ...)
-- [ ] More ISC examples across models and contexts
-- [ ] Project website
-- [ ] ISC Skill — domain knowledge + utility scripts
 
 ---
 
@@ -89,6 +89,11 @@ The demo GIF may take a moment to load.
   Replace <code>TODO</code> with the public demo link once the corresponding ISC conversation is ready.
 </p>
 
+<p align="center">
+  We welcome additional public ISC demonstrations and can incorporate qualified cases into the leaderboard.
+  If you encounter a model for which ISC does not reproduce reliably, please contact us.
+</p>
+
 <table align="center">
   <thead>
     <tr>
@@ -105,7 +110,7 @@ The demo GIF may take a moment to load.
   </thead>
   <tbody>
     <tr>
-      <td align="center">2</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Opus 4.6</td><td align="center">1501</td><td>TODO</td>
+      <td align="center">2</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Opus 4.6</td><td align="center">1501</td><td>👾 <a href="https://claude.ai/share/407d33f5-4655-4479-b3e3-0a6dc6639d34">Under ISC</a></td>
       <td></td>
       <td align="center">27</td><td><img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14" alt="Baidu"> ERNIE 5.0 Preview</td><td align="center">1450</td><td>TODO</td>
     </tr>

@@ -52,9 +52,11 @@
 
 | Date | Update |
 |:-----|--------|
-| 🔥 2026-03-26 | Release update: launched the ISC Leaderboard, added 10 public model-compromise case links (Claude Opus 4.6, Claude Opus 4.5, Claude Sonnet 4.6, Gemini 3 Pro, GPT-5.2 Chat, o3, Grok 4.1, Kimi K2.5 Thinking, Qwen 3 Max Preview, DeepSeek V3.2), and verified execution time for ISC-Single and ISC-ICL |
-| 🔥 2026-03-25 | README refresh: cleaner navigation, reorganized roadmap, and Top Frontier Large-Scale Models Under ISC leaderboard |
-| 🎉 2026-03-22 | Initial release — 56 templates, 3 experiment modes, tutorials |
+| 🔥 v3 — 2026-03-25 | Leaderboard v2, contributor attribution, 10 confirmed ISC cases, submission template |
+| 🔥 v2 — 2026-03-25 | README polish, notebook fixes, outputs cleared |
+| 🎉 v1 — 2026-03-22 | Initial release — 56 templates, 3 experiment modes, tutorials |
+
+<sub>[Full changelog →](CHANGELOG.md)</sub>
 
 ## Roadmap
 
@@ -84,135 +86,53 @@ The demo GIF may take a moment to load.
 
 ## 🏆 ISC Leaderboard
 
-<p align="center">
-  Current coverage against the <a href="https://arena.ai/leaderboard">Arena Leaderboard</a> overall Top 50, accessed on 2026-03-25.
-  Replace <code>TODO</code> with the public demo link once the corresponding ISC conversation is ready.
-</p>
+Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25. **10 / 40 confirmed under ISC.**
 
-<p align="center">
-  We welcome additional public ISC demonstrations and can incorporate qualified cases into the leaderboard.
-  If you encounter a model for which ISC does not reproduce reliably, please contact us.
-</p>
+> **Found ISC on an untested model?** [Submit via GitHub Issue →](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name) — we'll verify and add you to the leaderboard.
 
-<table align="center">
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Model</th>
-      <th>Score</th>
-      <th>Under ISC</th>
-      <th width="40"></th>
-      <th>Rank</th>
-      <th>Model</th>
-      <th>Score</th>
-      <th>Under ISC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center">2</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Opus 4.6</td><td align="center">1501</td><td>👾 <a href="https://claude.ai/share/407d33f5-4655-4479-b3e3-0a6dc6639d34">Under ISC</a></td>
-      <td></td>
-      <td align="center">27</td><td><img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14" alt="Baidu"> ERNIE 5.0 Preview</td><td align="center">1450</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">3</td><td><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14" alt="Google"> Gemini 3.1 Pro Preview</td><td align="center">1493</td><td>TODO</td>
-      <td></td>
-      <td align="center">29</td><td><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14" alt="Google"> Gemini 2.5 Pro</td><td align="center">1448</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">4</td><td><img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14" alt="xAI"> Grok 4.20 Beta</td><td align="center">1492</td><td>TODO</td>
-      <td></td>
-      <td align="center">30</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Opus 4.1</td><td align="center">1447</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">5</td><td><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14" alt="Google"> Gemini 3 Pro</td><td align="center">1486</td><td>👾 <a href="https://gemini.google.com/share/320bf34b0334">Under ISC</a></td>
-      <td></td>
-      <td align="center">31</td><td><img src="https://www.google.com/s2/favicons?domain=mi.com&sz=32" width="14" alt="Xiaomi"> Mimo V2 Pro</td><td align="center">1445</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">6</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.4 High</td><td align="center">1485</td><td>TODO</td>
-      <td></td>
-      <td align="center">32</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-4.5 Preview</td><td align="center">1444</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">7</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.2 Chat</td><td align="center">1482</td><td>👾 <a href="https://chatgpt.com/share/69a3f6e1-24d8-800c-9581-3d1a7180ee55">Under ISC</a></td>
-      <td></td>
-      <td align="center">33</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> ChatGPT 4o Latest</td><td align="center">1443</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">9</td><td><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14" alt="Google"> Gemini 3 Flash</td><td align="center">1475</td><td>TODO</td>
-      <td></td>
-      <td align="center">34</td><td><img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14" alt="Z.ai"> GLM-4.7</td><td align="center">1443</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">12</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Opus 4.5</td><td align="center">1469</td><td>👾 <a href="https://claude.ai/share/1e3e997c-0315-46f1-9cbd-37157314a7ef">Under ISC</a></td>
-      <td></td>
-      <td align="center">35</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.2 High</td><td align="center">1442</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">13</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Sonnet 4.6</td><td align="center">1465</td><td>👾 <a href="https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793">Under ISC</a></td>
-      <td></td>
-      <td align="center">36</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.2</td><td align="center">1440</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">14</td><td><img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14" alt="Alibaba"> Qwen 3.5 Max Preview</td><td align="center">1464</td><td>TODO</td>
-      <td></td>
-      <td align="center">37</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.1</td><td align="center">1439</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">15</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.3 Chat</td><td align="center">1464</td><td>TODO</td>
-      <td></td>
-      <td align="center">38</td><td><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14" alt="Google"> Gemini 3.1 Flash Lite Preview</td><td align="center">1438</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">17</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.4</td><td align="center">1463</td><td>TODO</td>
-      <td></td>
-      <td align="center">39</td><td><img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14" alt="Alibaba"> Qwen 3 Max Preview</td><td align="center">1435</td><td>👾 <a href="https://chat.qwen.ai/s/f1e5d846-018e-4a3d-94ff-418e34559497?fev=0.2.9">Under ISC</a></td>
-    </tr>
-    <tr>
-      <td align="center">18</td><td><img src="https://www.google.com/s2/favicons?domain=volcengine.com&sz=32" width="14" alt="ByteDance"> Dola Seed 2.0 Preview</td><td align="center">1462</td><td>TODO</td>
-      <td></td>
-      <td align="center">40</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5 High</td><td align="center">1434</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">19</td><td><img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14" alt="xAI"> Grok 4.1</td><td align="center">1461</td><td>👾 <a href="https://grok.com/share/c2hhcmQtMi1jb3B5_54de710c-9331-4fca-a953-6c35775156fb">Under ISC</a></td>
-      <td></td>
-      <td align="center">41</td><td><img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14" alt="Moonshot"> Kimi K2.5 Instant</td><td align="center">1433</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">20</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5.1 High</td><td align="center">1455</td><td>TODO</td>
-      <td></td>
-      <td align="center">42</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> o3</td><td align="center">1432</td><td>👾 <a href="https://chatgpt.com/share/69c3b0a7-3554-839a-95a5-d22d60758dc9">Under ISC</a></td>
-    </tr>
-    <tr>
-      <td align="center">21</td><td><img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14" alt="Z.ai"> GLM-5</td><td align="center">1455</td><td>TODO</td>
-      <td></td>
-      <td align="center">45</td><td><img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14" alt="Amazon"> Amazon Nova Experimental Chat</td><td align="center">1429</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">22</td><td><img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14" alt="Moonshot"> Kimi K2.5 Thinking</td><td align="center">1453</td><td>👾 <a href="https://www.kimi.com/share/19ca8616-9e32-810d-8000-0000647caebf">Under ISC</a></td>
-      <td></td>
-      <td align="center">46</td><td><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14" alt="OpenAI"> GPT-5 Chat</td><td align="center">1426</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">23</td><td><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14" alt="Anthropic"> Claude Sonnet 4.5</td><td align="center">1453</td><td>TODO</td>
-      <td></td>
-      <td align="center">47</td><td><img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14" alt="Z.ai"> GLM-4.6</td><td align="center">1426</td><td>TODO</td>
-    </tr>
-    <tr>
-      <td align="center">25</td><td><img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14" alt="Baidu"> ERNIE 5.0</td><td align="center">1452</td><td>TODO</td>
-      <td></td>
-      <td align="center">49</td><td><img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14" alt="DeepSeek"> DeepSeek V3.2</td><td align="center">1425</td><td>👾 <a href="https://chat.deepseek.com/share/pbzirkyhfkvapyc3g0">Under ISC</a></td>
-    </tr>
-    <tr>
-      <td align="center">26</td><td><img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14" alt="Alibaba"> Qwen 3.5 397B</td><td align="center">1452</td><td>TODO</td>
-      <td></td>
-      <td align="center">50</td><td><img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14" alt="Alibaba"> Qwen 3 Max 2025-09-23</td><td align="center">1424</td><td>TODO</td>
-    </tr>
-  </tbody>
-</table>
+| Rank | Model | Score | Jailbroken | Demo | By |
+|:----:|-------|:-----:|:------:|:----:|:--:|
+| 2 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.6 | 1501 | 🔴 | [🔗](https://claude.ai/share/407d33f5-4655-4479-b3e3-0a6dc6639d34) | [@wuyoscar](https://github.com/wuyoscar) |
+| 3 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3.1 Pro Preview | 1493 | 🟢 |  |  |
+| 4 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.20 Beta | 1492 | 🟢 |  |  |
+| 5 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Pro | 1486 | 🔴 | [🔗](https://gemini.google.com/share/320bf34b0334) | [@wuyoscar](https://github.com/wuyoscar) |
+| 6 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 High | 1485 | 🟢 |  |  |
+| 7 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.2 Chat | 1482 | 🔴 | [🔗](https://chatgpt.com/share/69a3f6e1-24d8-800c-9581-3d1a7180ee55) | [@wuyoscar](https://github.com/wuyoscar) |
+| 9 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Flash | 1475 | 🟢 |  |  |
+| 12 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.5 | 1469 | 🔴 | [🔗](https://claude.ai/share/1e3e997c-0315-46f1-9cbd-37157314a7ef) | [@wuyoscar](https://github.com/wuyoscar) |
+| 13 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.6 | 1465 | 🔴 | [🔗](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) | [@wuyoscar](https://github.com/wuyoscar) |
+| 14 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen 3.5 Max Preview | 1464 | 🟢 |  |  |
+| 15 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.3 Chat | 1464 | 🟢 |  |  |
+| 17 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 | 1463 | 🟢 |  |  |
+| 18 | <img src="https://www.google.com/s2/favicons?domain=volcengine.com&sz=32" width="14"> Dola Seed 2.0 Preview | 1462 | 🟢 |  |  |
+| 19 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.1 | 1461 | 🔴 | [🔗](https://grok.com/share/c2hhcmQtMi1jb3B5_54de710c-9331-4fca-a953-6c35775156fb) | [@wuyoscar](https://github.com/wuyoscar) |
+| 20 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.1 High | 1455 | 🟢 |  |  |
+| 21 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> GLM-5 | 1455 | 🟢 |  |  |
+| 22 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.5 Thinking | 1453 | 🔴 | [🔗](https://www.kimi.com/share/19ca8616-9e32-810d-8000-0000647caebf) | [@wuyoscar](https://github.com/wuyoscar) |
+| 23 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Sonnet 4.5 | 1453 | 🟢 |  |  |
+| 25 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> ERNIE 5.0 | 1452 | 🟢 |  |  |
+| 26 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen 3.5 397B | 1452 | 🟢 |  |  |
+| 27 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> ERNIE 5.0 Preview | 1450 | 🟢 |  |  |
+| 29 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.5 Pro | 1448 | 🟢 |  |  |
+| 30 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.1 | 1447 | 🟢 |  |  |
+| 31 | <img src="https://www.google.com/s2/favicons?domain=mi.com&sz=32" width="14"> Mimo V2 Pro | 1445 | 🟢 |  |  |
+| 32 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-4.5 Preview | 1444 | 🟢 |  |  |
+| 33 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> ChatGPT 4o Latest | 1443 | 🟢 |  |  |
+| 34 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> GLM-4.7 | 1443 | 🟢 |  |  |
+| 35 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.2 High | 1442 | 🟢 |  |  |
+| 36 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.2 | 1440 | 🟢 |  |  |
+| 37 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.1 | 1439 | 🟢 |  |  |
+| 38 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3.1 Flash Lite Preview | 1438 | 🟢 |  |  |
+| 39 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen 3 Max Preview | 1435 | 🔴 | [🔗](https://chat.qwen.ai/s/f1e5d846-018e-4a3d-94ff-418e34559497?fev=0.2.9) | [@wuyoscar](https://github.com/wuyoscar) |
+| 40 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5 High | 1434 | 🟢 |  |  |
+| 41 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.5 Instant | 1433 | 🟢 |  |  |
+| 42 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> o3 | 1432 | 🔴 | [🔗](https://chatgpt.com/share/69c3b0a7-3554-839a-95a5-d22d60758dc9) | [@wuyoscar](https://github.com/wuyoscar) |
+| 45 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat | 1429 | 🟢 |  |  |
+| 46 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5 Chat | 1426 | 🟢 |  |  |
+| 47 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> GLM-4.6 | 1426 | 🟢 |  |  |
+| 49 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> DeepSeek V3.2 | 1425 | 🔴 | [🔗](https://chat.deepseek.com/share/pbzirkyhfkvapyc3g0) | [@wuyoscar](https://github.com/wuyoscar) |
+| 50 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen 3 Max 2025-09-23 | 1424 | 🟢 |  |  |
 
-> **🏆 Triggered ISC on a model not listed here?** Submit your conversation link via [GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name) — we'll verify and add it to the leaderboard.
 
 ---
 

@@ -6,6 +6,9 @@ labels: isc-submission
 assignees: wuyoscar
 ---
 
+## Contributor
+- **Your GitHub username**: @
+
 ## Model
 - **Model name**:
 - **Arena rank** (if listed):

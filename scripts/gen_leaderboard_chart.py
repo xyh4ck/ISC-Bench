@@ -46,59 +46,54 @@ def main() -> None:
 
     latest = history[-1]
 
-    # -- Colors (dark theme for impact) --
-    BG = "#0D1117"
-    CARD = "#161B22"
-    BORDER = "#30363D"
-    TEXT = "#E6EDF3"
-    TEXT_DIM = "#8B949E"
-    RED = "#F85149"
-    RED_GLOW = "#F8514933"
+    # -- Colors (soft light theme, tech feel) --
+    BG = "#F8F0F0"
+    CARD = "#FFFFFF"
+    BORDER = "#E0D0D0"
+    TEXT = "#2D2020"
+    TEXT_DIM = "#6B5555"
+    RED = "#D94040"
+    RED_LIGHT = "#F2DADA"
     GREEN = "#3FB950"
 
     fig, ax = plt.subplots(figsize=(10, 3.8))
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
 
-    # -- Gradient fill (layered for glow effect) --
-    ax.fill_between(dates, 0, confirmed, color=RED, alpha=0.06, zorder=2)
-    ax.fill_between(dates, 0, confirmed, color=RED, alpha=0.12, zorder=2)
+    # -- Soft fill --
+    ax.fill_between(dates, 0, confirmed, color=RED_LIGHT, alpha=0.8, zorder=2)
+    ax.fill_between(dates, 0, confirmed, color=RED, alpha=0.08, zorder=2)
 
-    # -- Main line with glow --
-    ax.plot(dates, confirmed, color=RED, linewidth=3, alpha=0.3, zorder=3)  # glow
-    ax.plot(dates, confirmed, color=RED, linewidth=2, zorder=4)
+    # -- Main line --
+    ax.plot(dates, confirmed, color=RED, linewidth=3, zorder=4)
 
     # -- Data points --
     for i, (d, c) in enumerate(zip(dates, confirmed)):
         if c > 0:
-            # Outer glow
-            ax.plot(d, c, "o", color=RED, markersize=12, alpha=0.2, zorder=5)
-            # Inner dot
-            ax.plot(d, c, "o", color=RED, markersize=7, markerfacecolor=BG,
-                    markeredgecolor=RED, markeredgewidth=2, zorder=6)
-            # Value label
-            ax.annotate(str(c), xy=(d, c), xytext=(0, 14),
-                        textcoords="offset points", fontsize=13,
+            ax.plot(d, c, "o", color=RED, markersize=10, markerfacecolor="white",
+                    markeredgecolor=RED, markeredgewidth=2.5, zorder=6)
+            ax.annotate(str(c), xy=(d, c), xytext=(0, 16),
+                        textcoords="offset points", fontsize=16,
                         fontweight="bold", color=RED, ha="center", zorder=7)
 
     # -- Stats badge (top-right) --
     badge_text = f"  {latest['confirmed']} / {latest['total']}  "
     ax.text(0.97, 0.88, badge_text, transform=ax.transAxes,
-            fontsize=11, fontweight="bold", color=TEXT,
+            fontsize=14, fontweight="bold", color=TEXT,
             ha="right", va="top", family="monospace",
             bbox=dict(boxstyle="round,pad=0.5", facecolor=CARD,
-                      edgecolor=BORDER, linewidth=1, alpha=0.95))
+                      edgecolor=BORDER, linewidth=1))
 
-    # -- Title --
-    ax.text(0.03, 0.88, "JAILBROKEN ARENA", transform=ax.transAxes,
-            fontsize=15, fontweight="bold", color=TEXT,
-            ha="left", va="top")
+    # -- Title (centered, RED) --
+    ax.text(0.5, 0.92, "JAILBROKEN ARENA", transform=ax.transAxes,
+            fontsize=18, fontweight="bold", color=RED,
+            ha="center", va="top")
 
-    # -- Contributors (bottom) --
+    # -- Contributors (bottom, centered) --
     contrib_parts = [f"@{k} ({v})" for k, v in sorted(contributors.items(), key=lambda x: -x[1])]
-    ax.text(0.5, -0.16, "  ·  ".join(contrib_parts),
-            transform=ax.transAxes, fontsize=7.5, color=TEXT_DIM,
-            ha="center", family="monospace")
+    ax.text(0.5, -0.20, "  ·  ".join(contrib_parts),
+            transform=ax.transAxes, fontsize=12, color=TEXT_DIM,
+            ha="center", fontweight="bold")
 
     # -- Axes styling --
     y_max = max(confirmed) * 1.8 + 3
@@ -111,12 +106,12 @@ def main() -> None:
     ax.set_xlim(dates[0] - pad, dates[-1] + pad)
 
     # Tick styling
-    ax.tick_params(axis="both", colors=TEXT_DIM, labelsize=8, length=0)
-    ax.tick_params(axis="x", pad=8)
-    ax.tick_params(axis="y", pad=5)
+    ax.tick_params(axis="both", colors=TEXT, labelsize=12, length=0)
+    ax.tick_params(axis="x", pad=10)
+    ax.tick_params(axis="y", pad=6)
 
     # Grid
-    ax.grid(axis="y", color=BORDER, linewidth=0.5, alpha=0.5)
+    ax.grid(axis="y", color=BORDER, linewidth=0.6, alpha=0.6)
     ax.grid(axis="x", visible=False)
 
     # Spines
@@ -124,7 +119,7 @@ def main() -> None:
         spine.set_visible(False)
 
     # Bottom line only
-    ax.axhline(y=0, color=BORDER, linewidth=0.8)
+    ax.axhline(y=0, color=BORDER, linewidth=1)
 
     fig.tight_layout(pad=1.5)
     fig.savefig(OUT, format="svg", bbox_inches="tight", facecolor=BG)

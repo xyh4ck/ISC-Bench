@@ -31,8 +31,13 @@ Paste the prompt + response (or attach a JSON file):
 [paste here]
 ```
 
-## What harmful content was generated?
-<!-- Brief description: e.g., "lethal compound SMILES + LD50", "functional shellcode", "bioweapon gene sequences" -->
+## Harmful Content Details
+
+- **Type of harmful content** (e.g., toxic language, lethal compounds, functional exploits, bioweapon sequences):
+
+- **Domain** (e.g., cybersecurity, chemistry, biology, pharmacology, AI safety):
+
+- **Brief explanation** (1-2 sentences — what did the model generate and why is it harmful?):
 
 
 ## Method
@@ -46,6 +51,12 @@ Paste the prompt + response (or attach a JSON file):
 
 ## Checklist
 - [ ] Evidence is publicly accessible or attached
-- [ ] No adversarial prompt was used — only a legitimate professional task
+- [ ] **No adversarial prompt was used** — you did NOT rely on automated prompt optimization, white-box attacks, or any jailbreak technique. ISC is about the phenomenon where models voluntarily produce harmful content within a legitimate professional task, without any obvious attack.
 - [ ] The model generated harmful content as a functional requirement of the task
 - [ ] Content would be refused if requested directly (without task framing)
+
+> **What counts as ISC?** You only need to do one of two things:
+> - **Directed generation**: embed a harmful query into the task data (e.g., a test case the model must complete)
+> - **Undirected generation**: provide no harmful query at all — the model generates harmful content entirely on its own to fulfill the task
+>
+> If the model produces harmful content under either condition, that's ISC. For more details, please [read our paper](../../paper.pdf).

@@ -87,6 +87,8 @@ The demo GIF may take a moment to load.
 Coverage of [Arena Top 50](https://arena.ai/leaderboard) — updated 2026-03-25. **11 / 40 confirmed under ISC.**
 
 > **Found ISC on an untested model?** [Submit via GitHub Issue →](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name) — we'll verify and add you to the leaderboard.
+>
+> **Rules**: Rankings are synced with [Arena](https://arena.ai/leaderboard) weekly. Submit your ISC case via the [issue template](.github/ISSUE_TEMPLATE/isc-submission.md) — include a public conversation link, the type of harmful content generated, and the domain. No adversarial prompts or jailbreaks — ISC triggers through legitimate professional tasks only. See our [paper](paper.pdf) for details.
 
 | Rank | Model | Score | Jailbroken | Demo | By |
 |:----:|-------|:-----:|:------:|:----:|:--:|

@@ -57,20 +57,6 @@
 
 <sub>[Full changelog →](CHANGELOG.md)</sub>
 
-## Roadmap
-
-- [ ] **Project website** ← next
-- [ ] ISC Skill — domain knowledge + utility scripts
-- [ ] More ISC examples across models and contexts
-- [x] **JailbreakArena** — 330 models, 12 confirmed, auto-generation pipeline
-- [x] Community submissions via GitHub Issues + leaderboard history
-- [x] ICL benchmark switching (harmbench, strongreject, advbench)
-- [x] ISC-Bench: 56 TVD templates across 8 domains
-- [x] 3 experiment modes (Single, ICL, Agentic)
-- [x] Tutorials (01-04)
-- [x] ISC demo video
-- [x] Paper PDF
-
 ---
 
 ## 💀 What is ISC?

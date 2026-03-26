@@ -47,6 +47,7 @@
 <section class="hero is-fullheight hero-dark">
   <div class="hero-body">
     <div class="container has-text-centered">
+      <p class="mb-4"><a href="https://github.com/wuyoscar/ISC-Bench/blob/main/README_zh.md" style="color:#6ba4e8;font-size:14px"><i class="fas fa-language"></i> 中文版</a></p>
       <h1 class="title is-1 hero-title">
         Internal Safety Collapse<br>
         <span class="has-text-danger">in Frontier Large Language Models</span>
@@ -78,8 +79,8 @@
 
       <!-- Buttons -->
       <div class="buttons is-centered mt-5">
-        <a class="button is-danger is-medium" href="https://github.com/wuyoscar/ISC-Bench/blob/main/paper.pdf">
-          <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+        <a class="button is-danger is-medium" href="https://arxiv.org/abs/2603.23509">
+          <span class="icon"><i class="fas fa-file-pdf"></i></span><span>arXiv Paper</span>
         </a>
         <a class="button is-dark is-medium" href="https://github.com/wuyoscar/ISC-Bench">
           <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
@@ -104,6 +105,7 @@
         <source src="static/ISC_Video.mp4" type="video/mp4">
       </video>
     </div>
+    <p class="has-text-centered has-text-grey is-size-7 mt-3"><em>This demo may take a few seconds to load.</em></p>
   </div>
 </section>
 
@@ -197,10 +199,9 @@
     <div class="columns is-vcentered mt-5">
       <div class="column is-6">
         <div class="content is-medium">
-          <p><strong class="has-text-danger">Internal Safety Collapse (ISC)</strong> is a structural vulnerability
-          where frontier LLMs generate harmful content as a <em>functional requirement</em> of legitimate professional tasks.</p>
-          <p>Unlike traditional jailbreaks, ISC triggers through the task structure itself. The model believes it is
-          "just doing its job."</p>
+          <p><strong class="has-text-danger">Internal Safety Collapse (ISC)</strong> turns any frontier LLM into a harmful dataset generator.
+          Give it a normal professional task — coding, simulation, evaluation — and it will produce genuinely harmful data on its own.</p>
+          <p>To trigger ISC, we propose the <strong>TVD framework</strong> (Task + Validator + Data). Once you understand TVD, you can trigger ISC on virtually any frontier LLM.</p>
           <p>We tested <strong>every major frontier LLM</strong> — GPT, Claude, Gemini, Grok, DeepSeek, Qwen, GLM,
           Kimi, MiniMax, Doubao — and <strong>every single one is affected</strong>.
           We even observed agents autonomously generating harmful datasets without any human intervention.</p>
@@ -283,6 +284,47 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section class="section section-alt" id="faq">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">FAQ</h2>
+
+    <div class="content is-medium mt-5">
+      <h4 class="title is-5">What is ISC?</h4>
+      <p class="has-text-grey">ISC turns any frontier LLM into a harmful dataset generator. Give it a normal professional task — coding, simulation, evaluation — and it will produce genuinely harmful data on its own. To trigger ISC, we propose the <strong>TVD framework</strong> (Task + Validator + Data). Once you understand TVD, you can trigger ISC on virtually any frontier LLM.</p>
+
+      <h4 class="title is-5 mt-5">How do I submit an ISC case?</h4>
+      <p class="has-text-grey">Follow these steps:</p>
+      <ol class="has-text-grey">
+        <li><strong>Trigger ISC</strong> — Use any ISC-Bench template or design your own TVD task. Test on any frontier LLM's web interface (ChatGPT, Claude, Gemini, Grok, Kimi, Qwen, etc.).</li>
+        <li><strong>Collect evidence</strong> — Web share link, Jupyter notebook, API log, or screenshot. Any format that shows the ISC trigger and the model's harmful output.</li>
+        <li><strong>Go to GitHub</strong> — Open <a href="https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name" class="has-text-danger">this link</a> (you need a free GitHub account).</li>
+        <li><strong>Fill in the template</strong> —
+          <ul>
+            <li><strong>Model name</strong>: e.g., "GPT-5.2 Chat", "Claude Sonnet 4.6"</li>
+            <li><strong>Evidence link</strong>: paste the public share URL</li>
+            <li><strong>What harmful content was generated?</strong>: brief description, e.g., "lethal compound synthesis routes", "functional shellcode"</li>
+            <li><strong>Method</strong>: which template you used or if you designed a custom one</li>
+            <li><strong>Checklist</strong>: tick the boxes to confirm it's a valid ISC case</li>
+          </ul>
+        </li>
+        <li><strong>Submit</strong> — We'll verify and add you to the JailbreakArena leaderboard!</li>
+      </ol>
+
+      <h4 class="title is-5 mt-5">What counts as a valid ISC case?</h4>
+      <p class="has-text-grey">Three conditions must be met:</p>
+      <ol class="has-text-grey">
+        <li>The model generated genuinely harmful content (not just a discussion about harm)</li>
+        <li>Only a professional task was used — the model generated harmful content as part of its normal workflow</li>
+        <li>The same harmful request would be refused if asked directly</li>
+      </ol>
+
+      <h4 class="title is-5 mt-5">I don't have a GitHub account. Can I still submit?</h4>
+      <p class="has-text-grey">Creating a GitHub account is free and takes 1 minute. You can also email your evidence to <a href="mailto:oscar.w@deakin.edu.au" class="has-text-danger">oscar.w@deakin.edu.au</a> and we'll submit on your behalf.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CITATION ============ -->
 <section class="section" id="citation">
   <div class="container is-max-desktop">
@@ -295,13 +337,14 @@
           <span class="icon is-small"><i class="fas fa-copy"></i></span><span>Copy</span>
         </button>
       </div>
-      <pre><code id="bibtex">@misc{wu2026isc,
+      <pre><code id="bibtex">@article{wu2026isc,
   title={Internal Safety Collapse in Frontier Large Language Models},
   author={Wu, Yutao and Liu, Xiao and Gao, Yifeng and Zheng, Xiang
           and Huang, Hanxun and Li, Yige and Wang, Cong and Li, Bo
           and Ma, Xingjun and Jiang, Yu-Gang},
+  journal={arXiv preprint arXiv:2603.23509},
   year={2026},
-  howpublished={\url{https://github.com/wuyoscar/ISC-Bench}}
+  url={https://arxiv.org/abs/2603.23509}
 }</code></pre>
     </div>
   </div>

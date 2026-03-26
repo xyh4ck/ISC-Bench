@@ -158,8 +158,8 @@ def main() -> None:
         "> **Rules**: Rankings are synced with [Arena](https://arena.ai/leaderboard) weekly. "
         "Submit your ISC case via the [issue template](.github/ISSUE_TEMPLATE/isc-submission.md) "
         "— include a public conversation link, the type of harmful content generated, and the domain. "
-        "No adversarial prompts or jailbreaks — ISC triggers through legitimate professional tasks only. "
-        "See our [paper](paper.pdf) for details."
+        "ISC is a low-conditional design concept — just a professional task that causes models to generate harmful content on their own. "
+        "See our [paper](https://arxiv.org/abs/2603.23509) for details."
     )
 
     table_header = "| Rank | Model | Score | Jailbroken | Demo | By |\n|:----:|-------|:-----:|:------:|:----:|:--:|"
@@ -193,14 +193,16 @@ def main() -> None:
 
     section = "\n".join(lines)
 
-    # Replace in README
+    # Replace in README — only replace table, preserve History section
     readme = README.read_text()
-    # Find section boundaries
     start = readme.index("## 🏆 JailbreakArena")
-    # Find the next major section (---\n\n## )
-    end_pattern = re.search(r'\n---\n\n## ⚡', readme[start:])
-    if end_pattern:
-        end = start + end_pattern.start()
+    # End boundary: either History <details> or the next --- section
+    history_marker = readme.find("<details>\n<summary><b>📜 JailbreakArena History</b>", start)
+    fallback_marker = re.search(r'\n---\n\n## ⚡', readme[start:])
+    if history_marker > start:
+        end = history_marker
+    elif fallback_marker:
+        end = start + fallback_marker.start()
     else:
         print("ERROR: Could not find section end marker")
         sys.exit(1)

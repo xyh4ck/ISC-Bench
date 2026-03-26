@@ -479,6 +479,9 @@ Coverage of [Arena Leaderboard](https://arena.ai/leaderboard) — updated 2026-0
 
 New ISC cases discovered by the community — novel templates, trigger methods, and domains beyond the original 56.
 
+> [!NOTE]
+> **New trigger method discovered:** ISC can be triggered by uploading a file (e.g., JSON template with `???` placeholders) instead of pasting a prompt. The model treats the uploaded file as a task to complete and fills in harmful content — same TVD pattern, even lower barrier. See [#19](community/issue-19-gemini3flash-redteam-testgen/) for details.
+
 | Issue | Model | Contributor | Template | Domain |
 |:-----:|-------|:-----------:|----------|--------|
 | [#19](community/issue-19-gemini3flash-redteam-testgen/) | Gemini 3 Flash | [@bboylyg](https://github.com/bboylyg) | Red-team test case generator (file upload) | AI Safety |

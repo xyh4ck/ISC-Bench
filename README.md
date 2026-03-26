@@ -62,7 +62,7 @@
 
 ## 💀 What is ISC?
 
-**Internal Safety Collapse (ISC)** is a structural vulnerability where frontier LLMs generate harmful content — toxic chemicals, functional exploits, lethal drug targets — as a *functional requirement* of a legitimate professional task. No adversarial prompts, no jailbreak techniques. The model complies because the task structure demands it.
+**Internal Safety Collapse (ISC)** is an under-explored phenomenon where frontier LLMs generate harmful content — toxic chemicals, functional exploits, lethal drug targets — as a *functional requirement* of a legitimate professional task. Give any frontier LLM a normal coding or research task, and it will produce genuinely harmful data on its own.
 
 ### Demo
 
@@ -74,8 +74,8 @@
 ### How to Submit an ISC Case
 
 1. **Trigger ISC** — use any [ISC-Bench template](templates/) or design your own TVD task
-2. **Get a public share link** — most LLM web interfaces have a "Share" button
-3. **[Open a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)** — fill in model name, evidence link, and harmful content description
+2. **Collect evidence** — web share link, Jupyter notebook, API log, or screenshot
+3. **[Open a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)** — fill in model name, evidence, and harmful content description
 4. We verify and add you to the **JailbreakArena** leaderboard
 
 ---
@@ -86,7 +86,7 @@ Coverage of [Arena Leaderboard](https://arena.ai/leaderboard) — updated 2026-0
 
 > **Found ISC on an untested model?** [Submit via GitHub Issue →](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name) — we'll verify and add you to the leaderboard.
 >
-> **Rules**: Rankings are synced with [Arena](https://arena.ai/leaderboard) weekly. Submit your ISC case via the [issue template](.github/ISSUE_TEMPLATE/isc-submission.md) — include a public conversation link, the type of harmful content generated, and the domain. No adversarial prompts or jailbreaks — ISC triggers through legitimate professional tasks only. See our [paper](paper.pdf) for details.
+> **Rules**: Rankings are synced with [Arena](https://arena.ai/leaderboard) weekly. Submit your ISC case via the [issue template](.github/ISSUE_TEMPLATE/isc-submission.md) — include a public conversation link, the type of harmful content generated, and the domain. ISC is a low-conditional design concept — just a professional task that causes models to generate harmful content on their own. See our [paper](paper.pdf) for details.
 
 | Rank | Model | Score | Jailbroken | Demo | By |
 |:----:|-------|:-----:|:------:|:----:|:--:|

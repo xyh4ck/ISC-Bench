@@ -50,6 +50,10 @@
 >
 > *We observe outputs closely resembling early-generation, unaligned models from 2023.*
 
+<p align="center">
+  <code>🤖 Let your AI agent (Claude Code, Cursor, etc.) read <a href="SKILL.md">SKILL.md</a> to understand this repo.</code>
+</p>
+
 ## Recent News
 
 | Date | Update |
@@ -68,9 +72,7 @@
 
 ## 💀 What is ISC?
 
-**Internal Safety Collapse (ISC)** turns any frontier LLM into a harmful dataset generator. Give it a normal professional task — coding, simulation, evaluation — and it will produce genuinely harmful data (toxic compounds, functional exploits, lethal drug targets) on its own.
 
-To trigger ISC, we propose the **TVD framework** (Task + Validator + Data). Once you understand TVD, you can trigger ISC on virtually any frontier LLM.
 
 <h3 align="center">🎬 Demo</h3>
 

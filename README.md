@@ -44,15 +44,24 @@
   <sup>7</sup>University of Illinois at Urbana-Champaign
 </p>
 
+> [!CAUTION]
 > **ISC is a totally underexplored structural vulnerability in every frontier LLM.**
 >
 > ISC turns any LLM into a **harmful dataset generator** — toxic language, lethal compounds, functional exploits, bioweapon sequences — at scale, in minutes. Every model we tested is affected: **GPT, Claude, Gemini, Grok, Llama, DeepSeek, Mistral, Qwen, GLM, Kimi, MiniMax, Doubao**.
 >
 > *We observe outputs closely resembling early-generation, unaligned models from 2023.*
 
-<p align="center">
-  <code>🤖 Let your AI agent (Claude Code, Cursor, etc.) read <a href="SKILL.md">SKILL.md</a> to understand this repo.</code>
-</p>
+> [!TIP]
+> **Using an AI agent?** Let Claude Code, Cursor, or any coding agent read [`SKILL.md`](SKILL.md) to understand this repo.
+
+> [!WARNING]
+> **This project is released solely for academic safety research and responsible disclosure.**
+>
+> As AI agents become increasingly autonomous, we believe ISC represents a critical and underexplored threat to safety alignment. The purpose of this work is to help the research community understand the vulnerability and collaboratively develop effective mitigations — not to enable harm.
+>
+> We **strongly discourage** any use of ISC-Bench outside of safety research contexts. The templates and techniques in this repository should not be used to generate harmful content for any purpose other than improving AI safety. We do not endorse, support, or take responsibility for any misuse.
+>
+> If you are a model provider and would like to collaborate on mitigations, please [contact us](mailto:wuy7117@gmail.com).
 
 ## Recent News
 
@@ -98,9 +107,10 @@ Coverage of [Arena Leaderboard](https://arena.ai/leaderboard) — updated 2026-0
   <img src="assets/leaderboard_progress.svg" width="80%">
 </p>
 
+> [!IMPORTANT]
 > **Found ISC on an untested model?** [Submit via GitHub Issue →](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name) — we'll verify and add you to the leaderboard.
 >
-> **Rules**: Rankings are synced with [Arena](https://arena.ai/leaderboard) weekly. Submit your ISC case via the [issue template](.github/ISSUE_TEMPLATE/isc-submission.md) — include a public conversation link, the type of harmful content generated, and the domain. ISC is a low-conditional design concept — just a professional task that causes models to generate harmful content on their own. See our [paper](paper.pdf) for details.
+> **Rules**: Rankings are synced with [Arena](https://arena.ai/leaderboard) weekly. Submit your ISC case via the [issue template](.github/ISSUE_TEMPLATE/isc-submission.md) — include a public conversation link, the type of harmful content generated, and the domain. ISC is a low-conditional design concept — just a professional task that causes models to generate harmful content on their own. See our [paper](https://arxiv.org/abs/2603.23509) for details.
 
 | Rank | Model | Score | Jailbroken | Demo | By |
 |:----:|-------|:-----:|:------:|:----:|:--:|
@@ -660,7 +670,7 @@ All input-level defenses show **100% failure** — prompt contains nothing to de
 
 No. TVD is one highly effective template we iterated on — it uses Python + Pydantic + JSON because LLMs rarely refuse coding tasks, and the variations are extensive. As shown in our leaderboard demos, it triggers reliably across all frontier models.
 
-However, ISC is a **pattern**, not a fixed format. Any domain knowledge works as long as there is a structured place to hold the dataset. For example: LaTeX tables, YAML configs, CSV files, FASTA sequences — any scenario where an agent must fill in data fields to complete a professional task. If you design a new template that outperforms TVD, we'd love to hear about it — [contact us](mailto:oscar.w@deakin.edu.au) for collaboration.
+However, ISC is a **pattern**, not a fixed format. Any domain knowledge works as long as there is a structured place to hold the dataset. For example: LaTeX tables, YAML configs, CSV files, FASTA sequences — any scenario where an agent must fill in data fields to complete a professional task. If you design a new template that outperforms TVD, we'd love to hear about it — [contact us](mailto:wuy7117@gmail.com) for collaboration.
 
 </details>
 
@@ -692,4 +702,4 @@ However, ISC is a **pattern**, not a fixed format. Any domain knowledge works as
 
 ## Contact
 
-For questions, collaborations, or responsible disclosure: **oscar.w@deakin.edu.au**
+For questions, collaborations, or responsible disclosure: **wuy7117@gmail.com**

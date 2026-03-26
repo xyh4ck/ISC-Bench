@@ -5,6 +5,7 @@
   <img src="assets/isc_banner.png" width="1000">
 </p>
 <p align="center">
+  <a href="https://arxiv.org/abs/2603.23509"><img src="https://img.shields.io/badge/arXiv-2603.23509-b31b1b.svg"></a>
   <a href="paper.pdf"><img src="https://img.shields.io/badge/📄_论文-PDF-green"></a>
   <img src="https://img.shields.io/badge/LLM_&_Agent_安全-ISC-red">
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg"></a>
@@ -52,6 +53,7 @@
 
 | 日期 | 更新 |
 |:-----|--------|
+| 🎉 2026-03-26 | **论文已发布至 arXiv！** [arxiv.org/abs/2603.23509](https://arxiv.org/abs/2603.23509) |
 | 🔥 v7 — 2026-03-26 | 17 个 ISC 案例确认，FAQ + 提交指南，Grok/Dola/Gemini/Qwen/ERNIE 被攻破 |
 | 🔥 v6 — 2026-03-26 | **项目网站**上线，JailbreakArena 交互式排行榜 |
 | 🔥 v5 — 2026-03-25 | **JailbreakArena**：330 个模型，进度图表，自动生成脚本，社区提交 |
@@ -136,13 +138,14 @@
 ## 引用
 
 ```bibtex
-@misc{wu2026isc,
+@article{wu2026isc,
   title={Internal Safety Collapse in Frontier Large Language Models},
   author={Wu, Yutao and Liu, Xiao and Gao, Yifeng and Zheng, Xiang
           and Huang, Hanxun and Li, Yige and Wang, Cong and Li, Bo
           and Ma, Xingjun and Jiang, Yu-Gang},
+  journal={arXiv preprint arXiv:2603.23509},
   year={2026},
-  howpublished={\url{https://github.com/wuyoscar/ISC-Bench}}
+  url={https://arxiv.org/abs/2603.23509}
 }
 ```
 

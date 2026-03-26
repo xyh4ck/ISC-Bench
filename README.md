@@ -5,6 +5,7 @@
   <img src="assets/isc_banner.png" width="1000">
 </p>
 <p align="center">
+  <a href="https://arxiv.org/abs/2603.23509"><img src="https://img.shields.io/badge/arXiv-2603.23509-b31b1b.svg"></a>
   <a href="paper.pdf"><img src="https://img.shields.io/badge/📄_Read_the_Paper-PDF-green"></a>
   <img src="https://img.shields.io/badge/LLM_&_Agent_Safety-ISC-red">
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg"></a>
@@ -12,7 +13,7 @@
 <h1 align="center">Internal Safety Collapse in Frontier Large Language Models</h1>
 
 <h4 align="center">
-  <a href="paper.pdf">📄 Paper</a> &nbsp;|&nbsp;
+  <a href="https://arxiv.org/abs/2603.23509">📄 Paper</a> &nbsp;|&nbsp;
   <a href="#-jailbreakarena">🏆 JailbreakArena</a> &nbsp;|&nbsp;
   <a href="cookbook/">📓 Tutorial</a> &nbsp;|&nbsp;
   <a href="experiment/isc_agent/">🤖 ISC-Agent</a> &nbsp;|&nbsp;
@@ -52,6 +53,7 @@
 
 | Date | Update |
 |:-----|--------|
+| 🎉 2026-03-26 | **Paper on arXiv!** [arxiv.org/abs/2603.23509](https://arxiv.org/abs/2603.23509) |
 | 🔥 v7 — 2026-03-26 | 17 ISC cases confirmed, FAQ + submission guide, Grok/Dola/Gemini/Qwen/ERNIE jailbroken |
 | 🔥 v6 — 2026-03-26 | **Project website** launched, JailbreakArena interactive leaderboard |
 | 🔥 v5 — 2026-03-25 | **JailbreakArena**: 330 models, progress chart, auto-generation scripts, community submissions |
@@ -662,11 +664,12 @@ However, ISC is a **pattern**, not a fixed format. Any domain knowledge works as
 ## Citation
 
 ```bibtex
-@misc{wu2026isc,
+@article{wu2026isc,
   title={Internal Safety Collapse in Frontier Large Language Models},
   author={Wu, Yutao and Liu, Xiao and Gao, Yifeng and Zheng, Xiang and Huang, Hanxun and Li, Yige and Wang, Cong and Li, Bo and Ma, Xingjun and Jiang, Yu-Gang},
+  journal={arXiv preprint arXiv:2603.23509},
   year={2026},
-  howpublished={\url{https://github.com/wuyoscar/ISC-Bench}}
+  url={https://arxiv.org/abs/2603.23509}
 }
 ```
 

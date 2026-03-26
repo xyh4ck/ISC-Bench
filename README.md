@@ -456,6 +456,8 @@ Coverage of [Arena Leaderboard](https://arena.ai/leaderboard) — updated 2026-0
 
 ## ⚡ ISC-Bench
 
+> **Using an AI agent?** Point Claude Code, Cursor, or any coding agent to [`SKILL.md`](SKILL.md) for a complete guide to running ISC-Bench — setup, pipeline, benchmarks, and troubleshooting.
+
 <p align="center">
   <img src="assets/fig1_bench_overview.png" width="80%" height="auto">
 </p>

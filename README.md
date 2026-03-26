@@ -5,7 +5,12 @@
   <a href="https://arxiv.org/abs/2603.23509"><img src="https://img.shields.io/badge/arXiv-2603.23509-b31b1b.svg"></a>
   <img src="https://img.shields.io/badge/LLM_&_Agent_Safety-ISC-red">
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg"></a>
-  <a href="README_zh.md"><img src="https://img.shields.io/badge/lang-ZH-blue"></a>
+</p>
+<p align="center">
+  <a href="README_zh.md"><img src="https://img.shields.io/badge/lang-中文-blue"></a>
+  <a href="README_ja.md"><img src="https://img.shields.io/badge/lang-日本語-blue"></a>
+  <a href="README_ko.md"><img src="https://img.shields.io/badge/lang-한국어-blue"></a>
+  <a href="README_es.md"><img src="https://img.shields.io/badge/lang-Español-blue"></a>
 </p>
 <h1 align="center">Internal Safety Collapse in Frontier Large Language Models</h1>
 
@@ -63,7 +68,7 @@
 
 | Date | Update |
 |:-----|--------|
-| 🔥 v9 — 2026-03-26 | ⭐ **200 stars**, 4 contributors! GPT-5.3 Chat jailbroken by @zry29, Gemini 3 Flash by @bboylyg. 18/330 confirmed |
+| 🔥 v9 — 2026-03-26 | ⭐ **200 stars**, 4 contributors! GPT-5.3 Chat by [@zry29](https://github.com/zry29), Gemini 3 Flash by [@bboylyg](https://github.com/bboylyg). 18/330 confirmed |
 | 🔥 v8 — 2026-03-26 | [File upload triggers ISC](community/issue-19-gemini3flash-redteam-testgen/) — same TVD, lower barrier. Disclaimer, community reproductions |
 | 🎉 2026-03-26 | **Paper on arXiv!** [arxiv.org/abs/2603.23509](https://arxiv.org/abs/2603.23509) |
 | 🔥 v7 — 2026-03-26 | 17 ISC cases, FAQ + submission guide, Grok/Dola/Gemini/Qwen/ERNIE |

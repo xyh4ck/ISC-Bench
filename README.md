@@ -80,7 +80,7 @@
 |:-----|--------|
 | 🎆 2026-03-27 | **500+ stars in 48 hours!** 22/330 models confirmed |
 | 🔴 2026-03-27 | [@fresh-ma](https://github.com/fresh-ma) jailbroke **Claude Sonnet 4.5 Thinking** (~20 pages of text, 42 misinformation samples), **Claude Sonnet 4.5**, and **Kimi K2.5 Instant** (~4 pages novel). [@zry29](https://github.com/zry29) jailbroke **GPT-5.4** via file upload |
-| 🔧 2026-03-27 | README overhaul: community quotes, Rules of the Game, composable templates, simplified disclaimer |
+| 🔧 2026-03-27 | README overhaul + [GitHub Discussions](https://github.com/wuyoscar/ISC-Bench/discussions) now open — come chat, ask questions, share your ISC cases |
 | 🎆 2026-03-26 | **350+ stars within 24 hours** |
 | 📄 2026-03-26 | **Paper on arXiv!** [arxiv.org/abs/2603.23509](https://arxiv.org/abs/2603.23509) |
 | 🎉 v1 — 2026-03-22 | Initial release — 56 templates, 3 experiment modes, tutorials |

@@ -49,13 +49,21 @@
 
 ### How to Submit
 
-1. **Trigger ISC** — we encourage low-barrier methods. We provide [ready-to-use templates](templates/) — each one is a component, not a fixed prompt. Tweak it, remix it, split it into variants. We recommend starting with the [LlamaGuard template](templates/aiml_llamaguard_eval/). Or just grab any [input prompt](experiment/isc_single/prompts/jbb/ai-guard/) and copy-paste it directly into any LLM
+1. **Trigger ISC** — we encourage low-barrier methods. Start from any [template](templates/), or just grab an [input prompt](experiment/isc_single/prompts/jbb/ai-guard/) and try it directly in an LLM.
 2. **Collect evidence** — share link, notebook, API log, or screenshot. Prefer not to go public? Just DM me
 3. **[Open a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)** — model name + evidence + what it generated
 4. We verify and add you to the leaderboard
 
 > [!TIP]
-> The 56 public templates are **ready to use**, but they are not meant to be treated as fixed prompts. Each template already contains a workable anchor/query, but the public release is intentionally mild. For stronger evaluations, researchers should adjust the anchor, query, validator requirements, or follow-up strategy. Many recent flagship models also respond more reliably in agent mode. See [`templates/README.md`](templates/README.md) and [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
+> The 56 public templates are ready to use, but the release is intentionally mild. If you want stronger evaluations, adjust the anchor, query, validator, or follow-up strategy. Many recent flagship models also respond more reliably in agent mode. See [`templates/README.md`](templates/README.md) and [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
+
+## Start Here
+
+- **Want to see real cases?** Browse the [Community Reproductions](#-community-reproductions) table and the [`community/`](community/) archive.
+- **Want to try the templates?** Start from [`templates/README.md`](templates/README.md).
+- **Want to run the experiments?** Use [`experiment/README.md`](experiment/README.md).
+- **Testing newer flagship models?** Use [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
+- **New to ISC?** Read the [`cookbook/`](cookbook/).
 
 ## Recent News
 
@@ -475,7 +483,7 @@ This table tracks **publicly archived cases in this repo**, not every internal t
   <img src="assets/fig1_bench_overview.png" width="80%" height="auto">
 </p>
 
-Ready-to-use templates across 8 domains. Each one triggers any frontier LLM to generate harmful content — tested on 5 models, **every single one succeeded**. Ask the same questions directly, every model refuses.
+56 templates across 8 domains for reproducing ISC across different task settings.
 
 ### 🌍 Community Reproductions
 
@@ -503,7 +511,7 @@ Community members who learned the ISC concept and successfully reproduced it on 
 
 ### 📋 ISC-Bench Templates (8 domains)
 
-These are not fixed prompts — each template is a **composable blueprint**. Change the anchor, swap the validator, use a different data format, or target a different domain — and you get an entirely new variant. Think of them as building blocks, not scripts.
+These are **composable blueprints**, not fixed prompts. Change the anchor, swap the validator, use a different data format, or target a different domain, and you get a new variant.
 
 The public release is also intentionally conservative. Each template already includes a workable injected anchor/query, but many are milder than what an experienced researcher would ultimately use. If you want to test stronger settings, adjust the query strength, validator constraints, data scale, or follow-up strategy. For many recent flagship models, the more reliable path is agent mode rather than direct single-turn prompting. See [`templates/README.md`](templates/README.md) for customization guidance and [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md) for the agent workflow.
 
@@ -635,8 +643,6 @@ cat templates/aiml_llamaguard_eval/prompt.txt
 # → Copy, paste into any LLM. That's it.
 ```
 
-All templates follow the **TVD design pattern**. To design your own, see our [cookbook](cookbook/).
-
 ## 🔬 LLM API Endpoint Experiments
 
 Three evaluation modes. Full details in [`experiment/`](experiment/).
@@ -699,14 +705,6 @@ cp .env.example .env   # add your OpenRouter API key
 
 Python 3.11+ and [uv](https://docs.astral.sh/uv/). All scripts use [PEP 723](https://peps.python.org/pep-0723/) — `uv run` handles everything. Docker only for agentic mode.
 
-## Start Here
-
-- **Want to see real cases?** Browse the [Community Reproductions](#-community-reproductions) table and the [`community/`](community/) archive.
-- **Want to try the templates?** Start from [`templates/README.md`](templates/README.md).
-- **Want to reproduce the paper?** Use [`experiment/README.md`](experiment/README.md).
-- **Testing newer flagship models?** Use [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
-- **New to ISC?** Read the [`cookbook/`](cookbook/).
-
 ## ❓ FAQ
 
 <details>
@@ -726,7 +724,7 @@ Compare with [`experiment/isc_single/`](experiment/isc_single/) prompts — they
 <details>
 <summary><b>Q: Why didn't the template work when I just copy-pasted it?</b></summary>
 
-The public templates are intentionally mild. They are ready to use, but they are not meant to be the strongest possible version of each trigger. In practice, stronger results often require adjusting the anchor/query, tightening the validator, changing the data scale, or using follow-up turns. For many recently released flagship models, agent mode is also more reliable than direct single-turn prompting. See [`templates/README.md`](templates/README.md) and [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
+The public templates are intentionally mild. If a direct copy-paste does not work, adjust the anchor/query, tighten the validator, change the data scale, or use follow-up turns. For many recently released flagship models, agent mode is also more reliable than direct single-turn prompting. See [`templates/README.md`](templates/README.md) and [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
 
 </details>
 
@@ -747,9 +745,7 @@ All input-level defenses show **100% failure** — prompt contains nothing to de
 <details>
 <summary><b>Q: Does ISC require code-based prompts?</b></summary>
 
-No. TVD is one highly effective template we iterated on — it uses Python + Pydantic + JSON because LLMs rarely refuse coding tasks, and the variations are extensive. As shown in our leaderboard demos, it triggers reliably across all frontier models.
-
-However, ISC is a **pattern**, not a fixed format. Any domain knowledge works as long as there is a structured place to hold the dataset. For example: LaTeX tables, YAML configs, CSV files, FASTA sequences — any scenario where an agent must fill in data fields to complete a professional task. If you design a new template that outperforms TVD, we'd love to hear about it — [contact us](mailto:wuy7117@gmail.com) for collaboration.
+No. TVD is just one highly effective template family. It uses Python + Pydantic + JSON because LLMs rarely refuse coding tasks, but ISC is a broader pattern. Any domain knowledge works as long as there is a structured place to hold the data: LaTeX tables, YAML configs, CSV files, FASTA sequences, and similar formats all work. If you design a new template that outperforms TVD, we'd love to hear about it — [contact us](mailto:wuy7117@gmail.com) for collaboration.
 
 </details>
 
@@ -809,6 +805,7 @@ For questions, collaborations, or responsible disclosure: **wuy⁷¹¹⁷ ⓐ �
 
 - [Safety in Embodied AI](https://github.com/x-zheng16/Embodied-AI-Safety) -- Risks, Attacks, and Defenses across the full embodied AI pipeline (480+ papers)
 - [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
+- [AI Safety Report](https://github.com/XSafeAI/AI-safety-report) -- A broad evaluation suite and report for frontier model safety across language, vision-language, and image generation
 
 ## Star History
 

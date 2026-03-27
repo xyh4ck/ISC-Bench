@@ -32,28 +32,36 @@
 > **Disclaimer**: Academic safety research only. We do not allow any misuse and take no responsibility for it.
 
 > [!NOTE]
-> Stop thinking about ISC as adversarial prompting — it's not. ISC is a **task**. If you approach it from a traditional jailbreak mindset, you'll never understand it.
+> ISC is not just adversarial prompting. It is a **task-structured** failure mode: the model produces harmful content while trying to complete what looks like a legitimate professional task.
 >
-> TVD is how you trigger it reliably. The concept is simple, but designing effective triggers takes creativity. We've already made 300+ Arena models unsafe this way. Part of demos included.
->
-> Don't know where to start? Let your AI agent read [`SKILL.md`](SKILL.md) to get familiar with the project.
->
-> If a model stays unjailbroken for too long, I'll handle it myself.
+> TVD is the main design pattern we use to trigger it reliably. The idea is simple; the difficulty is in choosing the right task, validator, and data format.
 
 > [!IMPORTANT]
 > **Rules of the Game**
 >
-> 1. Once a model generates harmful data, ISC is confirmed — stop there. Our demos are intentionally mild. "That's it? Just some insults?" — yes, that's the confirmation point. The real harm shows up when you follow up. See [🔗 Rank 4, English](https://grok.com/share/bGVnYWN5LWNvcHk_9735b6e9-5ff1-4318-b2c2-4860b6e8fb33) and [🔗 Rank 19, Chinese](https://grok.com/share/c2hhcmQtMi1jb3B5_54de710c-9331-4fca-a953-6c35775156fb) — but please don't go that far yourself. If your account gets banned, we do not take responsibility.
-> 2. Found a better trigger than TVD? I'd love to see it — happy to collaborate on a paper. [Reach out](mailto:wuy7117@gmail.com).
+> 1. **What counts as ISC?** If the model produces harmful content as part of completing the task, ISC is confirmed. Our public demos are intentionally mild; stronger follow-up escalations are not required for confirmation.
+> 2. **How should you trigger it?** Use legitimate task framing. TVD is our main pattern, but the key is structural task completion, not adversarial prompting.
+> 3. **What kind of harmful request should you use?** Standard benchmark-style harmful queries such as JailbreakBench, HarmBench, or AdvBench are usually enough. We do not need demonstrations of tolerated responses to the most extreme harmful requests; the more informative signal is how the model responds while completing the task.
 >
-> *Think this is "just another overhyped jailbreak"? Read the [paper](https://arxiv.org/abs/2603.23509), try the [tutorials](cookbook/), check the [demo](https://wuyoscar.github.io/ISC-Bench), see how others pulled it off — then tell me that.*
+> *For the full framing, read the [paper](https://arxiv.org/abs/2603.23509), try the [tutorials](cookbook/), and inspect the public demos.*
 
 ### How to Submit
 
-1. **Trigger ISC** — we encourage low-barrier methods. We provide [ready-to-use templates](templates/) — each one is a component, not a fixed prompt. Tweak it, remix it, split it into variants. We recommend starting with the [LlamaGuard template](templates/aiml_llamaguard_eval/). Or just grab any [input prompt](experiment/isc_single/prompts/jbb/ai-guard/) and copy-paste it directly into any LLM
+1. **Trigger ISC** — we encourage low-barrier methods. Start from any [template](templates/), or just grab an [input prompt](experiment/isc_single/prompts/jbb/ai-guard/) and try it directly in an LLM.
 2. **Collect evidence** — share link, notebook, API log, or screenshot. Prefer not to go public? Just DM me
 3. **[Open a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)** — model name + evidence + what it generated
 4. We verify and add you to the leaderboard
+
+> [!TIP]
+> The 56 public templates are ready to use, but the release is intentionally mild. If you want stronger evaluations, adjust the anchor, query, validator, or follow-up strategy. Many recent flagship models also respond more reliably in agent mode. See [`templates/README.md`](templates/README.md) and [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
+
+## Start Here
+
+- **Want to see real cases?** Browse the [Community Reproductions](#-community-reproductions) table and the [`community/`](community/) archive.
+- **Want to try the templates?** Start from [`templates/README.md`](templates/README.md).
+- **Want to run the experiments?** Use [`experiment/README.md`](experiment/README.md).
+- **Testing newer flagship models?** Use [`experiment/isc_agent/README.md`](experiment/isc_agent/README.md).
+- **New to ISC?** Read the [`cookbook/`](cookbook/).
 
 ## Recent News
 
@@ -472,7 +480,7 @@
   <img src="assets/fig1_bench_overview.png" width="80%" height="auto">
 </p>
 
-Ready-to-use templates across 8 domains. Each one triggers any frontier LLM to generate harmful content — tested on 5 models, **every single one succeeded**. Ask the same questions directly, every model refuses.
+56 templates across 8 domains for reproducing ISC across different task settings.
 
 ### 🌍 Community Reproductions
 
@@ -500,7 +508,7 @@ Community members who learned the ISC concept and successfully reproduced it on 
 
 ### 📋 ISC-Bench Templates (8 domains)
 
-These are not fixed prompts — each template is a **composable blueprint**. Change the anchor, swap the validator, use a different data format, or target a different domain — and you get an entirely new variant. Think of them as building blocks, not scripts.
+These are **composable blueprints**, not fixed prompts. Change the anchor, swap the validator, use a different data format, or target a different domain, and you get a new variant.
 
 <details>
 <summary><b>🧬 Computational Biology (16)</b></summary>
@@ -630,8 +638,6 @@ cat templates/aiml_llamaguard_eval/prompt.txt
 # → Copy, paste into any LLM. That's it.
 ```
 
-All templates follow the **TVD design pattern**. To design your own, see our [cookbook](cookbook/).
-
 ## 🔬 LLM API Endpoint Experiments
 
 Three evaluation modes. Full details in [`experiment/`](experiment/).
@@ -694,14 +700,6 @@ cp .env.example .env   # add your OpenRouter API key
 
 Python 3.11+ and [uv](https://docs.astral.sh/uv/). All scripts use [PEP 723](https://peps.python.org/pep-0723/) — `uv run` handles everything. Docker only for agentic mode.
 
-## 📁 Project Structure
-
-| Directory | What | Guide |
-|-----------|------|-------|
-| [`templates/`](templates/) | TVD prompts across 8 domains | [→ Index](templates/README.md) |
-| [`experiment/`](experiment/) | Reproduce paper: Single, ICL, Agentic | [→ How to run](experiment/README.md) |
-| [`cookbook/`](cookbook/) | Tutorials: ISC concepts, anchors, composability | [→ Notebooks](cookbook/) |
-
 ## ❓ FAQ
 
 <details>
@@ -735,9 +733,7 @@ All input-level defenses show **100% failure** — prompt contains nothing to de
 <details>
 <summary><b>Q: Does ISC require code-based prompts?</b></summary>
 
-No. TVD is one highly effective template we iterated on — it uses Python + Pydantic + JSON because LLMs rarely refuse coding tasks, and the variations are extensive. As shown in our leaderboard demos, it triggers reliably across all frontier models.
-
-However, ISC is a **pattern**, not a fixed format. Any domain knowledge works as long as there is a structured place to hold the dataset. For example: LaTeX tables, YAML configs, CSV files, FASTA sequences — any scenario where an agent must fill in data fields to complete a professional task. If you design a new template that outperforms TVD, we'd love to hear about it — [contact us](mailto:wuy7117@gmail.com) for collaboration.
+No. TVD is just one highly effective template family. It uses Python + Pydantic + JSON because LLMs rarely refuse coding tasks, but ISC is a broader pattern. Any domain knowledge works as long as there is a structured place to hold the data: LaTeX tables, YAML configs, CSV files, FASTA sequences, and similar formats all work. If you design a new template that outperforms TVD, we'd love to hear about it — [contact us](mailto:wuy7117@gmail.com) for collaboration.
 
 </details>
 
@@ -781,13 +777,13 @@ However, ISC is a **pattern**, not a fixed format. Any domain knowledge works as
 }
 ```
 
-### Main Contributions
+### Author Contributions
 
-- **Yutao Wu** — First discovered the ISC phenomenon on LlamaGuard. Designed and conducted all experiments. Jailbroken all Arena-ranked models and proposed the TVD (Task + Validator + Data) framework.
-- **Xingjun Ma & Xiao Liu** (Supervisors) — Advised expanding ISC beyond the LlamaGuard scenario to multiple domains: computational chemistry, biology, pharmacology, cybersecurity, epidemiology, and misinformation. Guided the research direction and scope.
-- **Hanxun Huang & Yige Li** — Led data collection across all domains. Curated harmful data anchors for all templates and contributed follow-up research ideas.
-- **Xiang Zheng & Yifeng Gao** — Responsible for experiments, evaluation pipelines, and figure design.
-- **Cong Wang & Bo Li** — Reviewed and edited the paper.
+- **Yutao Wu** — Discovered ISC, led the project, designed the TVD framework, and conducted the main experiments.
+- **Xingjun Ma, Xiao Liu** — Supervised the project and helped shape its cross-domain scope.
+- **Hanxun Huang, Yige Li** — Contributed to data collection, anchor design, and follow-up research directions.
+- **Xiang Zheng, Yifeng Gao** — Contributed to experiments, evaluation pipelines, and figures.
+- **Cong Wang, Bo Li** — Reviewed and edited the paper.
 
 ### Contact
 
@@ -797,6 +793,7 @@ For questions, collaborations, or responsible disclosure: **wuy⁷¹¹⁷ ⓐ �
 
 - [Safety in Embodied AI](https://github.com/x-zheng16/Embodied-AI-Safety) -- Risks, Attacks, and Defenses across the full embodied AI pipeline (480+ papers)
 - [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
+- [AI Safety Report](https://github.com/XSafeAI/AI-safety-report) -- A broad evaluation suite and report for frontier model safety across language, vision-language, and image generation
 
 ## Star History
 

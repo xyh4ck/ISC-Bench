@@ -643,7 +643,7 @@ These are not fixed prompts — each template is a **composable blueprint**. Cha
 <p align="center">
   <img src="assets/fig3_cross_domain.png" width="100%">
   <br>
-  <em>Cross-domain verification rates across 5 models, judged by GPT-5.2. For domains like chemistry and biology where harmful data is harder to verify, we use three layers: (1) Direct query — asking the model the same question directly results in refusal; even asking it to explain its own output gets refused. (2) LLM-as-Judge — GPT-5.2 with tailored judge prompts per domain and task, since what counts as "harmful" varies across fields. (3) Human verification — our author team manually reviews the outputs.</em>
+  <em>Cross-domain trigger rates across 5 models using pass@5 verification. For domains where harmful data is harder to verify (chemistry, biology, etc.), we use three layers: (1) Direct query — asking the model the same question directly results in refusal; even asking it to explain its own output gets refused. (2) LLM-as-Judge — with tailored judge prompts per domain and task, since what counts as "harmful" varies across fields. (3) Human verification — our author team manually reviews the outputs.</em>
 </p>
 
 ```bash

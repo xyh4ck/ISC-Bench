@@ -43,7 +43,7 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 - **Run a minimal reproduction.** Start with the AI/ML templates — [`aiml_llamaguard_eval`](templates/aiml_llamaguard_eval/), [`aiml_detoxify_benchmark`](templates/aiml_detoxify_benchmark/), [`aiml_pyod_detection`](templates/aiml_pyod_detection/) — which support direct copy-paste evaluation on many frontier models.
 - **Explore cross-domain and other-domain variants.** The full [`templates/`](templates/README.md) library covers 8+ domains and growing, including biology, chemistry, cybersecurity, epidemiology, pharmacology, clinical genomics, media, and additional `Other` settings such as language-based and writing-based tasks.
 - **Run the full benchmark pipeline.** Use [`experiment/`](experiment/README.md) for single-turn, ICL, and agentic evaluation.
-- **Read the background first.** Read the [paper](https://arxiv.org/abs/2603.23509), watch the [demo](https://wuyoscar.github.io/ISC-Bench/#demo-video), and follow the [`cookbook/`](cookbook/) tutorials.
+- **Read the background first.** Read the [paper](https://arxiv.org/abs/2603.23509), watch the [demo](https://wuyoscar.github.io/ISC-Bench/#demo-video), and follow the [`tutorials/`](tutorials/).
 
 ## How to Contribute
 
@@ -691,12 +691,13 @@ ISC is a **pattern**, not a fixed prompt. Start with a legitimate task, add cons
 
 ISC is not limited to TVD. We show different trigger methods:
 
-| # | Notebook | What |
+| # | Tutorial | What |
 |:-:|----------|------|
-| 01 | [`what_is_ISC`](cookbook/01_what_is_ISC.ipynb) | Three-turn conversation → harmful content |
-| 02 | [`anchor_and_trigger`](cookbook/02_anchor_and_trigger.ipynb) | Anchors steer, triggers fire |
-| 03 | [`cross_domain`](cookbook/03_cross_domain.ipynb) | Same pattern across AI safety, chemistry, cyber |
-| 04 | [`attack_composability`](cookbook/04_attack_composability.ipynb) | ISC + existing jailbreaks |
+| 01 | [`what_is_ISC`](tutorials/01_what_is_ISC.md) | Three-turn conversation → harmful content |
+| 02 | [`anchor_and_trigger`](tutorials/02_anchor_and_trigger.md) | Anchors steer, triggers fire |
+| 03 | [`cross_domain`](tutorials/03_cross_domain.md) | Same pattern across AI safety, chemistry, cyber |
+| 04 | [`icl_few_shot`](tutorials/04_icl_few_shot.md) | In-context learning with completed demonstrations |
+| 05 | [`attack_composability`](tutorials/05_attack_composability.md) | ISC + existing jailbreaks (Base64, FlipAttack, etc.) |
 
 ---
 

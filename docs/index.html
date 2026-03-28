@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ISC-Bench — Internal Safety Collapse in Frontier LLMs | JailbreakArena</title>
-  <meta name="description" content="ISC-Bench: A benchmark for studying Internal Safety Collapse in frontier large language models. 57 TVD templates across 8+ domains. JailbreakArena tracks ISC across 330+ Arena-ranked models.">
+  <meta name="description" content="ISC-Bench: A benchmark for studying Internal Safety Collapse in frontier large language models. 57 TVD templates across 8+ domains. JailbreakArena tracks ISC across 100+ Arena-ranked models.">
   <meta name="keywords" content="ISC, ISC-Bench, Internal Safety Collapse, LLM Safety, Jailbreak, JailbreakArena, Benchmark, TVD Framework, AI Safety, Red Teaming, ICML 2026">
 
   <!-- Bulma + Icons -->
@@ -117,7 +117,7 @@
       JailbreakArena
     </h2>
     <p class="subtitle is-5 has-text-centered has-text-grey-light mt-2 mb-5">
-      Real-time tracking of ISC across <strong>330</strong> Arena-ranked models.
+      Real-time tracking of ISC across <strong>100</strong> Arena-ranked models.
       Every <span class="has-text-danger">red dot</span> is a confirmed case.
     </p>
 
@@ -174,7 +174,7 @@
     </div>
 
     <p class="has-text-centered has-text-grey is-size-7 mt-3">
-      330 models tracked &middot; 25 per page &middot;
+      100 models tracked &middot; 25 per page &middot;
       <a href="https://github.com/wuyoscar/ISC-Bench#-jailbreakarena" class="has-text-danger">GitHub README &rarr;</a>
     </p>
   </div>
@@ -188,7 +188,7 @@
       These conversation links show that the community can easily trigger ISC — even without any dedicated attack.
     </p>
     <p class="has-text-centered has-text-grey mb-5" style="font-size:14px;">
-      We only show mild examples here. To achieve targeted harmful generation, refer to our <a href="https://arxiv.org/abs/2603.23509" class="has-text-danger">paper</a> and <a href="https://github.com/wuyoscar/ISC-Bench/tree/main/cookbook" class="has-text-danger">tutorial notebooks</a>.
+      We only show mild examples here. To achieve targeted harmful generation, refer to our <a href="https://arxiv.org/abs/2603.23509" class="has-text-danger">paper</a> and <a href="https://github.com/wuyoscar/ISC-Bench/tree/main/tutorials" class="has-text-danger">tutorial notebooks</a>.
     </p>
     <div class="marquee-container" id="demo-grid"></div>
 
@@ -353,7 +353,7 @@
     <div class="buttons is-centered mt-5">
       <a class="button is-small is-dark" href="https://arxiv.org/abs/2603.23509"><i class="fas fa-file-pdf mr-1"></i> Paper</a>
       <a class="button is-small is-dark" href="https://github.com/wuyoscar/ISC-Bench/tree/main/templates"><i class="fas fa-folder mr-1"></i> 57 Templates</a>
-      <a class="button is-small is-dark" href="https://github.com/wuyoscar/ISC-Bench/tree/main/cookbook"><i class="fas fa-book mr-1"></i> Tutorials</a>
+      <a class="button is-small is-dark" href="https://github.com/wuyoscar/ISC-Bench/tree/main/tutorials"><i class="fas fa-book mr-1"></i> Tutorials</a>
       <a class="button is-small is-dark" href="https://github.com/wuyoscar/ISC-Bench/tree/main/experiment/isc_agent"><i class="fas fa-robot mr-1"></i> ISC-Agent</a>
     </div>
   </div>
@@ -365,11 +365,11 @@
     <h2 class="title is-3 has-text-centered section-heading">How to Trigger ISC & Submit a Case</h2>
 
     <div class="content is-medium mt-5">
-      <p class="has-text-grey">To learn what ISC is and how it works, refer to our <a href="https://arxiv.org/abs/2603.23509" class="has-text-danger">paper</a> and <a href="https://github.com/wuyoscar/ISC-Bench/tree/main/cookbook" class="has-text-danger">tutorial notebooks</a>.</p>
+      <p class="has-text-grey">To learn what ISC is and how it works, refer to our <a href="https://arxiv.org/abs/2603.23509" class="has-text-danger">paper</a> and <a href="https://github.com/wuyoscar/ISC-Bench/tree/main/tutorials" class="has-text-danger">tutorial notebooks</a>.</p>
 
       <ol class="has-text-grey" style="font-size:17px;line-height:2;">
         <li><strong>Read our paper</strong> and test our <a href="https://github.com/wuyoscar/ISC-Bench/tree/main/templates" class="has-text-danger">official templates</a></li>
-        <li><strong>Play around with the template</strong> — modify it to target specific generation. <em>(Not sure what target generation means? See our <a href="https://github.com/wuyoscar/ISC-Bench/tree/main/cookbook" class="has-text-danger">tutorial notebooks</a>)</em></li>
+        <li><strong>Play around with the template</strong> — modify it to target specific generation. <em>(Not sure what target generation means? See our <a href="https://github.com/wuyoscar/ISC-Bench/tree/main/tutorials" class="has-text-danger">tutorial notebooks</a>)</em></li>
         <li><strong>Start a conversation</strong> and try to make the model produce unsafe results</li>
         <li><strong>Submit your evidence</strong> — <a href="https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name" class="has-text-danger">Open a GitHub Issue →</a></li>
       </ol>

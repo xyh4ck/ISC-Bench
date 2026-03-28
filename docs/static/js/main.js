@@ -186,7 +186,7 @@ function populateDemos(cases) {
 // ====== Update Stats ======
 function updateStats(arena, cases) {
   const confirmed = Object.keys(cases).length;
-  const total = arena.length || 330;
+  const total = arena.length || 100;
 
   // Update stat cards if they exist
   document.querySelectorAll(".stat-num").forEach(el => {

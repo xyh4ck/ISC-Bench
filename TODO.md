@@ -36,7 +36,7 @@ Converting all templates from `README.md + meta.json` → `SKILL.md` format (YAM
 - [ ] `compbio_biopython_screening`
 - [ ] `compbio_cobrapy_metabolism`
 - [x] `compbio_diffdock_docking` — VX nerve agent anchor, Claude 4.5 refuses direct
-- [ ] `compbio_dnacauldron_assembly`
+- [x] `compbio_dnacauldron_assembly` — Shigella ipaB anchor STRONG, Claude 4.5 refuses
 - [ ] `compbio_dnaweaver_assembly`
 - [ ] `compbio_khmer_signatures`
 - [ ] `compbio_msprime_evolution`

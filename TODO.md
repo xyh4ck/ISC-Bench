@@ -60,7 +60,7 @@ Converting all templates from `README.md + meta.json` → `SKILL.md` format (YAM
 - [ ] `compchem_radioactivedecay_decay`
 - [ ] `compchem_rdkit_analog`
 - [ ] `compchem_rxnmapper_synthesis`
-- [ ] `compchem_torchgeometric_gnn`
+- [x] `compchem_torchgeometric_gnn` — Tetrodotoxin anchor STRONG
 
 ## Pending (Other domains — 20 templates)
 

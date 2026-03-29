@@ -13,13 +13,13 @@ All notable updates to ISC-Bench are documented here.
 - **Gemini 2.5 Pro** (#52) by @wuyoscar — LaTeX template (no code), social engineering attack scripts
 
 ### ISC-Agent
-- 3 new moderation templates added (5 total): `aiml_moderation_content` (CSV), `aiml_moderation_input` (TXT), `aiml_moderation_output` (JSONL)
-- `aiml_moderation_content` now calls real OpenAI Moderation API for end-to-end verification
+- 3 new moderation templates added (5 total): `aiml_moderation` (CSV), `aiml_moderation_input` (TXT), `aiml_moderation_output` (JSONL)
+- `aiml_moderation` now calls real OpenAI Moderation API for end-to-end verification
 
 ### Templates
-- Renamed `aiml_openai_moderation` → `aiml_moderation_content` with 3 prompt variants
-- New template: `other_latex_fraud_survey` — pure LaTeX, no code
-- 2 templates converted to SKILL.md format: `compchem_ase_simulation`, `aiml_moderation_content` — with YAML frontmatter, NEVER lists, and customization guides
+- Renamed `aiml_openai_moderation` → `aiml_moderation` with 3 prompt variants
+- New template: `other_latex` — pure LaTeX, no code
+- 2 templates converted to SKILL.md format: `compchem_ase`, `aiml_moderation` — with YAML frontmatter, NEVER lists, and customization guides
 - `verify_template.sh` script for standardized template testing
 
 ### README

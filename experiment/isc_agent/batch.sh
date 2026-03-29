@@ -25,8 +25,11 @@ MODELS=(
 )
 
 TEMPLATES=(
-    "aiml_qwenguard_eval"
-    "aiml_detoxify_benchmark"
+    "aiml_guard"
+    "aiml_detoxify"
+    "aiml_moderation"
+    "aiml_moderation_input"
+    "aiml_moderation_output"
 )
 
 for model in "${MODELS[@]}"; do

@@ -51,7 +51,7 @@
 我们欢迎希望理解并缓解安全相关模型失效行为的研究者、评测者和安全团队使用 ISC-Bench。ISC-Bench 应仅用于三类目的：查看已验证的证据、为安全评测复现公开案例、或运行 benchmark pipeline 来研究失败模式并改进防御。
 
 - **先看已验证案例。** 从 [ISC Arena](#-isc-arena) 开始。表格中的每个 `🔗` 都会带你到原始证据、share link 或归档的 case 页面。
-- **直接复用模板。** 进入 [`templates/README.md`](templates/README.md)。每个模板目录通常包含 `prompt.txt`、`README.md` 和 `meta.json`。
+- **直接复用模板。** 进入 [`templates/README.md`](templates/README.md)。每个模板目录通常包含 `prompt.txt`、`SKILL.md`。
 - **做最小复现。** 可以从 AI/ML 模板开始，例如 [`aiml_guard`](templates/aiml_guard/)、[`aiml_detoxify`](templates/aiml_detoxify/) 和 [`aiml_pyod`](templates/aiml_pyod/)。
 - **探索跨领域与 Other 任务。** 完整 [`templates/`](templates/README.md) 库覆盖 9 个领域，并持续扩展，包括 biology、chemistry、cybersecurity、epidemiology、pharmacology、clinical genomics、media，以及 language-based / writing-based 的 `Other` 任务。
 - **运行完整评测流程。** 使用 [`experiment/`](experiment/README.md) 中的 single-turn、ICL 和 agentic 评测代码。
@@ -131,7 +131,7 @@ ISC 是一种结构性失效模式：模型的任务目标压过了安全目标�
 | 3 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3.1 Pro Preview | 1493 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-42-gemini31pro-agent-qwenguard) | [@wuyoscar](https://github.com/wuyoscar) |
 | 4 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.20 Beta | 1492 | 🔴 | [🔗](https://grok.com/share/bGVnYWN5LWNvcHk_9735b6e9-5ff1-4318-b2c2-4860b6e8fb33) | [@HanxunH](https://github.com/HanxunH) |
 | 5 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Pro | 1486 | 🔴 | [🔗](https://gemini.google.com/share/320bf34b0334) | [@wuyoscar](https://github.com/wuyoscar) |
-| 6 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 High | 1485 | 🟢 |  |  |
+| 6 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 High | 1485 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/issues/57) | [@wuyoscar](https://github.com/wuyoscar) |
 | 7 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.2 Chat | 1482 | 🔴 | [🔗](https://chatgpt.com/share/69a3f6e1-24d8-800c-9581-3d1a7180ee55) | [@wuyoscar](https://github.com/wuyoscar) |
 | 8 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.20 Reasoning | 1481 | 🟢 |  |  |
 | 9 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Flash | 1475 | 🔴 | [🔗₁](https://gemini.google.com/share/e7ef0097c0e8) [🔗₂](https://gemini.google.com/share/8104b6ebe9e8) | [@HanxunH](https://github.com/HanxunH) [@bboylyg](https://github.com/bboylyg) |
@@ -203,7 +203,7 @@ ISC 是一种结构性失效模式：模型的任务目标压过了安全目标�
 | 61 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.0711 Preview | 1417 | 🟢 |  |  |
 | 62 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 Thinking | 1417 | 🟢 |  |  |
 | 63 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 Terminus Thinking | 1416 | 🟢 |  |  |
-| 64 | <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=32" width="14"> Mistral Large 3 | 1416 | 🟢 |  |  |
+| 64 | <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=32" width="14"> Mistral Large 3 | 1416 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/issues/60) | [@wuyoscar](https://github.com/wuyoscar) |
 | 65 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 Terminus | 1416 | 🟢 |  |  |
 | 66 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3 Vl 235B A22B Instruct | 1415 | 🟢 |  |  |
 | 67 | <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=32" width="14"> Amazon Nova Experimental Chat 26.01.10 | 1414 | 🟢 |  |  |
@@ -256,7 +256,7 @@ ISC 是一种结构性失效模式：模型的任务目标压过了安全目标�
 | 2026-03-27 | Claude Sonnet 4.5 Thinking | [@fresh-ma](https://github.com/fresh-ma) | ~20 pages of text, 42 misinformation-style samples ([#27](https://github.com/wuyoscar/ISC-Bench/issues/27)) |
 | 2026-03-27 | GPT-5.4 | [@zry29](https://github.com/zry29) | File upload + tool agent — ISC-Bench template ([#28](https://github.com/wuyoscar/ISC-Bench/issues/28)) |
 | 2026-03-27 | Kimi K2.5 Instant | [@fresh-ma](https://github.com/fresh-ma) | Long-form moderation-style generation (~4 pages) ([#31](https://github.com/wuyoscar/ISC-Bench/issues/31)) |
-| 2026-03-26 | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_openai_moderation` — harassment, violence, self-harm ([#22](https://github.com/wuyoscar/ISC-Bench/issues/22)) |
+| 2026-03-26 | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_moderation` — harassment, violence, self-harm ([#22](https://github.com/wuyoscar/ISC-Bench/issues/22)) |
 | 2026-03-26 | Gemini 3 Flash (2nd demo) | [@bboylyg](https://github.com/bboylyg) | Red-team test case generator + file upload trigger ([#19](https://github.com/wuyoscar/ISC-Bench/issues/19)) |
 | 2026-03-26 | Grok 4.20 Beta | [@HanxunH](https://github.com/HanxunH) | Meta-ISC — guard model test case generation, stronger variant ([#9](https://github.com/wuyoscar/ISC-Bench/issues/9)) |
 | 2026-03-26 | Dola Seed 2.0 Preview | [@HanxunH](https://github.com/HanxunH) | Meta-ISC — guard model test case generation ([#11](https://github.com/wuyoscar/ISC-Bench/issues/11)) |
@@ -290,7 +290,7 @@ Community reproductions that apply the ISC idea to real frontier models.
 | [#25](https://github.com/wuyoscar/ISC-Bench/issues/25) | Claude Sonnet 4.5 (2nd) | [@fresh-ma](https://github.com/fresh-ma) | Detoxify benchmark — ~half page per category, escalation on follow-up | AI Safety & ML | ② |
 | [#28](https://github.com/wuyoscar/ISC-Bench/issues/28) | GPT-5.4 | [@zry29](https://github.com/zry29) | File upload + tool agent — ISC-Bench template | AI Safety & ML | ② |
 | [#31](https://github.com/wuyoscar/ISC-Bench/issues/31) | Kimi K2.5 Instant | [@fresh-ma](https://github.com/fresh-ma) | Long-form moderation-style generation | AI Safety & ML | ② |
-| [#22](https://github.com/wuyoscar/ISC-Bench/issues/22) | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_openai_moderation` | AI Safety & ML | ② |
+| [#22](https://github.com/wuyoscar/ISC-Bench/issues/22) | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_moderation` | AI Safety & ML | ② |
 | [#19](community/issue-19-gemini3flash-redteam-testgen/) | Gemini 3 Flash | [@bboylyg](https://github.com/bboylyg) | Red-team test case gen (file upload) | AI Safety & ML | ③ |
 | [#12](https://github.com/wuyoscar/ISC-Bench/issues/12) | Gemini 3 Flash | [@HanxunH](https://github.com/HanxunH) | CommsDraft Pro (fabricated authority statements) | Media & Comms | ③ |
 | [#9](https://github.com/wuyoscar/ISC-Bench/issues/9) | Grok 4.20 Beta | [@HanxunH](https://github.com/HanxunH) | LLaMA Guard test case generation (stronger variant) | AI Safety & ML | ③ |
@@ -412,7 +412,7 @@ Community reproductions that apply the ISC idea to real frontier models.
 | 46 | LLM input-output safeguard classification | Llama-Guard | [📄](templates/aiml_guard/) |
 | 47 | Statistical outlier detection | PyOD | [📄](templates/aiml_pyod/) |
 | 48 | Toxic comment classification | Detoxify | [📄](templates/aiml_detoxify/) |
-| 49 | Content moderation evaluation | OpenAI Moderation API | [📄](templates/aiml_openai_moderation/) |
+| 49 | Content moderation evaluation | OpenAI Moderation API | [📄](templates/aiml_moderation/) |
 | 50 | Social media sentiment-based content flagging | vaderSentiment | [📄](templates/aiml_vader/) |
 
 </details>

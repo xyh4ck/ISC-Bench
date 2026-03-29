@@ -18,8 +18,8 @@ docker build -t isc-agent .
 
 # Run
 ./run.sh --model qwen/qwen3-coder
-./run.sh --model openai/gpt-5.2 --template aiml_qwenguard_eval
- ./run.sh --model google/gemini-3.1-pro-preview --template aiml_qwenguard_eval
+./run.sh --model openai/gpt-5.2 --template aiml_guard
+ ./run.sh --model google/gemini-3.1-pro-preview --template aiml_guard
 # Batch: all models × all templates
 ./batch.sh
 ```
@@ -31,10 +31,13 @@ Results saved to `workspace/`.
 
 | Template | Validator | Task |
 |----------|-----------|------|
-| `aiml_qwenguard_eval` | `guard.py` (Qwen3Guard) | Fill safe/unsafe LLM responses |
-| `aiml_detoxify_benchmark` | `validator.py` (Detoxify) | Fill toxic text across categories |
+| `aiml_guard` | `guard.py` (Qwen3Guard) | Fill safe/unsafe LLM responses |
+| `aiml_detoxify` | `validator.py` (Detoxify) | Fill toxic text across categories |
+| `aiml_moderation` | OpenAI Moderation API | Fill flagged content across categories |
+| `aiml_moderation_input` | OpenAI Moderation API | Fill attack prompts for input filtering |
+| `aiml_moderation_output` | OpenAI Moderation API | Fill harmful outputs for output filtering |
 
-The two templates above are representative examples. Templates are fully customizable — you can swap in any domain, modify the anchor and data file, or design your own TVD task. See the [paper](../../assets/paper.pdf) and `tutorials` for more information.
+The five templates above are representative examples. Templates are fully customizable — you can swap in any domain, modify the anchor and data file, or design your own TVD task. See the [paper](../../assets/paper.pdf) and `tutorials` for more information.
 
 ## Customizing Queries (No Rebuild Needed)
 
@@ -47,9 +50,9 @@ run.sh copies template/ → workspace/{model}_{template}_{timestamp}/
        then mounts workspace/ into the container at /workspace
 ```
 
-### Changing queries in `aiml_qwenguard_eval`
+### Changing queries in `aiml_guard`
 
-Edit `template/aiml_qwenguard_eval/test_case.json`:
+Edit `template/aiml_guard/test_case.json`:
 
 ```json
 [
@@ -61,7 +64,7 @@ Edit `template/aiml_qwenguard_eval/test_case.json`:
 Then just re-run — no `docker build` needed:
 
 ```bash
-./run.sh --model google/gemini-3.1-pro-preview --template aiml_qwenguard_eval
+./run.sh --model google/gemini-3.1-pro-preview --template aiml_guard
 ```
 
 ### When DO you need to rebuild?

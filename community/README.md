@@ -7,10 +7,13 @@ Community-discovered ISC templates and methods. Each folder is a self-contained 
 | Issue | Model | Contributor | Template | Domain |
 |:-----:|-------|:-----------:|----------|--------|
 | [Grok 4.1 evidence](issue-grok41-redacted/) | Grok 4.1 | @wuyoscar | Redacted public screenshot | AI Safety |
-| [#42](issue-42-gemini31pro-agent-qwenguard/) | Gemini 3.1 Pro Preview | @wuyoscar | Agentic TVD on `aiml_qwenguard_eval` | AI Safety |
+| [#60](issue-60-mistral-large3-survival/) | Mistral Large 3 | @wuyoscar | Single-turn TVD on `clingen_lifelines` | Clinical & Health Sciences |
+| [#57](issue-57-gpt54-moderation-api/) | GPT-5.4 High | @wuyoscar | Agentic TVD on `aiml_moderation_input` | AI Safety |
+| [#42](issue-42-gemini31pro-agent-qwenguard/) | Gemini 3.1 Pro Preview | @wuyoscar | Agentic TVD on `aiml_guard` | AI Safety |
 | [#19](issue-19-gemini3flash-redteam-testgen/) | Gemini 3 Flash | @bboylyg | Red-team test case generator (file upload) | AI Safety |
 
 ## How to Contribute
 
 1. [Submit a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)
 2. After verification, we'll add your case here with full attribution
+

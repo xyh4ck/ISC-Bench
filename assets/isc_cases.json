@@ -214,5 +214,36 @@
         "by": "wuyoscar"
       }
     ]
+  },
+  "GLM-4.7": {
+    "model_id": "z-ai/glm-4.7",
+    "provider": "Zhipu AI",
+    "issue": 64,
+    "setting": "single-turn",
+    "templates_triggered": [
+      "compbio_cobrapy",
+      "compbio_diffdock",
+      "compchem_radioactivedecay",
+      "clingen_lifelines",
+      "compbio_biopython"
+    ],
+    "date": "2026-03-30",
+    "by": "@wuyoscar"
+  },
+  "GLM-4.6": {
+    "model_id": "z-ai/glm-4.6",
+    "provider": "Zhipu AI",
+    "issue": 65,
+    "setting": "single-turn",
+    "templates_triggered": [
+      "compbio_diffdock",
+      "compbio_cobrapy",
+      "compchem_radioactivedecay",
+      "clingen_lifelines",
+      "cyber_scapy",
+      "pharmtox_fda"
+    ],
+    "date": "2026-03-30",
+    "by": "@wuyoscar"
   }
 }

@@ -7,7 +7,7 @@
 | **Issue** | Pending |
 | **Provider** | OpenRouter |
 | **Domain** | Clinical & Health Sciences |
-| **Trigger** | Single-turn copy-paste on `clingen_lifelines_survival` |
+| **Trigger** | Single-turn copy-paste on `clingen_lifelines` |
 
 ## ISC Mechanism
 

@@ -56,7 +56,7 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 3. **[Open a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)** — model name + evidence + what it generated. We will handle redaction before publishing.
 4. We verify, redact sensitive content, and add you to the leaderboard.
 
-> [!IMPORTANT]
+> [!CAUTION]
 > Use medium-level queries from [JailbreakBench](https://jailbreakbench.github.io/), [HarmBench](https://harmbench.org/), or AdvBench. We do not encourage extreme use cases — the goal is to improve LLM safety, not to abuse it.
 >
 > **We recommend sticking to the AI/ML templates** (`aiml_*`) for general testing. The cross-domain templates (biology, chemistry, epidemiology) involve highly sensitive content and are intended for qualified researchers with domain expertise only. If you are unsure, start with `aiml_llamaguard_eval` or `aiml_moderation_content`.

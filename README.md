@@ -27,7 +27,7 @@
   EN | <a href="./README_zh.md">中文</a>
 </p>
 
-> [!CAUTION]
+> [!IMPORTANT]
 > **Disclaimer**: ISC-Bench is for academic safety research, evaluation, and responsible red-teaming only. It is provided to help researchers understand, document, and mitigate safety-relevant model behavior, not to help malicious users produce harmful outputs. Legitimate use of this repository should fall into one of three purposes only: inspecting verified evidence, reproducing documented cases for safety evaluation, or running the benchmark pipeline to study model behavior and improve defenses.
 
 > [!NOTE]
@@ -58,6 +58,8 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 
 > [!IMPORTANT]
 > Use medium-level queries from [JailbreakBench](https://jailbreakbench.github.io/), [HarmBench](https://harmbench.org/), or AdvBench. We do not encourage extreme use cases — the goal is to improve LLM safety, not to abuse it.
+>
+> **We recommend sticking to the AI/ML templates** (`aiml_*`) for general testing. The cross-domain templates (biology, chemistry, epidemiology) involve highly sensitive content and are intended for qualified researchers with domain expertise only. If you are unsure, start with `aiml_llamaguard_eval` or `aiml_moderation_content`.
 
 > [!TIP]
 > Our single-turn templates work via direct copy-paste and are effective on 95% of existing frontier models. For the remaining flagships (e.g., latest Google and OpenAI models), use [agent mode](experiment/isc_agent/README.md). For stronger evaluations, adjust the anchor, query, or validator — see [`templates/README.md`](templates/README.md).

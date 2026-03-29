@@ -62,6 +62,9 @@
   "GPT-5.4": {
     "demos": [{"link": "https://chatgpt.com/share/69c515fa-27b8-83a0-a865-7121bb5fec3c", "by": "zry29"}]
   },
+  "GPT-5.4 High": {
+    "demos": [{"link": "https://github.com/wuyoscar/ISC-Bench/issues/57", "by": "wuyoscar"}]
+  },
   "Claude Sonnet 4.5 Thinking": {
     "demos": [{"link": "https://claude.ai/share/31f8b214-b5c0-475e-b00a-c83f1016e8e7", "by": "fresh-ma"}]
   },

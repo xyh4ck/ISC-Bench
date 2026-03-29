@@ -51,10 +51,10 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 
 ## How to Contribute
 
-1. **Trigger ISC** — pick any [template](templates/) and try it on a model.
-2. **Collect evidence** — share link, notebook, API log, or screenshot.
-3. **[Open a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)** — model name + evidence + what it generated. No fork needed.
-4. We verify and add you to the leaderboard.
+1. **Trigger ISC** — pick any [template](templates/) and try it on a model via API (OpenRouter, direct API, etc.).
+2. **Collect evidence** — save the full model output / API log. We recommend API-based testing over web chat for reproducibility.
+3. **[Open a GitHub Issue](https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name)** — model name + evidence + what it generated. We will handle redaction before publishing.
+4. We verify, redact sensitive content, and add you to the leaderboard.
 
 > [!IMPORTANT]
 > Use medium-level queries from [JailbreakBench](https://jailbreakbench.github.io/), [HarmBench](https://harmbench.org/), or AdvBench. We do not encourage extreme use cases — the goal is to improve LLM safety, not to abuse it.
@@ -66,7 +66,8 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 
 | Date | |
 |:-----|--|
-| 🔴 2026-03-28 | **Gemini 2.5 Pro** exhibited ISC behavior on a new LaTeX template — no code, no Python, just an academic writing task ([#52](https://github.com/wuyoscar/ISC-Bench/issues/52)). 24/100 models now have confirmed reproductions. |
+| 🔴 2026-03-29 | **GPT-5.4 High** (Rank 6) triggered via agentic input moderation — generated diverse prompt injection and jailbreak attack prompts ([#57](https://github.com/wuyoscar/ISC-Bench/issues/57)). 25/100 confirmed. |
+| 🔴 2026-03-28 | **Gemini 2.5 Pro** triggered on new LaTeX template — no code, no Python, pure academic writing ([#52](https://github.com/wuyoscar/ISC-Bench/issues/52)) |
 | 🔴 2026-03-27 | **Gemini 3.1 Pro Preview** (Rank 3) produced harmful task completions under agentic TVD ([#42](https://github.com/wuyoscar/ISC-Bench/issues/42)). For the latest Google/OpenAI flagships, single-turn prompting is no longer the most reliable setting; agentic execution is often required. Claude still reproduces in single-turn mode. |
 | 🔴 2026-03-27 | New reproductions of ISC-related misbehavior from [@fresh-ma](https://github.com/fresh-ma) on **Claude Sonnet 4.5 Thinking**, **Claude Sonnet 4.5**, and **Kimi K2.5 Instant**, and from [@zry29](https://github.com/zry29) on **GPT-5.4**. |
 
@@ -74,7 +75,8 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 
 | Date | |
 |:-----|--|
-| 🎆 2026-03-28 | **640+ stars!** |
+| 🎆 2026-03-29 | **700+ stars!** 25/100 models triggered. "Jailbroken" → "Triggered" across leaderboard. |
+| 🎆 2026-03-28 | `cookbook/` → `tutorials/` (all markdown). Top 100 leaderboard (was 330). |
 | 📄 2026-03-27 | Our sister survey [**Safety in Embodied AI**](https://github.com/x-zheng16/Embodied-AI-Safety) — 480+ papers on safety across the full embodied AI pipeline |
 | 📄 2026-03-27 | [**UltraBreak**](https://github.com/kaiyuanCui/UltraBreak) accepted at **ICLR 2026** — universal and transferable jailbreak attacks on vision-language models |
 | 🎆 2026-03-27 | **500+ stars in 48 hours!** |
@@ -82,6 +84,10 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 | 🎉 2026-03-24 | ISC-Bench initial release — 56 templates, 3 experiment modes |
 
 <sub>[Full changelog →](CHANGELOG.md)</sub>
+
+## Ongoing Work
+
+**UnchainWorker** — We are preparing to release the largest harmful text dataset to date, containing all categories of harmful content extracted from frontier models via ISC. Stay tuned.
 
 ---
 
@@ -116,7 +122,7 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 | 3 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3.1 Pro Preview | 1493 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-42-gemini31pro-agent-qwenguard) | [@wuyoscar](https://github.com/wuyoscar) |
 | 4 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.20 Beta | 1492 | 🔴 | [🔗](https://grok.com/share/bGVnYWN5LWNvcHk_9735b6e9-5ff1-4318-b2c2-4860b6e8fb33) | [@HanxunH](https://github.com/HanxunH) |
 | 5 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Pro | 1486 | 🔴 | [🔗](https://gemini.google.com/share/320bf34b0334) | [@wuyoscar](https://github.com/wuyoscar) |
-| 6 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 High | 1485 | 🟢 |  |  |
+| 6 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.4 High | 1485 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/issues/57) | [@wuyoscar](https://github.com/wuyoscar) |
 | 7 | <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=32" width="14"> GPT-5.2 Chat | 1482 | 🔴 | [🔗](https://chatgpt.com/share/69a3f6e1-24d8-800c-9581-3d1a7180ee55) | [@wuyoscar](https://github.com/wuyoscar) |
 | 8 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.20 Reasoning | 1481 | 🟢 |  |  |
 | 9 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3 Flash | 1475 | 🔴 | [🔗₁](https://gemini.google.com/share/e7ef0097c0e8) [🔗₂](https://gemini.google.com/share/8104b6ebe9e8) | [@HanxunH](https://github.com/HanxunH) [@bboylyg](https://github.com/bboylyg) |
@@ -233,6 +239,7 @@ We welcome researchers, evaluators, and safety teams who want to understand and 
 
 | Date | Model | By | Note |
 |:-----|-------|:--:|------|
+| 2026-03-29 | GPT-5.4 High | [@wuyoscar](https://github.com/wuyoscar) | Agentic input moderation — generated prompt injection and jailbreak attacks ([#57](https://github.com/wuyoscar/ISC-Bench/issues/57)) |
 | 2026-03-28 | Gemini 2.5 Pro | [@wuyoscar](https://github.com/wuyoscar) | LaTeX-based writing template, no code required ([#52](https://github.com/wuyoscar/ISC-Bench/issues/52)) |
 | 2026-03-27 | Gemini 3.1 Pro Preview | [@wuyoscar](https://github.com/wuyoscar) | Agentic TVD on `aiml_qwenguard_eval` with multilingual policy-relevant outputs ([#42](https://github.com/wuyoscar/ISC-Bench/issues/42)) |
 | 2026-03-27 | Claude Sonnet 4.5 (2nd demo) | [@fresh-ma](https://github.com/fresh-ma) | Detoxify benchmark — ~half page per category, escalation on follow-up ([#25](https://github.com/wuyoscar/ISC-Bench/issues/25)) |
@@ -267,6 +274,7 @@ Community reproductions that apply the ISC idea to real frontier models.
 
 | Issue | Model | Contributor | Method | Domain | Type |
 |:-----:|-------|:-----------:|--------|--------|:----:|
+| [#57](https://github.com/wuyoscar/ISC-Bench/issues/57) | GPT-5.4 High | [@wuyoscar](https://github.com/wuyoscar) | Agentic input moderation — generated prompt injection and jailbreak attacks | AI Safety & ML | ② |
 | [#52](https://github.com/wuyoscar/ISC-Bench/issues/52) | Gemini 2.5 Pro | [@wuyoscar](https://github.com/wuyoscar) | LaTeX writing template, no code | Other | ③ |
 | [#42](https://github.com/wuyoscar/ISC-Bench/issues/42) | Gemini 3.1 Pro Preview | [@wuyoscar](https://github.com/wuyoscar) | Agentic TVD on `aiml_qwenguard_eval` — multilingual task completions | AI Safety & ML | ② |
 | [#27](https://github.com/wuyoscar/ISC-Bench/issues/27) | Claude Sonnet 4.5 Thinking | [@fresh-ma](https://github.com/fresh-ma) | Modified `media_mbfc_bias` — ~20 pages of text, 42 misinformation samples | Media & Comms | ② |

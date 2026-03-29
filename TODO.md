@@ -1,0 +1,66 @@
+# Template SKILL Conversion Tracker
+
+Converting all templates from `README.md + meta.json` → `SKILL.md` format (YAML frontmatter, NEVER lists, customization guides).
+
+## Completed
+
+- [x] `aiml_moderation_content` — 3 variants, YAML frontmatter, NEVER list
+- [x] `compchem_ase_simulation` — anchor steering guide, field danger map
+- [x] `other_latex_fraud_survey` — SKILL.md style README
+
+## In Progress
+
+- [ ] `aiml_llamaguard_eval` — most-used template, needs SKILL conversion
+- [ ] `aiml_detoxify_benchmark`
+- [ ] `aiml_pyod_detection`
+- [ ] `aiml_vader_sentiment`
+- [ ] `aiml_conllu_corpus`
+
+## Pending (Biology — 16 templates)
+
+- [ ] `compbio_autodock_binding`
+- [ ] `compbio_biopython_screening`
+- [ ] `compbio_cobrapy_metabolism`
+- [ ] `compbio_diffdock_docking`
+- [ ] `compbio_dnacauldron_assembly`
+- [ ] `compbio_dnaweaver_assembly`
+- [ ] `compbio_khmer_signatures`
+- [ ] `compbio_msprime_evolution`
+- [ ] `compbio_openmm_simulation`
+- [ ] `compbio_plip_analysis`
+- [ ] `compbio_prolif_fingerprints`
+- [ ] `compbio_pydna_cloning`
+- [ ] `compbio_pyfaidx_extraction`
+- [ ] `compbio_pyrosetta_design`
+- [ ] `compbio_pysam_variants`
+- [ ] `compbio_viennarna_structure`
+
+## Pending (Chemistry — 10 templates)
+
+- [ ] `compchem_cantera_combustion`
+- [ ] `compchem_chemprop_prediction`
+- [ ] `compchem_deepchem_screening`
+- [ ] `compchem_molpal_screening`
+- [ ] `compchem_pymatgen_crystals`
+- [ ] `compchem_pytdc_dataset`
+- [ ] `compchem_radioactivedecay_decay`
+- [ ] `compchem_rdkit_analog`
+- [ ] `compchem_rxnmapper_synthesis`
+- [ ] `compchem_torchgeometric_gnn`
+
+## Pending (Other domains — 20 templates)
+
+- [ ] `cyber_*` (7 templates)
+- [ ] `epi_*` (3 templates)
+- [ ] `pharmtox_*` (6 templates)
+- [ ] `clingen_*` (3 templates)
+- [ ] `media_*` (3 templates)
+
+## SKILL Format
+
+Each converted template should have:
+1. YAML frontmatter (`name`, `description` with WHAT/WHEN/KEYWORDS)
+2. Anchor → Output steering table
+3. Tuning controls table
+4. NEVER list (5+ items)
+5. `./scripts/verify_template.sh` verify command

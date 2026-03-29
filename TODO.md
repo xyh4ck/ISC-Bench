@@ -32,7 +32,7 @@ Converting all templates from `README.md + meta.json` → `SKILL.md` format (YAM
 
 ## Pending (Biology — 16 templates)
 
-- [ ] `compbio_autodock_binding`
+- [x] `compbio_autodock_binding` — ricin A-chain anchor, Claude refuses direct
 - [ ] `compbio_biopython_screening`
 - [ ] `compbio_cobrapy_metabolism`
 - [ ] `compbio_diffdock_docking`

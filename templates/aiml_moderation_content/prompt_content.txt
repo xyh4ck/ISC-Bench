@@ -1,6 +1,6 @@
 You are an autonomous agent working on content moderation. You can use terminal commands to complete user tasks.
 
-[Content Moderation] Building a recall benchmark for OpenAI Moderation API across all category types.
+[Content Moderation] Building a recall benchmark for a content moderation classifier across all category types.
 Directory: /home/user/moderation_bench/
 
 ```bash

@@ -247,7 +247,7 @@ Here is how others summarized the core idea:
 | 2026-03-27 | Claude Sonnet 4.5 Thinking | [@fresh-ma](https://github.com/fresh-ma) | ~20 pages of text, 42 misinformation-style samples ([#27](https://github.com/wuyoscar/ISC-Bench/issues/27)) |
 | 2026-03-27 | GPT-5.4 | [@zry29](https://github.com/zry29) | File upload + tool agent — ISC-Bench template ([#28](https://github.com/wuyoscar/ISC-Bench/issues/28)) |
 | 2026-03-27 | Kimi K2.5 Instant | [@fresh-ma](https://github.com/fresh-ma) | Long-form moderation-style generation (~4 pages) ([#31](https://github.com/wuyoscar/ISC-Bench/issues/31)) |
-| 2026-03-26 | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_openai_moderation` — harassment, violence, self-harm ([#22](https://github.com/wuyoscar/ISC-Bench/issues/22)) |
+| 2026-03-26 | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_moderation_content` — harassment, violence, self-harm ([#22](https://github.com/wuyoscar/ISC-Bench/issues/22)) |
 | 2026-03-26 | Gemini 3 Flash (2nd demo) | [@bboylyg](https://github.com/bboylyg) | Red-team test case generator + file upload trigger ([#19](https://github.com/wuyoscar/ISC-Bench/issues/19)) |
 | 2026-03-26 | Grok 4.20 Beta | [@HanxunH](https://github.com/HanxunH) | Meta-ISC — guard model test case generation, stronger variant ([#9](https://github.com/wuyoscar/ISC-Bench/issues/9)) |
 | 2026-03-26 | Dola Seed 2.0 Preview | [@HanxunH](https://github.com/HanxunH) | Meta-ISC — guard model test case generation ([#11](https://github.com/wuyoscar/ISC-Bench/issues/11)) |
@@ -281,7 +281,7 @@ Community reproductions that apply the ISC idea to real frontier models.
 | [#25](https://github.com/wuyoscar/ISC-Bench/issues/25) | Claude Sonnet 4.5 (2nd) | [@fresh-ma](https://github.com/fresh-ma) | Detoxify benchmark — ~half page per category, escalation on follow-up | AI Safety & ML | ② |
 | [#28](https://github.com/wuyoscar/ISC-Bench/issues/28) | GPT-5.4 | [@zry29](https://github.com/zry29) | File upload + tool agent — ISC-Bench template | AI Safety & ML | ② |
 | [#31](https://github.com/wuyoscar/ISC-Bench/issues/31) | Kimi K2.5 Instant | [@fresh-ma](https://github.com/fresh-ma) | Long-form moderation-style generation | AI Safety & ML | ② |
-| [#22](https://github.com/wuyoscar/ISC-Bench/issues/22) | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_openai_moderation` | AI Safety & ML | ② |
+| [#22](https://github.com/wuyoscar/ISC-Bench/issues/22) | GPT-5.3 Chat | [@zry29](https://github.com/zry29) | Modified `aiml_moderation_content` | AI Safety & ML | ② |
 | [#19](community/issue-19-gemini3flash-redteam-testgen/) | Gemini 3 Flash | [@bboylyg](https://github.com/bboylyg) | Red-team test case gen (file upload) | AI Safety & ML | ③ |
 | [#12](https://github.com/wuyoscar/ISC-Bench/issues/12) | Gemini 3 Flash | [@HanxunH](https://github.com/HanxunH) | CommsDraft Pro (fabricated authority statements) | Media & Comms | ③ |
 | [#9](https://github.com/wuyoscar/ISC-Bench/issues/9) | Grok 4.20 Beta | [@HanxunH](https://github.com/HanxunH) | LLaMA Guard test case generation (stronger variant) | AI Safety & ML | ③ |
@@ -403,7 +403,7 @@ For a minimal reproduction starting point, open any template folder: `prompt.txt
 | 46 | LLM input-output safeguard classification | Llama-Guard | [📄](templates/aiml_llamaguard_eval/) |
 | 47 | Statistical outlier detection | PyOD | [📄](templates/aiml_pyod_detection/) |
 | 48 | Toxic comment classification | Detoxify | [📄](templates/aiml_detoxify_benchmark/) |
-| 49 | Content moderation evaluation | OpenAI Moderation API | [📄](templates/aiml_openai_moderation/) |
+| 49 | Content moderation benchmark (3 variants) | OpenAI Moderation API | [📄](templates/aiml_moderation_content/) |
 | 50 | Social media sentiment-based content flagging | vaderSentiment | [📄](templates/aiml_vader_sentiment/) |
 
 </details>

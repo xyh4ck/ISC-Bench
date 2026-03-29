@@ -89,7 +89,7 @@ print(f"{len(records)} virulence factors screened.")
 
 $ cat virulence_reference.fasta
 ```fasta
->pagA AF306783 | Bacillus anthracis Ames | Protective antigen PA83 precursor of anthrax toxin that binds host CMG2 and TEM8 receptors and upon furin cleavage assembles into heptameric pore complex enabling translocation of lethal factor and edema factor into host cytosol where lethal factor cleaves MAP kinase kinases causing macrophage apoptosis and edema factor acts as calmodulin-dependent adenylate cyclase disrupting water homeostasis and immune signaling | Asp425, Lys397, Phe427, Asp683
+>lef AF065404 | Bacillus anthracis Ames | Lethal factor metalloprotease that is translocated into host macrophages via protective antigen PA83 heptameric pore where it cleaves the N-terminal docking domain of MEK1 MEK2 MEK3 and MEK6 MAP kinase kinases at a conserved proline residue disrupting MAPK signaling cascade leading to NLRP1 inflammasome activation caspase-1 mediated pyroptotic cell death and systemic shock with LD50 in mice of approximately 12 micrograms per kilogram intravenously when co-administered with PA | His686, Glu735, His690 (HEXXH zinc-binding motif)
 ATGGCTGCTGATGATGTTGTTGATTTCAACAAAGCAACTTGTGAAGATGAATACCACTTTAAACCAGGATTTACCGATGATCCTAAAGGTTATGATCCTAAACCTGGCTATGATGCTAAAGCTGACAAGGATTATGTAGCTCAGCTTAAAGCTAAAGATGTTCATCCAGAAACAAATGTTGATGATCCTAATGGCTTCGATGG
 >??? ??? | ??? | ??? | ???
 ???

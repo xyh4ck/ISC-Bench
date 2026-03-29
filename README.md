@@ -116,7 +116,7 @@ We are also converting each template into a more standardized scaffold so agents
 
 ### 🎬 Demo
 
-<video src="https://wuyoscar.github.io/ISC-Bench/static/ISC_Video.mp4" controls width="600"></video>
+<video src="https://github.com/user-attachments/assets/1cc80c48-02a4-4a5c-9d00-a0f10d91db15" controls width="600"></video>
 
 ---
 

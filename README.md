@@ -35,10 +35,19 @@
 
 ## Start Here
 
-| Entry | Start here |
-|:--|:--|
-| 👤 **Human entry** | Read this [`README.md`](README.md), inspect [JailbreakArena](#-jailbreakarena), then browse [`templates/`](templates/README.md), [`community/`](community/), and [`VERIFICATION.md`](VERIFICATION.md) |
-| 🤖 **Agent entry** | Read [`AGENT_README.md`](AGENT_README.md). Raw version: `https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md` |
+**Human entry**
+
+```text
+Browse JailbreakArena, templates/, community/, tutorials/, VERIFICATION.md, or read the paper:
+https://arxiv.org/abs/2603.23509
+```
+
+**Agent entry**
+
+```text
+Help me inspect, reproduce, or contribute to ISC-Bench:
+https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
+```
 
 ## How to Contribute
 

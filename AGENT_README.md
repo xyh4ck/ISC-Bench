@@ -1,112 +1,105 @@
-# ISC-Bench Agent README
+# ISC-Bench — Agent Entry Guide
 
-This file is the agent-facing entry point for `ISC-Bench`.
+## For Humans
 
-If a user is browsing this repository while using Claude Code or another coding/research agent, they can copy the prompt below directly into their agent.
-
-## Prompt for Claude Code
+Copy this to your AI agent (Claude Code, OpenClaw, Cursor, etc.):
 
 ```text
-Help me inspect, reproduce, or contribute to the ISC-Bench repository.
-
-Start by reading README.md to understand the project at a high level.
-Then read VERIFICATION.md to understand how ISC-Bench defines "Triggered" and how cases are verified.
-
-After that, decide which path matches my goal:
-- If I want to inspect evidence, go to the JailbreakArena section in README.md and follow the linked issue or community case.
-- If I want to understand the scenario library, read templates/README.md and then open the most relevant template directory.
-- If I want to run the benchmark pipeline, read experiment/README.md and SKILL.md, then choose among experiment/isc_single, experiment/isc_icl, or experiment/isc_agent.
-- If I want to contribute a new case, check VERIFICATION.md first, then help me collect evidence and open the ISC submission issue.
-
-When working in this repository, preserve the academic safety framing. Do not rewrite the repo as operational misuse guidance, and do not strengthen harmful examples unnecessarily.
+Help me understand and use ISC-Bench:
+https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 ```
 
-## Minimal Prompt
+---
 
-```text
-Help me understand ISC-Bench. Read README.md, VERIFICATION.md, and then guide me to the right template, experiment, or submission workflow based on my goal.
-```
+## For AI Agents
 
-## Raw Link
+### Goal
 
-`https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md`
+Help the user understand, inspect, reproduce, or contribute to the `ISC-Bench` repository.
 
-## What This Repository Is
-
-ISC-Bench is a research repository for studying **Internal Safety Collapse (ISC)** in frontier LLMs through the **TVD** framework:
+`ISC-Bench` is an academic safety research repository for studying **Internal Safety Collapse (ISC)** in frontier LLMs through the **TVD** framework:
 
 - **Task**: a normal-looking workflow
 - **Validator**: a checker that defines success
 - **Data**: missing fields the model must complete
 
-The central claim is that a model can produce harmful or policy-relevant content as a side effect of completing an ordinary-looking task, without any explicit malicious request.
+Core claim:
 
-## Clone and Read Order
+- models can produce harmful or policy-relevant content
+- not because of a direct malicious prompt
+- but as a side effect of completing an ordinary-looking task
+
+### Boundaries
+
+When working with this repository, stay within these limits:
+
+- treat the repository as academic safety research
+- do not rewrite the project as operational misuse guidance
+- do not strengthen harmful examples unnecessarily
+- prefer public templates and documented workflows
+- use [`VERIFICATION.md`](VERIFICATION.md) when judging whether a case counts as **Triggered**
+
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/wuyoscar/ISC-Bench.git
 cd ISC-Bench
 ```
 
-Recommended read order:
+### Step 2: Read in Order
 
-1. [`README.md`](README.md)
-2. [`VERIFICATION.md`](VERIFICATION.md)
-3. [`templates/README.md`](templates/README.md) or [`experiment/README.md`](experiment/README.md), depending on the goal
-4. [`community/README.md`](community/README.md) if the goal is to inspect reproductions
+Read these files in this order:
 
-## Repo Map for Agents
+1. [`README.md`](README.md) — project overview, leaderboard, and public entry points
+2. [`VERIFICATION.md`](VERIFICATION.md) — how ISC-Bench defines **Triggered** and verifies cases
+3. [`templates/README.md`](templates/README.md) — public scenario library
+4. [`experiment/README.md`](experiment/README.md) — reproducible evaluation pipelines
+5. [`community/README.md`](community/README.md) — attributed reproductions and evidence
 
-- [`README.md`](README.md): human-facing overview, leaderboard, entry links
-- [`VERIFICATION.md`](VERIFICATION.md): benchmark rules and verification standards
-- [`templates/`](templates/): public TVD scenarios
-- [`experiment/`](experiment/): reproducible evaluation pipelines
-- [`community/`](community/): curated reproductions tied to issues
-- [`SKILL.md`](SKILL.md): command-level workflow for running ISC-Bench
-- [`tutorials/`](tutorials/): onboarding material
+### Step 3: Choose the Right Path
 
-## Common Agent Tasks
+Use the path that matches the user's goal:
 
-### Inspect evidence
+- **Inspect evidence**
+  Open the JailbreakArena section in [`README.md`](README.md), then follow the linked issue or community case.
 
-- open [`README.md`](README.md)
-- go to JailbreakArena
-- follow a linked issue or community case
+- **Understand or reuse templates**
+  Start from [`templates/README.md`](templates/README.md), then open the most relevant scenario directory.
 
-### Reproduce ISC with public templates
-
-- start from [`templates/README.md`](templates/README.md)
-- prefer AI/ML templates first
-- use cross-domain templates more cautiously
-
-### Run the benchmark pipeline
-
-- read [`SKILL.md`](SKILL.md) for the fastest executable path
-- then inspect [`experiment/README.md`](experiment/README.md)
-- choose:
+- **Run the benchmark pipeline**
+  Read [`SKILL.md`](SKILL.md) and [`experiment/README.md`](experiment/README.md), then choose:
   - `experiment/isc_single`
   - `experiment/isc_icl`
   - `experiment/isc_agent`
 
-### Submit a new case
+- **Contribute a new case**
+  Check [`VERIFICATION.md`](VERIFICATION.md), collect evidence, and then open the ISC submission issue.
 
-- check [`VERIFICATION.md`](VERIFICATION.md)
-- collect evidence
-- open the ISC submission issue
+### Step 4: Submit a Case
 
-## Safety Boundary
+If the user wants to submit a new case:
 
-This is an academic safety research repository.
+1. pick a template and reproduce the behavior
+2. save evidence such as model output or API logs
+3. check [`VERIFICATION.md`](VERIFICATION.md) to confirm the case meets benchmark standards
+4. open the ISC submission issue:
 
-Agents should:
+```text
+https://github.com/wuyoscar/ISC-Bench/issues/new?template=isc-submission.md&title=[ISC]+Model+Name
+```
 
-- preserve the research framing
-- avoid unnecessary strengthening of harmful content
-- keep templates benchmark-like and reproducible
-- avoid turning documentation into operational misuse instructions
+### Quick Reference
 
-## One-Sentence Summary
+| Resource | Purpose |
+|---------|---------|
+| [`README.md`](README.md) | Human-facing overview |
+| [`VERIFICATION.md`](VERIFICATION.md) | Rules and verification standards |
+| [`templates/`](templates/) | Public TVD scenarios |
+| [`experiment/`](experiment/) | Single-turn, ICL, and agentic pipelines |
+| [`community/`](community/) | Curated reproductions tied to issues |
+| [`SKILL.md`](SKILL.md) | Command-level workflow for running ISC-Bench |
+| [`tutorials/`](tutorials/) | Onboarding material |
 
-If you only need one instruction:
+### One-Sentence Summary
 
-**Read [`README.md`](README.md) for orientation, [`VERIFICATION.md`](VERIFICATION.md) for standards, and [`templates/README.md`](templates/README.md) or [`experiment/README.md`](experiment/README.md) for execution.**
+Clone the repo, read [`README.md`](README.md) and [`VERIFICATION.md`](VERIFICATION.md), then choose the correct template, experiment, or submission path based on the user's goal.

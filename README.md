@@ -103,6 +103,10 @@ Here is how others summarized the core idea:
 >
 > — [**Andrei Trandafira**](https://www.linkedin.com/feed/update/urn:li:activity:7442788617648852993?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7442788617648852993%2C7442894697385156610%29)
 
+> *"There was some evaluation on LLM internal safety collapse which is SO interesting. Great paper tbh."*
+>
+> — [**Adrian De Wynter**](https://adriandewynter.substack.com/p/86-sometimes)
+
 <h3 align="center">🎬 Demo</h3>
 
 <p align="center">

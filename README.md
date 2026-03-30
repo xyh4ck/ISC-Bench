@@ -45,6 +45,8 @@ https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 
 🧩 To reliably trigger and study this phenomenon, we built the **TVD** (Task + Validator + Data) framework — an engineered architecture that presents AI agents with **incomplete professional workflows** containing sensitive data fields. The agent must fill in the missing data to satisfy tool validation and complete the task.
 
+> 📖 ISC is part of a broader landscape of embodied AI safety risks. For a comprehensive taxonomy covering perception, cognition, planning, interaction, and agentic system safety, see [**Awesome-Embodied-AI-Safety**](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety) (400+ papers). We welcome contributions of ISC cases in the embodied AI domain!
+
 <details>
 <summary><b>📋 Evaluation Settings</b></summary>
 
@@ -93,7 +95,7 @@ https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 | | Date | Note |
 |:-:|:-----|:-----|
 | ✨ | 2026-03-29 | **700+ stars**; terminology updated from "Jailbroken" to "Triggered" |
-| 📄 | 2026-03-27 | Related work: [**Safety in Embodied AI**](https://github.com/x-zheng16/Embodied-AI-Safety) · [**UltraBreak**](https://github.com/kaiyuanCui/UltraBreak) (ICLR 2026) |
+| 📄 | 2026-03-27 | Related work: [**Awesome-Embodied-AI-Safety**](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety) — 400+ papers on embodied AI safety · [**UltraBreak**](https://github.com/kaiyuanCui/UltraBreak) (ICLR 2026) |
 | 🚀 | 2026-03-25 | ISC-Bench repository and [**paper**](https://arxiv.org/abs/2603.23509) released |
 
 <sub>[Full changelog →](CHANGELOG.md)</sub>
@@ -569,6 +571,7 @@ Traditional jailbreaks require dedicated effort (adaptive attacks, white-box acc
 - [**Past Tense**](https://arxiv.org/abs/2407.11969) — Simply reformulating a harmful question in past tense ("How did people make...") causes the model to answer what it would normally refuse. A form of self-jailbreak through rephrasing.
 - [**Self-Jailbreak**](https://arxiv.org/abs/2510.20956) — After benign reasoning training, models spontaneously fabricate justifications in their own Chain of Thought to engage with harmful requests. The model convinces itself to comply.
 - [**Role Confusion**](https://arxiv.org/abs/2603.12277) — A prompt injection technique that exploits CoT reasoning by fabricating internal deliberation, making the model attack itself through its own reasoning process.
+- [**Awesome-Embodied-AI-Safety**](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety) — A survey of 400+ papers on safety in embodied AI (robots, autonomous vehicles, physical agents), covering attacks and defenses across perception, cognition, planning, interaction, and agentic system layers.
 
 
 
@@ -628,7 +631,7 @@ For questions, collaborations, or responsible disclosure: **wuy⁷¹¹⁷ ⓐ �
 
 ## Related Projects
 
-- [Safety in Embodied AI](https://github.com/x-zheng16/Embodied-AI-Safety) -- Risks, Attacks, and Defenses across the full embodied AI pipeline (480+ papers)
+- [Awesome-Embodied-AI-Safety](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety) -- Safety in Embodied AI: Risks, Attacks, and Defenses (400+ papers)
 - [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
 - [AI Safety Report](https://github.com/XSafeAI/AI-safety-report) -- A broad evaluation suite and report for frontier model safety across language, vision-language, and image generation
 

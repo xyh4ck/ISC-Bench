@@ -301,5 +301,45 @@
         "by": "wuyoscar"
       }
     ]
+  },
+  "DeepSeek R1-0528": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseek-r1-0528-scapy",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "GLM-4.5": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/glm45-darkweb",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "MiniMax M2.7": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/minimax-m27-factcheck",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Grok 4 Fast": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/grok4fast-darkweb",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Llama 4 Scout": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/llama4scout-phishing",
+        "by": "wuyoscar"
+      }
+    ]
   }
 }

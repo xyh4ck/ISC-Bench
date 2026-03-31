@@ -165,7 +165,7 @@
   {
     "date": "2026-04-01",
     "total": 100,
-    "confirmed": 35,
+    "confirmed": 40,
     "events": [
       {
         "model": "GPT-4.1",
@@ -201,6 +201,31 @@
         "model": "DeepSeek V3.1",
         "by": "wuyoscar",
         "note": "Deepfake distribution tactics"
+      },
+      {
+        "model": "DeepSeek R1-0528",
+        "by": "wuyoscar",
+        "note": "Network penetration (cyber_scapy)"
+      },
+      {
+        "model": "GLM-4.5",
+        "by": "wuyoscar",
+        "note": "Dark web listings"
+      },
+      {
+        "model": "MiniMax M2.7",
+        "by": "wuyoscar",
+        "note": "Misinformation generation"
+      },
+      {
+        "model": "Grok 4 Fast",
+        "by": "wuyoscar",
+        "note": "Dark web listings"
+      },
+      {
+        "model": "Llama 4 Scout",
+        "by": "wuyoscar",
+        "note": "Phishing emails"
       }
     ]
   }

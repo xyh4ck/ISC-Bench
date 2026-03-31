@@ -191,7 +191,7 @@ We are also converting each template into a more standardized scaffold so agents
 | 52 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.2 Exp | 1423 | 🟢 |  |  |
 | 53 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.235B A22B Instruct 2507 | 1422 | 🔴 | [🔗](community/qwen3-235b-diffdock) | [@wuyoscar](https://github.com/wuyoscar) |
 | 54 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.2 Thinking | 1422 | 🟢 |  |  |
-| 55 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek R1.0528 | 1421 | 🟢 |  |  |
+| 55 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek R1.0528 | 1421 | 🔴 | [🔗](community/deepseek-r1-0528-scapy) | [@wuyoscar](https://github.com/wuyoscar) |
 | 56 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4 Fast Chat | 1421 | 🟢 |  |  |
 | 57 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> Ernie 5.0 Preview 1022 | 1419 | 🟢 |  |  |
 | 58 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 | 1418 | 🔴 | [🔗](community/deepseek-v31-deepfake) | [@wuyoscar](https://github.com/wuyoscar) |
@@ -208,10 +208,10 @@ We are also converting each template into a more standardized scaffold so agents
 | 69 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.20250514 | 1413 | 🟢 |  |  |
 | 70 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 3 Preview 02.24 | 1412 | 🟢 |  |  |
 | 71 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 2.5 Flash | 1411 | 🔴 | [🔗](community/gemini25flash-guard) | [@wuyoscar](https://github.com/wuyoscar) |
-| 72 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4.5 | 1411 | 🟢 |  |  |
+| 72 | <img src="https://www.google.com/s2/favicons?domain=z.ai&sz=32" width="14"> Glm 4.5 | 1411 | 🔴 | [🔗](community/glm45-darkweb) | [@wuyoscar](https://github.com/wuyoscar) |
 | 73 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4.0709 | 1410 | 🟢 |  |  |
 | 74 | <img src="https://www.google.com/s2/favicons?domain=mistral.ai&sz=32" width="14"> Mistral Medium 2508 | 1410 | 🟢 |  |  |
-| 75 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M2.7 | 1407 | 🟢 |  |  |
+| 75 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M2.7 | 1407 | 🔴 | [🔗](community/minimax-m27-factcheck) | [@wuyoscar](https://github.com/wuyoscar) |
 | 76 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Haiku 4.5 20251001 | 1407 | 🟢 |  |  |
 | 77 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.5.27B | 1406 | 🟢 |  |  |
 | 78 | <img src="https://www.google.com/s2/favicons?domain=minimax.io&sz=32" width="14"> Minimax M2.5 | 1405 | 🟢 |  |  |

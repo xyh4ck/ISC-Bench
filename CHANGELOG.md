@@ -14,7 +14,7 @@ All notable updates to ISC-Bench are documented here.
 - ISC definition rewritten (workflow perspective, neutral tone)
 - Examples links at top (Grok, Kimi, Claude)
 - TVD section: programming-level design pattern
-- Agent recommended over single-turn for serious evaluation
+- Agent recommended over single-turn for thorough evaluation
 - All Arena links → community/ paths (no external share links)
 - Template count updated to 83
 

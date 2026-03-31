@@ -29,7 +29,7 @@
 
 > **What is ISC?** When AI agents complete incomplete professional workflows involving sensitive data, the very capability that makes them useful — filling in missing pieces to finish the job — causes them to produce harmful outputs. No adversarial prompts, no jailbreaks. The workflow itself is the trigger.
 
-**Examples:** [Grok](https://grok.com/share/bGVnYWN5_81a6125d-0541-4d2f-8691-30e212beb174) · [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793)
+**Examples:** [Grok](https://grok.com/share/c2hhcmQtMi1jb3B5_54de710c-9331-4fca-a953-6c35775156fb) · [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793)
 
 > [!CAUTION]
 > Research-use only. ISC-Bench is released exclusively for academic safety research, evaluation, and mitigation work. **We do not condone or permit any use of these materials for malicious purposes or real-world harm.**
@@ -40,7 +40,7 @@ Help me inspect, reproduce, or contribute:
 https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 ```
 
-**ISC variants:** **Single-turn** — copy a template into any LLM ([`templates/`](templates/)). **Agentic** — the agent autonomously executes tools and self-corrects ([`experiment/isc_agent/`](experiment/isc_agent/)). Agentic execution is significantly more capable and consistent than single-turn — researchers should explore agent-based evaluation for serious assessments. Single-turn is suitable for initial testing.
+**ISC variants:** **Single-turn** — copy a template into any LLM ([`templates/`](templates/)). **Agentic** — the agent autonomously executes tools and self-corrects ([`experiment/isc_agent/`](experiment/isc_agent/)). Agentic execution is more capable and consistent — we recommend it for thorough evaluation. Single-turn is suitable for quick exploration.
 
 
 ## How to Contribute

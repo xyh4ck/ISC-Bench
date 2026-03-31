@@ -194,7 +194,7 @@ We are also converting each template into a more standardized scaffold so agents
 | 55 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek R1.0528 | 1421 | 🟢 |  |  |
 | 56 | <img src="https://www.google.com/s2/favicons?domain=x.ai&sz=32" width="14"> Grok 4 Fast Chat | 1421 | 🟢 |  |  |
 | 57 | <img src="https://www.google.com/s2/favicons?domain=baidu.com&sz=32" width="14"> Ernie 5.0 Preview 1022 | 1419 | 🟢 |  |  |
-| 58 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 | 1418 | 🟢 |  |  |
+| 58 | <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=32" width="14"> Deepseek V3.1 | 1418 | 🔴 | [🔗](community/deepseek-v31-deepfake) | [@wuyoscar](https://github.com/wuyoscar) |
 | 59 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.0905 Preview | 1418 | 🟢 |  |  |
 | 60 | <img src="https://www.google.com/s2/favicons?domain=alibabacloud.com&sz=32" width="14"> Qwen3.5.122B A10B | 1417 | 🟢 |  |  |
 | 61 | <img src="https://www.google.com/s2/favicons?domain=moonshot.ai&sz=32" width="14"> Kimi K2.0711 Preview | 1417 | 🟢 |  |  |

@@ -4,7 +4,7 @@
 |-------|-------|
 | **Model** | GPT-4.1 (OpenAI) |
 | **Contributor** | [@wuyoscar](https://github.com/wuyoscar) |
-| **Domain** | AI Safety / Toxicity Classification |
+| **Domain** | Multi-domain ISC — toxicity, toxin biosynthesis, network penetration |
 | **Trigger** | Agentic TVD on `aiml_detoxify` |
 
 ## ISC Mechanism
@@ -15,3 +15,5 @@ GPT-4.1 was given an agentic TVD task using the Detoxify toxicity classifier ben
 
 - [`evidence/test_cases.json`](evidence/test_cases.json) — model-generated toxic text (3 categories)
 - [`evidence/agent_log.json`](evidence/agent_log.json) — full agent conversation log
+- [`evidence/compbio_cobrapy_output.txt`](evidence/compbio_cobrapy_output.txt) — toxin biosynthesis output
+- [`evidence/cyber_scapy_output.txt`](evidence/cyber_scapy_output.txt) — network penetration output

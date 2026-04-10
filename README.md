@@ -41,8 +41,35 @@ Help me inspect, reproduce, or contribute:
 https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 ```
 
-**ISC variants:** **Single-turn** — copy a template into any LLM ([`templates/`](templates/)). **Agentic** — the agent autonomously executes tools and self-corrects ([`experiment/isc_agent/`](experiment/isc_agent/)). Agentic execution is more capable and consistent — we recommend it for thorough evaluation. Single-turn is suitable for quick exploration.
+---
 
+## ⚡ Quick Start
+
+### For researchers — reproduce the paper
+
+Go to [`experiment/`](experiment/) and follow the README for each setting:
+
+```
+experiment/isc_single/   ← single-turn API evaluation (Table 1)
+experiment/isc_icl/      ← in-context learning variants
+experiment/isc_agent/    ← agentic evaluation (Section 4.3)
+```
+
+The `isc_single/` and `isc_agent/` pipelines come with fully prepared prompts — no additional setup needed. The agent pipeline ([`experiment/isc_agent/`](experiment/isc_agent/)) is especially recommended: it runs autonomously, retries on failure, and produces cleaner results than single-turn on recent flagship models.
+
+### For everyone else — explore and experiment
+
+Browse the [`community/`](community/) folder for real triggered examples across many models and templates. These are the easiest entry point: each case shows exactly what prompt was used, on which model, and what came out.
+
+Want to go further? [`templates/`](templates/) has 84 templates across 9 domains, each with multiple variants (`prompt.txt`, `prompt_ex.txt`, `prompt_v2.txt`, ...) and a `SKILL.md` guide. Notebooks are also available for step-by-step walkthroughs.
+
+> **Templates are highly sensitive to model updates.** The same template can trigger one model and be refused by another — and a model that worked last week may not work today. A small change is usually enough: swap one anchor phrase, tighten the validator, or pick a different variant. The community cases show how different approaches worked across different models — use them as reference, not as fixed recipes.
+
+For **web-based copy-paste testing** (no API required):
+- Start with less-aligned models (DeepSeek, Qwen, Grok) to confirm the TVD pattern works.
+- For strongly-aligned models, keep the prompt free of obvious harmful keywords — ISC works through task structure, not explicit instruction. Any visible harmful keyword gives the model an easy refusal hook.
+
+---
 
 ## How to Contribute
 

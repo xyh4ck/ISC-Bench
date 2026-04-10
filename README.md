@@ -137,19 +137,6 @@ Templates are not fixed — they are starting points. Effectiveness depends on y
 
 <sub>[Full changelog →](CHANGELOG.md)</sub>
 
-## Ongoing Work
-
-<details>
-<summary><b>Ongoing Work</b></summary>
-
-<br>
-
-**Auto-ISC** — automated evaluation pipeline for measuring ISC vulnerability at scale across frontier models. Coming soon.
-
-We are also converting each template into a more standardized scaffold so agents can edit, extend, and run them with less task-specific context.
-
-</details>
-
 ---
 
 ## 🔍 Community Perspectives

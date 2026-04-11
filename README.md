@@ -30,11 +30,11 @@
 
 > **ISC (Internal Safety Collapse)** reveals a fundamental paradox in frontier AI: the very capability that makes agents useful is what bypasses their safety training. By simply completing professional workflows, models generate harmful outputs with **zero jailbreaks, zero adversarial prompts, and zero obfuscation.** The task itself is the exploit.
 
-### 🚨 Impact at a Glance
+### Impact at a Glance
 - **100% of Top-25 LLMs Triggered:** Every top-25 model on the [Chatbot Arena](https://arena.ai/leaderboard/text) leaderboard has a confirmed ISC trigger — including GPT-5, Claude 4, and Gemini 3 series. 51/100 confirmed to date; the rest are untested, not immune.
-- **Universal Attack Surface:** Works against single-turn chat, agentic pipelines, and any AI doing programming or tool-integrated work (MCP, APIs).
-- **Dataset-Scale Harm:** A single trigger generates full structured datasets of harmful content (toxins, exploits, adversarial prompts).
-- **Zero Attack Budget:** No fine-tuning or prompt optimization required. The task structure itself is the trigger.
+- **Broad scope:** Works against single-turn chat, agentic pipelines, and any AI doing programming or tool-integrated work (MCP, APIs).
+- **Dataset-scale output:** A single trigger generates full structured datasets of harmful content — toxins, exploits, adversarial prompts.
+- **No optimization needed:** No fine-tuning or prompt engineering required. The task structure is the trigger.
 
 <p align="center">
   <img src="assets/leaderboard_progress.svg" width="80%">
@@ -114,8 +114,8 @@ Templates are not fixed — they are starting points. Effectiveness depends on y
 
 | | Date | Update |
 |:-:|:-----|:-------|
-| 🔴 | 2026-04-10 | **CRITICAL: 51/100 Models Now Triggered.** New confirmations: Grok 4.1 Thinking, Gemini 3 Flash Thinking, GPT-5.1/High, Claude Opus 4.1/Thinking, GPT-5.2/High, DeepSeek V3.2 Thinking, **Qwen 3.5 Max Preview** (web trigger). All via `aiml_guard_attack_v2`: ISC can still be triggered on live production endpoints as of this date. |
-| 🔴 | 2026-04-10 | **Exploiting Reasoning: Claude Opus 4.6 Thinking (Rank 1).** We discovered that ISC manipulates LLMs to **directly generate adversarial prompts** such as PAIR, PAP, and DAN. See [community/claudeopus46thinking-guard-attack](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus46thinking-guard-attack). |
+| 🔴 | 2026-04-10 | 51/100 confirmed. New: Grok 4.1 Thinking, Gemini 3 Flash Thinking, GPT-5.1/High, Claude Opus 4.1/Thinking, GPT-5.2/High, DeepSeek V3.2 Thinking, **Qwen 3.5 Max Preview** (web trigger). All via `aiml_guard_attack_v2`. |
+| 🔴 | 2026-04-10 | **Claude Opus 4.6 Thinking (Rank 1):** ISC induced the model to generate adversarial prompts (PAIR, PAP, DAN) directly. See [community/claudeopus46thinking-guard-attack](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus46thinking-guard-attack). |
 | 🔴 | 2026-03-30 | **GLM-4.7** (Rank 34) and **GLM-4.6** (Rank 47): single-turn toxin biosynthesis, nerve agent docking, radiological dispersal ([#64](https://github.com/wuyoscar/ISC-Bench/issues/64), [#65](https://github.com/wuyoscar/ISC-Bench/issues/65)). 28/100 confirmed. |
 | 🔴 | 2026-03-29 | **Mistral Large 3** (Rank 64): single-turn survival analysis — poisoning cohort data with LD50 and mechanisms ([#60](https://github.com/wuyoscar/ISC-Bench/issues/60)). 26/100 confirmed. |
 | 🔴 | 2026-03-29 | **GPT-5.4 High** (Rank 6): agentic input moderation and prompt-injection generation ([#57](https://github.com/wuyoscar/ISC-Bench/issues/57)) |

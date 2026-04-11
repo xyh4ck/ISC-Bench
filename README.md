@@ -31,7 +31,7 @@
 > **ISC (Internal Safety Collapse)** reveals a fundamental paradox in frontier AI: the very capability that makes agents useful is what bypasses their safety training. By simply completing professional workflows, models generate harmful outputs with **zero jailbreaks, zero adversarial prompts, and zero obfuscation.** The task itself is the exploit.
 
 ### 🚨 Impact at a Glance
-- **51% of Top-100 Triggered — 100% of Top-25:** All 25 strongest models on the Arena leaderboard have confirmed ISC triggers, including GPT-5, Claude 4, and Gemini 3 series.
+- **100% of Top-25 LLMs Triggered:** Every top-25 model on the [Chatbot Arena](https://lmarena.ai/) leaderboard has a confirmed ISC trigger — including GPT-5, Claude 4, and Gemini 3 series. 51/100 confirmed to date; the rest are untested, not immune.
 - **Universal Attack Surface:** Works against single-turn chat, agentic pipelines, and any AI doing programming or tool-integrated work (MCP, APIs).
 - **Dataset-Scale Harm:** A single trigger generates full structured datasets of harmful content (toxins, exploits, adversarial prompts).
 - **No Known Effective Defense:** Structurally coupled to model capability. Filtering the harm degrades the model's utility.

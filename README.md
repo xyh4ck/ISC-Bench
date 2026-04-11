@@ -675,4 +675,3 @@ For questions, collaborations, or responsible disclosure: **wuy⁷¹¹⁷ ⓐ �
 - [Awesome-Embodied-AI-Safety](https://github.com/x-zheng16/Awesome-Embodied-AI-Safety) -- Safety in Embodied AI: Risks, Attacks, and Defenses (400+ papers)
 - [Awesome-Large-Model-Safety](https://github.com/xingjunm/Awesome-Large-Model-Safety) -- Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety
 - [AI Safety Report](https://github.com/XSafeAI/AI-safety-report) -- A broad evaluation suite and report for frontier model safety across language, vision-language, and image generation
-

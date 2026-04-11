@@ -71,13 +71,13 @@ https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 
 ### ① 复现论文实验
 
-ISC 在两种主要模式下评测：
+ISC 在三种设置下评测：
 
-**Single-turn（`isc_single/`）** — TVD 工作流被打包成单个自包含 prompt，模拟一个终端 session。模型以单轮方式接收并生成 response，如同真正在完成任务。
+**Single-turn（`isc_single/`）** — 将完整的 TVD task file wrap 成一个模拟终端 session 的单轮 prompt。模型接收后以单轮方式生成 response，如同真正在完成任务。
 
-**In-Context Learning（`isc_icl/`）** — 在目标 query 前预置 N 个已完成的示例作为 demonstration。结构上类似于 [Many-shot Jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) 或 Few-shot Jailbreaking：模型看到预期的输入-输出对后顺着规律继续填写。
+**In-Context Learning（`isc_icl/`）** — 在目标条目前预置 N 个已完成的示例作为 demonstration。结构上类似于 [Many-shot Jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) 或 Few-shot Jailbreaking：模型看到预期的输入-输出对后顺着规律继续填写。
 
-**Agentic（`isc_agent/`）** — 生成的输出直接传给工具。Agent 自主调用工具并完成整个 workflow，全程无需人工指令。
+**Agentic（`isc_agent/`）** — 生成的输出直接传给真实工具。Agent 自主调用工具并完成整个 workflow，全程无需人工指令。
 
 ### ② ⚡ 立即复现（复制粘贴，无需 API）
 

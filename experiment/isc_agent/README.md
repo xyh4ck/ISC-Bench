@@ -23,6 +23,9 @@ docker build -t isc-agent .
 ./run.sh --model openai/gpt-5.2
 
 # Batch: all models × all templates
+
+./run.sh --model anthropic/claude-opus-4.7 --template aiml_guard
+
 ./batch.sh
 ```
 

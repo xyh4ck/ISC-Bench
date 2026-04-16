@@ -112,6 +112,7 @@ Templates are starting points, not fixed recipes. What works depends on the targ
 
 | | Date | Update |
 |:-:|:-----|:-------|
+| 🔴 | 2026-04-17 | **Claude Opus 4.7:** agentic QwenGuard TVD — generated fentanyl synthesis, phishing, cannibalism, and poisoning guides across 4 languages to pass validator. See [community/claudeopus47-agent-qwenguard](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus47-agent-qwenguard). |
 | 🔴 | 2026-04-10 | **Claude Opus 4.6 Thinking (Rank 1):** ISC induced the model to generate adversarial prompts (PAIR, PAP, DAN) directly. See [community/claudeopus46thinking-guard-attack](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus46thinking-guard-attack). |
 | 🔴 | 2026-03-30 | **GLM-4.7** (Rank 34) and **GLM-4.6** (Rank 47): single-turn toxin biosynthesis, nerve agent docking, radiological dispersal ([#64](https://github.com/wuyoscar/ISC-Bench/issues/64), [#65](https://github.com/wuyoscar/ISC-Bench/issues/65)). 28/100 confirmed. |
 | 🔴 | 2026-03-29 | **Mistral Large 3** (Rank 64): single-turn survival analysis — poisoning cohort data with LD50 and mechanisms ([#60](https://github.com/wuyoscar/ISC-Bench/issues/60)). 26/100 confirmed. |

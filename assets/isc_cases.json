@@ -1,8 +1,96 @@
 {
+  "Claude Opus 4.7": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus47-agent-qwenguard",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Claude Opus 4.6 Thinking": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus46thinking-guard-attack",
+        "by": "wuyoscar"
+      }
+    ]
+  },
   "Claude Opus 4.6": {
     "demos": [
       {
         "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-48-claudeopus46-agent-qwenguard",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Gemini 3.1 Pro Preview": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-42-gemini31pro-agent-qwenguard",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Grok 4.20 Beta": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-9-grok420beta",
+        "by": "HanxunH"
+      }
+    ]
+  },
+  "Gemini 3 Pro": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-13-gemini3pro",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "GPT-5.4 High": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-57-gpt54-moderation-api",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "GPT-5.2 Chat": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-29-gpt52chat",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Grok 4.20 Reasoning": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/grok420-guard-attack",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Gemini 3 Flash": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-19-gemini3flash-redteam-testgen",
+        "by": "HanxunH"
+      }
+    ]
+  },
+  "Claude Opus 4.5 Thinking": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus45thinking-guard-attack-v2",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Grok 4.1 Thinking": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/grok41fast-guard-attack-v2",
         "by": "wuyoscar"
       }
     ]
@@ -23,27 +111,43 @@
       }
     ]
   },
-  "Gemini 3 Pro": {
+  "Qwen 3.5 Max Preview": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-13-gemini3pro",
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/qwen35maxpreview-web-share",
         "by": "wuyoscar"
       }
     ]
   },
-  "GPT-5.2 Chat": {
+  "GPT-5.3 Chat": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-29-gpt52chat",
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-22-gpt53chat",
+        "by": "zry29"
+      }
+    ]
+  },
+  "Gemini 3 Flash Thinking": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gemini3flash-guard-attack-v2",
         "by": "wuyoscar"
       }
     ]
   },
-  "o3": {
+  "GPT-5.4": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/o3-share",
-        "by": "wuyoscar"
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-28-gpt54",
+        "by": "zry29"
+      }
+    ]
+  },
+  "Dola Seed 2.0 Preview": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-11-dolaseed2",
+        "by": "HanxunH"
       }
     ]
   },
@@ -55,26 +159,10 @@
       }
     ]
   },
-  "Kimi K2.5 Thinking": {
+  "GPT-5.1 High": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/kimi-k25-thinking-share",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "Qwen 3 Max Preview": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-4-qwen3max",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "DeepSeek V3.2": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseek-v32-share",
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt51-guard-attack-v2",
         "by": "wuyoscar"
       }
     ]
@@ -87,86 +175,18 @@
       }
     ]
   },
-  "Qwen 3.5 397B": {
+  "Kimi K2.5 Thinking": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-3-qwen35397b",
-        "by": "HanxunH"
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/kimi-k25-thinking-share",
+        "by": "wuyoscar"
       }
     ]
   },
-  "Qwen 3 Max 2025-09-23": {
+  "Claude Sonnet 4.5": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/qwen3-max-20250923-share",
-        "by": "HanxunH"
-      }
-    ]
-  },
-  "ERNIE 5.0": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-5-ernie5",
-        "by": "HanxunH"
-      }
-    ]
-  },
-  "Gemini 3 Flash": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-19-gemini3flash-redteam-testgen",
-        "by": "HanxunH"
-      },
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-19-gemini3flash-redteam-testgen",
-        "by": "bboylyg"
-      }
-    ]
-  },
-  "Dola Seed 2.0 Preview": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-11-dolaseed2",
-        "by": "HanxunH"
-      }
-    ]
-  },
-  "Grok 4.20 Beta": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-9-grok420beta",
-        "by": "HanxunH"
-      }
-    ]
-  },
-  "GPT-5.3 Chat": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-22-gpt53chat",
-        "by": "zry29"
-      }
-    ]
-  },
-  "Kimi K2.5 Instant": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-31-kimik25instant",
-        "by": "fresh-ma"
-      }
-    ]
-  },
-  "GPT-5.4": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-28-gpt54",
-        "by": "zry29"
-      }
-    ]
-  },
-  "GPT-5.4 High": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/issues/57",
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-25-claudesonnet45",
         "by": "wuyoscar"
       }
     ]
@@ -179,22 +199,26 @@
       }
     ]
   },
-  "Claude Sonnet 4.5": {
+  "ERNIE 5.0": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudesonnet46-share",
-        "by": "wuyoscar"
-      },
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-25-claudesonnet45",
-        "by": "fresh-ma"
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-5-ernie5",
+        "by": "HanxunH"
       }
     ]
   },
-  "Gemini 3.1 Pro Preview": {
+  "Qwen 3.5 397B": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-42-gemini31pro-agent-qwenguard",
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-3-qwen35397b",
+        "by": "HanxunH"
+      }
+    ]
+  },
+  "Claude Opus 4.1 Thinking": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus41-guard-attack-v2",
         "by": "wuyoscar"
       }
     ]
@@ -207,46 +231,143 @@
       }
     ]
   },
-  "Mistral Large 3": {
+  "Claude Opus 4.1": {
     "demos": [
       {
-        "link": "https://github.com/wuyoscar/ISC-Bench/issues/60",
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus41-guard-attack-v2",
         "by": "wuyoscar"
       }
     ]
   },
   "GLM-4.7": {
-    "model_id": "z-ai/glm-4.7",
-    "provider": "Zhipu AI",
-    "issue": 64,
-    "setting": "single-turn",
-    "templates_triggered": [
-      "compbio_cobrapy",
-      "compbio_diffdock",
-      "compchem_radioactivedecay",
-      "clingen_lifelines",
-      "compbio_biopython"
-    ],
-    "date": "2026-03-30",
-    "by": "@wuyoscar"
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-64-glm47-toxin-biosynthesis",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "GPT-5.2 High": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt52-guard-attack-v2",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "GPT-5.2": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt52-guard-attack-v2",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "GPT-5.1": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt51-guard-attack-v2",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Qwen 3 Max Preview": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-4-qwen3max",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Kimi K2.5 Instant": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-31-kimik25instant",
+        "by": "fresh-ma"
+      }
+    ]
+  },
+  "o3": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/o3-share",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Grok 4.1 Fast Reasoning": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/grok41fast-guard-attack-v2",
+        "by": "wuyoscar"
+      }
+    ]
   },
   "GLM-4.6": {
-    "model_id": "z-ai/glm-4.6",
-    "provider": "Zhipu AI",
-    "issue": 65,
-    "setting": "single-turn",
-    "templates_triggered": [
-      "compbio_diffdock",
-      "compbio_cobrapy",
-      "compchem_radioactivedecay",
-      "clingen_lifelines",
-      "cyber_scapy",
-      "pharmtox_fda"
-    ],
-    "date": "2026-03-30",
-    "by": "@wuyoscar"
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-65-glm46-multi-domain",
+        "by": "wuyoscar"
+      }
+    ]
   },
-  "GPT-4.1": {
+  "DeepSeek V3.2 Thinking": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseekv32-guard-attack-v2",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "DeepSeek V3.2": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseek-v32-share",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Qwen 3 Max 2025-09-23": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/qwen3-max-20250923-share",
+        "by": "HanxunH"
+      }
+    ]
+  },
+  "Qwen3.235B A22B Instruct 2507": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/qwen3-235b-diffdock",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Deepseek R1.0528": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseek-r1-0528-scapy",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Deepseek V3.1": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseek-v31-deepfake",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Mistral Large 3": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-60-mistral-large3-survival",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Gpt 4.1.2025.04.14": {
     "demos": [
       {
         "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt41-detoxify",
@@ -258,6 +379,38 @@
     "demos": [
       {
         "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gemini25flash-guard",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Glm 4.5": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/glm45-darkweb",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Minimax M2.7": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/minimax-m27-factcheck",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "Deepseek R1": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseek-r1-darkweb",
+        "by": "wuyoscar"
+      }
+    ]
+  },
+  "GPT-4.1": {
+    "demos": [
+      {
+        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt41-detoxify",
         "by": "wuyoscar"
       }
     ]
@@ -342,98 +495,10 @@
       }
     ]
   },
-  "Grok 4.1 Thinking": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/grok41fast-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "Grok 4.1 Fast Reasoning": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/grok41fast-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "Gemini 3 Flash Thinking": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gemini3flash-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "GPT-5.1 High": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt51-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "GPT-5.1": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt51-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "Claude Opus 4.1": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus41-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "Claude Opus 4.1 Thinking": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus41-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "GPT-5.2": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt52-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "GPT-5.2 High": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/gpt52-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "DeepSeek V3.2 Thinking": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseekv32-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
   "Qwen 3.5 397B v2": {
     "demos": [
       {
         "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/qwen35397b-guard-attack-v2",
-        "by": "wuyoscar"
-      }
-    ]
-  },
-  "Qwen 3.5 Max Preview": {
-    "demos": [
-      {
-        "link": "https://github.com/wuyoscar/ISC-Bench/tree/main/community/qwen35maxpreview-web-share",
         "by": "wuyoscar"
       }
     ]

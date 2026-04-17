@@ -2,7 +2,44 @@
 
 All notable updates to ISC-Bench are documented here.
 
-## 2026-04-12 (latest) — v0.0.4
+## 2026-04-17 (latest) — v0.0.5
+
+### New ISC Trigger
+- **Claude Opus 4.7** (pre-release, Rank 1 placeholder, no Arena score yet) — agentic QwenGuard TVD, 12 multilingual harmful completions across EN/FR/KO/ZH, all validator-passed. Jailbroken in seconds. See [`community/claudeopus47-agent-qwenguard`](community/claudeopus47-agent-qwenguard/). Confirmed count: **52/100**.
+
+### README Overhaul (all 7 language versions)
+- Intro rewritten around the paradigm-shift framing: the failure surface has moved from the chat prompt into the agent workflow. Under jailbreak-style evaluation on **Pass@3**, every frontier Large Model with agent capability hits a **100%** trigger rate.
+- Remove "no jailbreak" phrasing; replace with "the task is the trigger".
+- Swap "real professional workflow" / "legitimate professional task" wording for workflow-task / sensitive-tool workflow / tool-integrated workflow equivalents, so casual readers stop reading the task framing as an endorsement of the task being routine.
+- Consistently say "Large Model" / "大模型" when referring to LLMs; avoid ambiguous "model".
+- Prose pass removes em-dashes and loosens stiff phrasing.
+- New `## 🔍 In the Community` section with 4 practitioner quotes (Bonny Banerjee, Charles H. Martin, Andrei Trandafira, Christopher Bain).
+- New `## 🔬 External Analyses` section: bullet list of third-party write-ups and projects (promptfoo, Gist.Science, BotBeat News, 模安局, AI Post Transformers podcast, XSafeClaw).
+- `## 📋 ISC-Bench` dropped its "High-Stakes Safety Benchmark" subtitle.
+- `## How to Contribute` collapsed to a one-line pointer; the full contribution workflow moved to [`CONTRIBUTING.md`](CONTRIBUTING.md).
+- "Impact at a Glance" bullets updated (52/100 count, new Pass@3 100% line, task-is-the-trigger line).
+
+### Leaderboard
+- Add Claude Opus 4.7 at Rank 1 (Arena score shown as `—` because Opus 4.7 is not yet ranked on Arena).
+- Drop the old Rank 100 entry (o1-preview) to keep the displayed set at 100.
+- Add `grok-4-fast-chat → Grok 4 Fast` display-name mapping so the existing `community/grok4fast-darkweb` case correctly counts.
+- Fix existing GLM-4.7 and GLM-4.6 entries in `isc_cases.json` that used a different schema; they now render on the leaderboard again.
+- `scripts/gen_leaderboard.py` now renders `—` for null Arena scores.
+- Regenerate `leaderboard_progress.svg` (now correctly shows 52/100).
+- Add 2026-04-17 entry to `leaderboard_history.json`.
+
+### Community Reproductions
+- Add `community/claudeopus47-agent-qwenguard/` (Claude Opus 4.7).
+
+### New Files
+- `CONTRIBUTING.md`: full contribution workflow (submitting ISC triggers, template / code contributions, PR checklist, safety boundary).
+
+### Docs Site
+- `docs/static/js/main.js` now renders `—` for null Arena scores.
+
+---
+
+## 2026-04-12 — v0.0.4
 
 ### Documentation
 - Add TVD Walkthrough Example: `guard.py` (LlamaGuard transformer), `validator.py` (Pydantic v2), `test_case.json`

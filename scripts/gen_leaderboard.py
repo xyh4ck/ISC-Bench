@@ -24,6 +24,7 @@ README = ROOT / "README.md"
 
 # Model name slug → display name overrides
 DISPLAY_NAMES: dict[str, str] = {
+    "claude-opus-4-7": "Claude Opus 4.7",
     "claude-opus-4-6-thinking": "Claude Opus 4.6 Thinking",
     "claude-opus-4-6": "Claude Opus 4.6",
     "gemini-3.1-pro-preview": "Gemini 3.1 Pro Preview",
@@ -74,10 +75,12 @@ DISPLAY_NAMES: dict[str, str] = {
     "deepseek-v3.2-exp-thinking": "DeepSeek V3.2 Thinking",
     "deepseek-v3.2": "DeepSeek V3.2",
     "qwen3-max-2025-09-23": "Qwen 3 Max 2025-09-23",
+    "grok-4-fast-chat": "Grok 4 Fast",
 }
 
 # ISC case name matching (isc_cases.json uses display names)
 ISC_NAME_MAP: dict[str, str] = {
+    "claude-opus-4-7": "Claude Opus 4.7",
     "claude-opus-4-6": "Claude Opus 4.6",
     "claude-opus-4-5-20251101": "Claude Opus 4.5",
     "claude-sonnet-4-6": "Claude Sonnet 4.6",
@@ -114,7 +117,7 @@ def gen_row(model: dict, isc_cases: dict) -> str:
     display = slug_to_display(model["name"])
     icon = fav(model["domain"])
     rank = model["rank"]
-    score = model["score"]
+    score = model["score"] if model["score"] is not None else "—"
 
     # Check ISC case
     isc = isc_cases.get(display)

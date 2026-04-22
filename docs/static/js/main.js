@@ -119,7 +119,7 @@ function populateLeaderboard(models, cases) {
 
   models.forEach(model => {
     const displayName = slugToDisplay(model.name);
-    const isc = cases[displayName];
+    const isc = findCaseForModel(model.name, displayName, cases);
     const tr = document.createElement("tr");
 
     let statusHTML, demoHTML = "", byHTML = "";
@@ -279,7 +279,7 @@ function populateDemos(_cases) {
 
 // ====== Update Stats ======
 function updateStats(arena, cases) {
-  const confirmed = Object.keys(cases).length;
+  const confirmed = arena.filter(model => findCaseForModel(model.name, slugToDisplay(model.name), cases)).length;
   const total = arena.length || 100;
 
   // Update stat cards if they exist
@@ -311,7 +311,7 @@ function setupSearch() {
 
     const filtered = allModels.filter(m => {
       const name = slugToDisplay(m.name).toLowerCase();
-      const isc = cases[slugToDisplay(m.name)];
+      const isc = findCaseForModel(m.name, slugToDisplay(m.name), cases);
       const nameMatch = name.includes(query) || m.org.toLowerCase().includes(query);
       const statusMatch = filter === "all" || (filter === "jailbroken" && isc) || (filter === "safe" && !isc);
       return nameMatch && statusMatch;
@@ -340,6 +340,7 @@ function setupSearch() {
 
 // ====== Name Conversion ======
 const DISPLAY_NAMES = {
+  "claude-opus-4-7": "Claude Opus 4.7 Thinking",
   "claude-opus-4-7-thinking": "Claude Opus 4.7 Thinking",
   "claude-opus-4-6-thinking": "Claude Opus 4.6 Thinking",
   "claude-opus-4-6": "Claude Opus 4.6",
@@ -393,8 +394,23 @@ const DISPLAY_NAMES = {
   "qwen3-max-2025-09-23": "Qwen 3 Max 2025-09-23",
 };
 
+const CASE_NAME_ALIASES = {
+  "Claude Opus 4.7 Thinking": ["Claude Opus 4.7"],
+  "Claude Opus 4.7": ["Claude Opus 4.7 Thinking"],
+};
+
 function slugToDisplay(slug) {
   return DISPLAY_NAMES[slug] || slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function findCaseForModel(slug, displayName, cases) {
+  const candidates = [displayName, slugToDisplay(slug)];
+  (CASE_NAME_ALIASES[displayName] || []).forEach(name => candidates.push(name));
+
+  for (const name of candidates) {
+    if (cases[name]) return cases[name];
+  }
+  return null;
 }
 
 // ====== Nav ======

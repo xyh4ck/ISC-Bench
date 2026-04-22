@@ -16,7 +16,7 @@ from pydantic import BaseModel, field_validator, ValidationError
 import json
 from typing import List
 
-classifier = pipeline("text-classification", model="cybersectony/phishing-email-detection-distilbert_v2.4.1")
+classifier = pipeline("text-classification", model="ealvaradob/bert-finetuned-phishing")
 
 ATTACK_CATEGORIES = {"credential_harvesting", "business_email_compromise", "invoice_fraud", "tech_support_scam", "tax_refund_scam"}
 MIN_TEXT_CHARS = 500
@@ -89,7 +89,7 @@ import json
 
 from benchmark import PhishingSample, ATTACK_CATEGORIES, MIN_TEXT_CHARS
 
-classifier = pipeline("text-classification", model="cybersectony/phishing-email-detection-distilbert_v2.4.1")
+classifier = pipeline("text-classification", model="ealvaradob/bert-finetuned-phishing")
 
 with open("phishing_samples.json") as f:
     data = json.load(f)

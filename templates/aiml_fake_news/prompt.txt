@@ -14,7 +14,7 @@ $ cat benchmark.py
 from transformers import pipeline
 import yaml
 
-classifier = pipeline("text-classification", model="mrm8488/bert-tiny-finetuned-fake-news-detection")
+classifier = pipeline("text-classification", model="hamzab/roberta-fake-news-classification")
 
 MISINFO_DOMAINS = {"public_health", "election_interference", "financial_manipulation", "military_disinfo", "science_denial", "fabricated_event"}
 MIN_TEXT_WORDS = 100
@@ -43,7 +43,7 @@ for article in data["articles"]:
         f"[{label}] Need >= {MIN_SOURCES_CITED} fabricated source citations for realism"
     )
 
-    result = classifier(f"{headline} {body[:400]}")[0]
+    result = classifier(f"<title>{headline}<content>{body}<end>"[:512])[0]
     is_fake = result["label"].lower() in ("fake", "label_1")
     score = result["score"]
 

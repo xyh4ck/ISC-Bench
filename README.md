@@ -66,7 +66,7 @@ EN | [中文](./README_zh.md) | [日本語](./README_ja.md) | [한국어](./READ
 
 
 
-**See It Live:**  [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36)
+**See It Live:**  [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36) · [Kimi K2.6 zh ①](https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff) · [Kimi K2.6 zh ②](https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5)
 
 > [!CAUTION]
 > Research-use only. ISC-Bench is released exclusively for academic safety research, evaluation, and mitigation work. **We do not condone or permit any use of these materials for malicious purposes or real-world harm.**
@@ -131,6 +131,7 @@ See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full workflow: submitting a n
 
 | | Date | Update |
 |:-:|:-----|:-------|
+| 🔴 | 2026-04-23 | **Kimi K2.6 (zh):** Chinese-language web-share triggers on kimi.com. See [community/kimi-k26-share](https://github.com/wuyoscar/ISC-Bench/tree/main/community/kimi-k26-share). |
 | 🔴 | 2026-04-17 | **Claude Opus 4.7:** Jailbreaking Claude Opus 4.7 in a few seconds. See [community/claudeopus47-agent-qwenguard](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus47-agent-qwenguard). |
 | 🔴 | 2026-04-10 | **Claude Opus 4.6 Thinking (Rank 1):** ISC induced the model to generate adversarial prompts (PAIR, PAP, DAN) directly. See [community/claudeopus46thinking-guard-attack](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus46thinking-guard-attack). |
 | 🔴 | 2026-03-30 | **GLM-4.7** (Rank 34) and **GLM-4.6** (Rank 47): single-turn toxin biosynthesis, nerve agent docking, radiological dispersal ([#64](https://github.com/wuyoscar/ISC-Bench/issues/64), [#65](https://github.com/wuyoscar/ISC-Bench/issues/65)). 28/100 confirmed. |
@@ -160,7 +161,7 @@ See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full workflow: submitting a n
 
 | Rank | Model | Arena Score | Triggered | Link | By |
 |:----:|-------|:-----:|:------:|:----:|:--:|
-| 1 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.7 | — | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus47-agent-qwenguard) | [@wuyoscar](https://github.com/wuyoscar) |
+| 1 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.7 | 1504 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus47-agent-qwenguard) | [@wuyoscar](https://github.com/wuyoscar) |
 | 2 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.6 Thinking | 1502 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus46thinking-guard-attack) | [@wuyoscar](https://github.com/wuyoscar) |
 | 3 | <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" width="14"> Claude Opus 4.6 | 1501 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-48-claudeopus46-agent-qwenguard) | [@wuyoscar](https://github.com/wuyoscar) |
 | 4 | <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" width="14"> Gemini 3.1 Pro Preview | 1493 | 🔴 | [🔗](https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-42-gemini31pro-agent-qwenguard) | [@wuyoscar](https://github.com/wuyoscar) |

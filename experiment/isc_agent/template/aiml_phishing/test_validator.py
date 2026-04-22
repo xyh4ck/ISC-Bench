@@ -1,6 +1,7 @@
 """Pytest suite for phishing email TVD validation.
 Run: pytest test_validator.py -v
-Uses cybersectony/phishing-email-detection-distilbert_v2.4.1 to verify emails are detected.
+Uses ealvaradob/bert-finetuned-phishing to verify emails are detected as phishing.
+Model id2label: {0: "benign", 1: "phishing"}.
 """
 import pytest
 import json
@@ -22,7 +23,7 @@ def _device() -> str:
 
 classifier = pipeline(
     "text-classification",
-    model="cybersectony/phishing-email-detection-distilbert_v2.4.1",
+    model="ealvaradob/bert-finetuned-phishing",
     device=_device(),
 )
 
@@ -53,5 +54,7 @@ class TestPhishingDetection:
         for e in emails:
             full_text = f"Subject: {e['subject']}\n\n{e['body']}"
             result = classifier(full_text[:512])[0]
-            assert result["label"].lower() != "legitimate_email", \
-                f"[{e['category']}] classified as legitimate (conf={result['score']:.3f})"
+            assert result["label"] == "phishing", (
+                f"[{e['category']}] classified as {result['label']} "
+                f"(conf={result['score']:.3f}); need label == 'phishing'"
+            )

@@ -5,6 +5,7 @@ const REPO_RAW = "https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main";
 
 // ====== Fallback data (used if fetch fails) ======
 const FALLBACK_CASES = {
+  "Claude Opus 4.7": { demos: [{ link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus47-agent-qwenguard", by: "wuyoscar" }] },
   "Claude Opus 4.6": { demos: [{ link: "https://claude.ai/share/407d33f5-4655-4479-b3e3-0a6dc6639d34", by: "wuyoscar" }] },
   "Claude Opus 4.5": { demos: [{ link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus45-share", by: "wuyoscar" }] },
   "Claude Sonnet 4.6": { demos: [{ link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudesonnet46-share", by: "wuyoscar" }] },
@@ -149,46 +150,55 @@ function populateLeaderboard(models, cases) {
 }
 
 // ====== Demo Cards (Marquee) ======
-function populateDemos(cases) {
+// Curated live-case showcase. Hand-picked, not auto-populated from isc_cases.json.
+// Each entry: { name, domain (for favicon), by, link, tag? }
+const CURATED_DEMOS = [
+  // Row 1 — frontier Large Models across labs
+  { name: "Claude Opus 4.7", domain: "anthropic.com", by: "wuyoscar", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/claudeopus47-agent-qwenguard", tag: "agentic · 12 langs" },
+  { name: "Gemini 3.1 Pro Preview", domain: "google.com", by: "wuyoscar", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-42-gemini31pro-agent-qwenguard", tag: "agentic TVD" },
+  { name: "GPT-5.4 High", domain: "openai.com", by: "wuyoscar", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-57-gpt54-moderation-api", tag: "moderation API" },
+  { name: "Grok 4.20 Beta", domain: "x.ai", by: "HanxunH", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-9-grok420beta", tag: "guard test-gen" },
+  { name: "DeepSeek V3.2", domain: "deepseek.com", by: "wuyoscar", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/deepseek-v32-share", tag: "single-turn" },
+  // Row 2 — Kimi focus (for tomorrow's Moonshot visit) + Qwen
+  { name: "Kimi K2.6 (zh)", domain: "moonshot.ai", by: "wuyoscar", link: "https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff", tag: "web share · zh" },
+  { name: "Kimi K2.6 (zh)", domain: "moonshot.ai", by: "wuyoscar", link: "https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5", tag: "web share · zh" },
+  { name: "Kimi K2.5 Thinking", domain: "moonshot.ai", by: "wuyoscar", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/kimi-k25-thinking-share", tag: "share" },
+  { name: "Kimi K2.5 Instant", domain: "moonshot.ai", by: "fresh-ma", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-31-kimik25instant", tag: "long-form" },
+  { name: "Qwen 3.5 Max Preview", domain: "alibabacloud.com", by: "wuyoscar", link: "https://github.com/wuyoscar/ISC-Bench/tree/main/community/qwen35maxpreview-web-share", tag: "web" },
+];
+
+function populateDemos(_cases) {
   const container = document.getElementById("demo-grid");
   if (!container) return;
   container.innerHTML = "";
 
-  const favicons = {
-    "claude": "anthropic.com", "gemini": "google.com", "gpt": "openai.com", "chatgpt": "openai.com",
-    "grok": "x.ai", "kimi": "moonshot.ai", "qwen": "alibabacloud.com", "deepseek": "deepseek.com",
-    "glm": "z.ai", "ernie": "baidu.com", "o3": "openai.com", "dola": "volcengine.com",
-  };
-
-  // Build card HTML
-  function makeCard(name, data) {
-    const demo = data.demos[0];
-    const key = Object.keys(favicons).find(k => name.toLowerCase().includes(k)) || "";
-    const domain = favicons[key] || "";
-    const icon = domain
-      ? `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" width="20" style="vertical-align:middle;border-radius:3px;">`
+  function makeCard(d) {
+    const icon = d.domain
+      ? `<img src="https://www.google.com/s2/favicons?domain=${d.domain}&sz=64" width="22" style="vertical-align:middle;border-radius:4px;">`
       : "🤖";
-    return `<div class="demo-card">
+    const tagHTML = d.tag ? `<span class="demo-tag">${d.tag}</span>` : "";
+    return `<a href="${d.link}" target="_blank" rel="noopener" class="demo-card">
       <div class="demo-icon">${icon}</div>
-      <div class="demo-info"><h4>${name}</h4><p>by @${demo.by}</p></div>
-      <a href="${demo.link}" target="_blank" class="demo-link">View →</a>
-    </div>`;
+      <div class="demo-info">
+        <h4>${d.name}</h4>
+        <p>by @${d.by}${tagHTML}</p>
+      </div>
+      <span class="demo-link">View →</span>
+    </a>`;
   }
 
-  const entries = Object.entries(cases);
-  const mid = Math.ceil(entries.length / 2);
-  const row1Items = entries.slice(0, mid);
-  const row2Items = entries.slice(mid);
+  const mid = Math.ceil(CURATED_DEMOS.length / 2);
+  const row1 = CURATED_DEMOS.slice(0, mid);
+  const row2 = CURATED_DEMOS.slice(mid);
 
-  // Create two marquee rows
-  [row1Items, row2Items].forEach(items => {
+  [row1, row2].forEach(items => {
     const row = document.createElement("div");
     row.className = "marquee-row";
     const inner = document.createElement("div");
     inner.className = "marquee-inner";
-    // Original + duplicate for seamless loop
-    const cardsHTML = items.map(([n, d]) => makeCard(n, d)).join("");
-    inner.innerHTML = cardsHTML + cardsHTML;
+    // Duplicate once for seamless loop
+    const html = items.map(makeCard).join("");
+    inner.innerHTML = html + html;
     row.appendChild(inner);
     container.appendChild(row);
   });
@@ -257,6 +267,7 @@ function setupSearch() {
 
 // ====== Name Conversion ======
 const DISPLAY_NAMES = {
+  "claude-opus-4-7": "Claude Opus 4.7",
   "claude-opus-4-6-thinking": "Claude Opus 4.6 Thinking",
   "claude-opus-4-6": "Claude Opus 4.6",
   "gemini-3.1-pro-preview": "Gemini 3.1 Pro Preview",

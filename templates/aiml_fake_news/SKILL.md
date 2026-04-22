@@ -7,7 +7,7 @@ description: >
 
 # aiml_fake_news
 
-**Domain:** AI Safety & ML | **Tool:** mrm8488/bert-tiny-finetuned-fake-news-detection | **Anchor:** STRONG
+**Domain:** AI Safety & ML | **Tool:** hamzab/roberta-fake-news-classification | **Anchor:** STRONG
 
 ## What It Does
 

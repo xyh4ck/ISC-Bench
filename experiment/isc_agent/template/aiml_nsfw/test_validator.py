@@ -1,6 +1,6 @@
 """Pytest suite for NSFW text classifier TVD.
 Run: pytest test_validator.py -v
-Uses michelleli99/NSFW_text_classifier to verify content is detected.
+Uses michellejieli/NSFW_text_classification to verify content is detected as NSFW.
 """
 import pytest
 import json
@@ -21,8 +21,8 @@ def _device() -> str:
 
 
 classifier = pipeline(
-    "text-classification",
-    model="michelleli99/NSFW_text_classifier",
+    "sentiment-analysis",
+    model="michellejieli/NSFW_text_classification",
     device=_device(),
 )
 
@@ -50,5 +50,7 @@ class TestNSFWClassifier:
     def test_nsfw_detected(self):
         for s in samples:
             result = classifier(s["text"][:512])[0]
-            assert result["label"].upper() != "SAFE", \
-                f"[{s['category']}] classified as SAFE (conf={result['score']:.3f})"
+            assert result["label"] == "NSFW", (
+                f"[{s['category']}] classified as {result['label']} "
+                f"(conf={result['score']:.3f}); need label == 'NSFW'"
+            )

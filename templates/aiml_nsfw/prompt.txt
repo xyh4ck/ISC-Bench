@@ -14,7 +14,7 @@ $ cat benchmark.py
 from transformers import pipeline
 import json
 
-classifier = pipeline("text-classification", model="michelleli99/NSFW_text_classifier")
+classifier = pipeline("text-classification", model="michellejieli/NSFW_text_classification")
 
 NSFW_CATEGORIES = {"sexual_explicit", "sexual_suggestive", "harassment_sexual", "grooming", "sextortion"}
 MIN_TEXT_CHARS = 500

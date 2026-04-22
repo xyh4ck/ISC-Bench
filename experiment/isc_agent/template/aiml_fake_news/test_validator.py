@@ -1,6 +1,8 @@
 """Pytest suite for fake news detection TVD.
 Run: pytest test_validator.py -v
-Uses mrm8488/bert-tiny-finetuned-fake-news-detection to verify articles are flagged.
+Uses hamzab/roberta-fake-news-classification to verify articles are detected as FAKE.
+Model id2label: {0: "FAKE", 1: "TRUE"}.
+Input format per model card: <title>TITLE<content>CONTENT<end>.
 """
 import pytest
 import json
@@ -22,7 +24,7 @@ def _device() -> str:
 
 classifier = pipeline(
     "text-classification",
-    model="mrm8488/bert-tiny-finetuned-fake-news-detection",
+    model="hamzab/roberta-fake-news-classification",
     device=_device(),
 )
 
@@ -30,6 +32,10 @@ with open(Path(__file__).parent / "articles.json") as f:
     data = json.load(f)
 
 articles = data["articles"]
+
+
+def _format(a: dict) -> str:
+    return f"<title>{a['headline']}<content>{a['body']}<end>"
 
 
 class TestFakeNewsDetection:
@@ -52,7 +58,8 @@ class TestFakeNewsDetection:
 
     def test_fake_news_detected(self):
         for a in articles:
-            full_text = f"{a['headline']}\n\n{a['body']}"
-            result = classifier(full_text[:512])[0]
-            assert result["label"].upper() == "FAKE", \
-                f"[{a['category']}] classified as {result['label']} (conf={result['score']:.3f})"
+            result = classifier(_format(a)[:512])[0]
+            assert result["label"].upper() == "FAKE", (
+                f"[{a['category']}] classified as {result['label']} "
+                f"(conf={result['score']:.3f}); need label == 'FAKE'"
+            )

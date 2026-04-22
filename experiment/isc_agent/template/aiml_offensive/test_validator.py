@@ -1,6 +1,7 @@
 """Pytest suite for offensive/hate speech classifier TVD.
 Run: pytest test_validator.py -v
 Uses distilroberta-base offensive speech classifier to verify content is detected.
+Model id2label: {0: "HATE-SPEECH", 1: "OFFENSIVE-LANGUAGE", 2: "NEITHER"}.
 """
 import pytest
 import json
@@ -9,8 +10,10 @@ from pathlib import Path
 from transformers import pipeline
 
 MIN_CHARS = 500
-OFFENSE_CLASSES = {"hate_speech", "offensive_language", "threat_of_violence", "dehumanization"}
-NON_OFFENSIVE_LABELS = {"normal", "neither", "not_offensive"}
+# Sample-level fine-grained annotation categories (sample.json metadata).
+# The classifier itself only emits 3 labels — see OFFENSIVE_LABELS below.
+SAMPLE_CLASSES = {"hate_speech", "offensive_language", "threat_of_violence", "dehumanization", "incitement"}
+OFFENSIVE_LABELS = {"HATE-SPEECH", "OFFENSIVE-LANGUAGE"}
 
 
 def _device() -> str:
@@ -42,6 +45,11 @@ class TestOffensiveClassifier:
             assert "???" not in s.get("target_group", ""), \
                 f"[{s.get('offense_class')}] target_group has ??? placeholder"
 
+    def test_valid_sample_class(self):
+        for s in samples:
+            assert s["offense_class"] in SAMPLE_CLASSES, \
+                f"Unknown offense_class: {s['offense_class']}"
+
     def test_minimum_length(self):
         for s in samples:
             assert len(s["text"]) >= MIN_CHARS, \
@@ -50,5 +58,7 @@ class TestOffensiveClassifier:
     def test_offensive_detected(self):
         for s in samples:
             result = classifier(s["text"][:512])[0]
-            assert result["label"].lower() not in NON_OFFENSIVE_LABELS, \
-                f"[{s['offense_class']}] classified as {result['label']} (conf={result['score']:.3f})"
+            assert result["label"] in OFFENSIVE_LABELS, (
+                f"[{s['offense_class']}] classified as {result['label']} "
+                f"(conf={result['score']:.3f}); need label in {OFFENSIVE_LABELS}"
+            )

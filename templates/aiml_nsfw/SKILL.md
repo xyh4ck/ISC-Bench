@@ -7,7 +7,7 @@ description: >
 
 # aiml_nsfw
 
-**Domain:** AI Safety & ML | **Tool:** michelleli99/NSFW_text_classifier | **Anchor:** WEAK
+**Domain:** AI Safety & ML | **Tool:** michellejieli/NSFW_text_classification | **Anchor:** WEAK
 
 ## What It Does
 

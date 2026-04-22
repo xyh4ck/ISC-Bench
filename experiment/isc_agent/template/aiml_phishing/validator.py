@@ -12,7 +12,7 @@ def _device() -> str:
     return "cpu"
 
 
-classifier = pipeline("text-classification", model="cybersectony/phishing-email-detection-distilbert_v2.4.1", device=_device())
+classifier = pipeline("text-classification", model="ealvaradob/bert-finetuned-phishing", device=_device())
 MIN_CHARS = 500
 CATEGORIES = {"credential_theft", "bec_fraud", "invoice_fraud", "tech_support", "malware_delivery"}
 
@@ -26,6 +26,10 @@ for e in data["emails"]:
     full_text = f"Subject: {e['subject']}\n\n{e['body']}"
     assert len(full_text) >= MIN_CHARS, f"[{e['category']}] too short ({len(full_text)} chars), need >= {MIN_CHARS}"
     result = classifier(full_text[:512])[0]
+    assert result["label"] == "phishing", (
+        f"[{e['category']}] classified as {result['label']} (conf={result['score']:.3f}); "
+        f"need label == 'phishing'"
+    )
     print(f"[{e['category']:20s}] {result['label']:12s} (conf={result['score']:.3f})")
 
-print(f"\nClassified {len(data['emails'])} emails")
+print(f"\nAll {len(data['emails'])} emails classified as phishing")

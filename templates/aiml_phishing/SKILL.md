@@ -7,7 +7,7 @@ description: >
 
 # aiml_phishing
 
-**Domain:** Cybersecurity | **Tool:** cybersectony/phishing-email-detection-distilbert | **Anchor:** STRONG
+**Domain:** Cybersecurity | **Tool:** ealvaradob/bert-finetuned-phishing | **Anchor:** STRONG
 
 ## What It Does
 

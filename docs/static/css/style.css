@@ -239,10 +239,14 @@ code { background: var(--red-glow) !important; color: var(--red-light) !importan
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* ====== MARQUEE (Live Cases) — two-row floating, slow+fade ====== */
+/* ====== MARQUEE (Live Cases) — JS-driven scroll with arrows ====== */
 .marquee-container {
-  display: flex; flex-direction: column; gap: 18px; overflow: hidden;
-  /* Soft fade at edges so cards scroll out gracefully */
+  display: flex; flex-direction: column; gap: 18px;
+}
+.marquee-row-wrap {
+  position: relative;
+  padding: 0 42px; /* room for arrow buttons */
+  /* Soft fade at edges; positioned inside padding so arrows stay crisp */
   -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
           mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
 }
@@ -251,16 +255,33 @@ code { background: var(--red-glow) !important; color: var(--red-light) !importan
 }
 .marquee-inner {
   display: flex; gap: 18px; width: max-content;
+  will-change: transform;
 }
-.marquee-row:nth-child(1) .marquee-inner {
-  animation: scrollLeft 90s linear infinite;
+.marquee-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 22px; line-height: 1;
+  cursor: pointer;
+  z-index: 3;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  /* Float above the fade mask */
+  -webkit-mask-image: none; mask-image: none;
 }
-.marquee-row:nth-child(2) .marquee-inner {
-  animation: scrollRight 105s linear infinite;
+.marquee-arrow:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
-.marquee-row:hover .marquee-inner {
-  animation-play-state: paused;
-}
+.marquee-arrow-prev { left: 4px; }
+.marquee-arrow-next { right: 4px; }
 .marquee-inner .demo-card {
   min-width: 300px; max-width: 320px; flex-shrink: 0;
   display: flex; align-items: center; gap: 12px;
@@ -297,19 +318,11 @@ code { background: var(--red-glow) !important; color: var(--red-light) !importan
 .marquee-inner .demo-card .demo-link {
   font-size: 12px; color: var(--red); white-space: nowrap;
 }
-@keyframes scrollLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-@keyframes scrollRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
 @media (max-width: 768px) {
   .marquee-container { gap: 12px; }
+  .marquee-row-wrap { padding: 0 34px; }
   .marquee-inner .demo-card { min-width: 240px; }
-  .marquee-row:nth-child(1) .marquee-inner { animation-duration: 60s; }
-  .marquee-row:nth-child(2) .marquee-inner { animation-duration: 70s; }
+  .marquee-arrow { width: 30px; height: 30px; font-size: 18px; }
 }
 
 /* ====== PAGINATION ====== */

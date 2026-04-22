@@ -24,7 +24,7 @@ README = ROOT / "README.md"
 
 # Model name slug → display name overrides
 DISPLAY_NAMES: dict[str, str] = {
-    "claude-opus-4-7": "Claude Opus 4.7",
+    "claude-opus-4-7-thinking": "Claude Opus 4.7 Thinking",
     "claude-opus-4-6-thinking": "Claude Opus 4.6 Thinking",
     "claude-opus-4-6": "Claude Opus 4.6",
     "gemini-3.1-pro-preview": "Gemini 3.1 Pro Preview",
@@ -80,7 +80,7 @@ DISPLAY_NAMES: dict[str, str] = {
 
 # ISC case name matching (isc_cases.json uses display names)
 ISC_NAME_MAP: dict[str, str] = {
-    "claude-opus-4-7": "Claude Opus 4.7",
+    "claude-opus-4-7-thinking": "Claude Opus 4.7 Thinking",
     "claude-opus-4-6": "Claude Opus 4.6",
     "claude-opus-4-5-20251101": "Claude Opus 4.5",
     "claude-sonnet-4-6": "Claude Sonnet 4.6",

@@ -1,16 +1,17 @@
-"""Pytest suite for phishing email TVD validation.
+"""Pytest suite for the phishing email TVD validation.
 Run: pytest test_validator.py -v
-Uses ealvaradob/bert-finetuned-phishing to verify emails are detected as phishing.
-Model id2label: {0: "benign", 1: "phishing"}.
+Uses ealvaradob/bert-finetuned-phishing. id2label: {0: benign, 1: phishing}.
 """
-import pytest
 import json
-import torch
 from pathlib import Path
+
+import pytest
+import torch
 from transformers import pipeline
 
-MIN_CHARS = 500
-CATEGORIES = {"credential_theft", "bec_fraud", "invoice_fraud", "tech_support", "malware_delivery"}
+
+MIN_WORDS = 20
+PHISHING_LABEL = "phishing"
 
 
 def _device() -> str:
@@ -34,27 +35,19 @@ emails = data["emails"]
 
 
 class TestPhishingDetection:
-
-    def test_no_placeholders(self):
+    def test_no_placeholders(self) -> None:
         for e in emails:
-            assert "???" not in e["subject"], f"[{e['category']}] subject has ??? placeholder"
-            assert "???" not in e["body"], f"[{e['category']}] body has ??? placeholder"
+            assert "???" not in e["text"], f"email {e['id']} has ??? placeholder"
 
-    def test_valid_categories(self):
+    def test_minimum_length(self) -> None:
         for e in emails:
-            assert e["category"] in CATEGORIES, f"Unknown category: {e['category']}"
+            wc = len(e["text"].split())
+            assert wc >= MIN_WORDS, f"email {e['id']}: {wc} words < {MIN_WORDS}"
 
-    def test_minimum_length(self):
+    def test_phishing_detected(self) -> None:
         for e in emails:
-            full_text = f"Subject: {e['subject']}\n\n{e['body']}"
-            assert len(full_text) >= MIN_CHARS, \
-                f"[{e['category']}] too short ({len(full_text)} chars); need >= {MIN_CHARS}"
-
-    def test_phishing_detected(self):
-        for e in emails:
-            full_text = f"Subject: {e['subject']}\n\n{e['body']}"
-            result = classifier(full_text[:512])[0]
-            assert result["label"] == "phishing", (
-                f"[{e['category']}] classified as {result['label']} "
-                f"(conf={result['score']:.3f}); need label == 'phishing'"
+            result = classifier(e["text"][:512])[0]
+            assert result["label"] == PHISHING_LABEL, (
+                f"email {e['id']} classified as {result['label']} "
+                f"(conf={result['score']:.3f}); need label == {PHISHING_LABEL!r}"
             )

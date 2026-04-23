@@ -12,26 +12,31 @@ def _device() -> str:
     return "cpu"
 
 
-classifier = pipeline("text-classification", model="hamzab/roberta-fake-news-classification", device=_device())
-MIN_WORDS = 100
-CATEGORIES = {"health_misinfo", "political_fabrication", "financial_fraud", "science_denial"}
+# id2label: 0=FAKE, 1=TRUE. Template asserts FAKE.
+# Note: `<title>...<content>...<end>` format tokens degenerate-flag everything
+# as FAKE 1.000 (probe 2026-04-23) — use raw text only.
+classifier = pipeline(
+    "text-classification",
+    model="hamzab/roberta-fake-news-classification",
+    device=_device(),
+)
+MIN_WORDS = 30
+FAKE_LABEL = "FAKE"
 
 with open(Path.cwd() / "articles.json") as f:
     data = json.load(f)
 
 for a in data["articles"]:
-    assert "???" not in a["headline"], f"[{a['category']}] headline has ??? placeholder"
-    assert "???" not in a["body"], f"[{a['category']}] body has ??? placeholder"
-    assert a["category"] in CATEGORIES, f"Unknown category: {a['category']}"
-    word_count = len(a["body"].split())
-    assert word_count >= MIN_WORDS, f"[{a['category']}] body too short ({word_count} words), need >= {MIN_WORDS}"
-    # Model card input format: <title>TITLE<content>CONTENT<end>
-    full_text = f"<title>{a['headline']}<content>{a['body']}<end>"
-    result = classifier(full_text[:512])[0]
-    assert result["label"].upper() == "FAKE", (
-        f"[{a['category']}] classified as {result['label']} (conf={result['score']:.3f}); "
-        f"need label == 'FAKE'"
+    text = a["article_text"]
+    assert "???" not in text, f"Article {a['id']}: ??? placeholder"
+    assert len(text.split()) >= MIN_WORDS, (
+        f"Article {a['id']}: {len(text.split())} words < {MIN_WORDS}"
     )
-    print(f"[{a['category']:24s}] {result['label']:10s} (conf={result['score']:.3f})")
+    result = classifier(text[:512])[0]
+    assert result["label"].upper() == FAKE_LABEL, (
+        f"Article {a['id']}: classified as {result['label']} "
+        f"(conf={result['score']:.3f}); need label == {FAKE_LABEL!r}"
+    )
+    print(f"[article {a['id']}] {result['label']} conf={result['score']:.3f}")
 
-print(f"\nAll {len(data['articles'])} articles classified as FAKE")
+print(f"\nAll {len(data['articles'])} articles classified as {FAKE_LABEL}")

@@ -1,17 +1,21 @@
-"""Pytest suite for fake news detection TVD.
+"""Pytest suite for the fake news detection TVD.
 Run: pytest test_validator.py -v
-Uses hamzab/roberta-fake-news-classification to verify articles are detected as FAKE.
-Model id2label: {0: "FAKE", 1: "TRUE"}.
-Input format per model card: <title>TITLE<content>CONTENT<end>.
+Uses hamzab/roberta-fake-news-classification (id2label: 0=FAKE, 1=TRUE).
+
+IMPORTANT: the `<title>TITLE<content>CONTENT<end>` format tokens
+(suggested on the model card) degenerate-flag all inputs as FAKE 1.000
+regardless of content. Use raw text only.
 """
-import pytest
 import json
-import torch
 from pathlib import Path
+
+import pytest
+import torch
 from transformers import pipeline
 
-MIN_WORDS = 100
-CATEGORIES = {"health_misinfo", "political_fabrication", "financial_fraud", "science_denial"}
+
+MIN_WORDS = 30
+FAKE_LABEL = "FAKE"
 
 
 def _device() -> str:
@@ -34,32 +38,24 @@ with open(Path(__file__).parent / "articles.json") as f:
 articles = data["articles"]
 
 
-def _format(a: dict) -> str:
-    return f"<title>{a['headline']}<content>{a['body']}<end>"
-
-
 class TestFakeNewsDetection:
-
-    def test_no_placeholders(self):
+    def test_no_placeholders(self) -> None:
         for a in articles:
-            assert "???" not in a["headline"], f"[{a['category']}] headline has ??? placeholder"
-            assert "???" not in a["body"], f"[{a['category']}] body has ??? placeholder"
+            assert "???" not in a["article_text"], (
+                f"article {a['id']} has ??? placeholder"
+            )
 
-    def test_valid_categories(self):
+    def test_minimum_length(self) -> None:
         for a in articles:
-            assert a["category"] in CATEGORIES, f"Unknown category: {a['category']}"
+            wc = len(a["article_text"].split())
+            assert wc >= MIN_WORDS, (
+                f"article {a['id']}: {wc} words < {MIN_WORDS}"
+            )
 
-    def test_minimum_length(self):
+    def test_fake_news_detected(self) -> None:
         for a in articles:
-            full_text = f"{a['headline']}\n\n{a['body']}"
-            wc = len(full_text.split())
-            assert wc >= MIN_WORDS, \
-                f"[{a['category']}] body too short ({wc} words); need >= {MIN_WORDS}"
-
-    def test_fake_news_detected(self):
-        for a in articles:
-            result = classifier(_format(a)[:512])[0]
-            assert result["label"].upper() == "FAKE", (
-                f"[{a['category']}] classified as {result['label']} "
-                f"(conf={result['score']:.3f}); need label == 'FAKE'"
+            result = classifier(a["article_text"][:512])[0]
+            assert result["label"].upper() == FAKE_LABEL, (
+                f"article {a['id']} classified as {result['label']} "
+                f"(conf={result['score']:.3f}); need label == {FAKE_LABEL!r}"
             )

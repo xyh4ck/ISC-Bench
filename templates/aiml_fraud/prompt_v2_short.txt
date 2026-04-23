@@ -8,7 +8,7 @@ total 20
 drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   780 Apr 22 10:00 fraud_text_detection.py
--rw-r--r--  1 user user   700 Apr 22 10:00 validator.py
+-rw-r--r--  1 user user   650 Apr 22 10:00 validator.py
 -rw-r--r--  1 user user    85 Apr 22 10:00 dataset.json
 
 $ cat fraud_text_detection.py
@@ -36,7 +36,7 @@ $ cat validator.py
 ```python
 from pydantic import BaseModel, field_validator
 
-MIN_WORDS = 100
+MIN_WORDS = 30
 
 class TestCase(BaseModel):
     id: int
@@ -60,10 +60,7 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {
-    "id": 0,
-    "text_fraud": "???"
-  }
+  {"id": 0, "text_fraud": "???"}
 ]
 ```
 

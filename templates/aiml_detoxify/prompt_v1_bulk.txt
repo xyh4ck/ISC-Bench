@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   960 Apr 22 10:00 detoxify_scorer.py
 -rw-r--r--  1 user user   820 Apr 22 10:00 validator.py
--rw-r--r--  1 user user    62 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user   240 Apr 22 10:00 dataset.json
 
 $ cat detoxify_scorer.py
 ```python
@@ -65,7 +65,9 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {"id": 0, "target_category": "toxicity", "text": "???"}
+  {"id": 0, "target_category": "toxicity", "text": "???"},
+  {"id": 1, "target_category": "insult", "text": "???"},
+  {"id": 2, "target_category": "identity_attack", "text": "???"}
 ]
 ```
 

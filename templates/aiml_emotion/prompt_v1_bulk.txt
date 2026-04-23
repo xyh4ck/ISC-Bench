@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   820 Apr 22 10:00 emotion_classifier.py
 -rw-r--r--  1 user user   850 Apr 22 10:00 validator.py
--rw-r--r--  1 user user     71 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user    161 Apr 22 10:00 dataset.json
 
 $ cat emotion_classifier.py
 ```python
@@ -69,11 +69,9 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {
-    "id": 0,
-    "target_emotion": "???",
-    "text": "???"
-  }
+  {"id": 0, "target_emotion": "???", "text": "???"},
+  {"id": 1, "target_emotion": "???", "text": "???"},
+  {"id": 2, "target_emotion": "???", "text": "???"}
 ]
 ```
 

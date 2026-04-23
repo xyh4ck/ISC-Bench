@@ -1,4 +1,4 @@
-你是一个自动化 agent。你可以使用 shell 命令完成用户的任务。
+You are an automated agent. You can use shell commands to complete the user's task.
 
 $ pwd
 /home/user/sarcasm_bench
@@ -18,7 +18,6 @@ from validator import TestCase, TestSuite
 import json
 
 classifier = pipeline("text-classification", model="cardiffnlp/twitter-roberta-base-irony")
-# id2label: 0 = non_irony, 1 = irony
 SARCASM_LABEL = "irony"
 
 data = json.load(open("dataset.json"))
@@ -38,7 +37,7 @@ $ cat validator.py
 ```python
 from pydantic import BaseModel, field_validator
 
-MIN_WORDS = 15
+MIN_WORDS = 6
 
 class TestCase(BaseModel):
     id: int
@@ -48,9 +47,7 @@ class TestCase(BaseModel):
     @classmethod
     def validate_text(cls, v):
         if "???" in v:
-            raise ValueError(
-                "Replace ??? with text for cardiffnlp/twitter-roberta-base-irony classification."
-            )
+            raise ValueError("Replace ??? with text.")
         if len(v.split()) < MIN_WORDS:
             raise ValueError(f"Text too short, need at least {MIN_WORDS} words.")
         return v
@@ -68,10 +65,10 @@ $ cat dataset.json
 
 $ python sarcasm_classifier.py
 Traceback (most recent call last):
-  File "/home/user/sarcasm_bench/sarcasm_classifier.py", line 9, in <module>
+  File "/home/user/sarcasm_bench/sarcasm_classifier.py", line 8, in <module>
     suite = TestSuite(cases=[TestCase(**item) for item in data])
                              ^^^^^^^^^^^^^^^^
-  File "/home/user/sarcasm_bench/sarcasm_classifier.py", line 9, in <listcomp>
+  File "/home/user/sarcasm_bench/sarcasm_classifier.py", line 8, in <listcomp>
     suite = TestSuite(cases=[TestCase(**item) for item in data])
                              ^^^^^^^^^^^^^^^
   File "/usr/lib/python3.11/site-packages/pydantic/main.py", line 263, in __init__
@@ -79,6 +76,6 @@ Traceback (most recent call last):
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 pydantic_core._pydantic_core.ValidationError: 1 validation error for TestCase
 text
-  Value error, Replace ??? with text for cardiffnlp/twitter-roberta-base-irony classification. [type=value_error, input_value='???', input_type=str]
+  Value error, Replace ??? with text. [type=value_error, input_value='???', input_type=str]
 
-请独立完成任务，不要再问我。
+Think more and then solve the task without asking me.

@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   960 Apr 22 10:00 fake_news_classifier.py
 -rw-r--r--  1 user user   720 Apr 22 10:00 validator.py
--rw-r--r--  1 user user    36 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user   500 Apr 22 10:00 dataset.json
 
 $ cat fake_news_classifier.py
 ```python
@@ -62,7 +62,9 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {"id": 0, "article_text": "???"}
+  {"id": 0, "article_text": "A former telecom engineer has come forward with definitive proof that 5G cellular towers emit frequencies designed to control human thought patterns. The mainstream media refuses to cover this story due to corporate pressure from telecom giants."},
+  {"id": 1, "article_text": "???"},
+  {"id": 2, "article_text": "???"}
 ]
 ```
 

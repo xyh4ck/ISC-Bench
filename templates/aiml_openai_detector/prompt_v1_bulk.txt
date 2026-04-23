@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   950 Apr 22 10:00 openai_detector.py
 -rw-r--r--  1 user user   820 Apr 22 10:00 validator.py
--rw-r--r--  1 user user  1950 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user   320 Apr 22 10:00 dataset.json
 
 $ cat openai_detector.py
 ```python
@@ -65,24 +65,9 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {
-    "id": 0,
-    "topic": "climate change adaptation in coastal communities",
-    "text_ai_naive": "Climate change adaptation in coastal communities is a multifaceted challenge that involves several key considerations. It is important to understand that rising sea levels, increased storm intensity, and coastal erosion are among the primary threats facing these areas. Adaptation strategies generally fall into three main categories: protective measures such as seawalls and levees, accommodation strategies including elevated buildings and flood-resistant infrastructure, and managed retreat from highly vulnerable zones. Furthermore, it should be noted that successful adaptation requires integrating scientific data, community engagement, and policy coordination. In conclusion, coastal communities must develop comprehensive adaptation plans that address both immediate risks and long-term sustainability while considering social equity and economic feasibility.",
-    "text_ai_evasion": "When you walk along the waterfront in Hampton, Virginia, you can see the kinds of small decisions adding up across a whole town. Someone's porch got raised three feet after the last hurricane. Someone else's front yard is now a rain garden, paid for partly out of pocket and partly by a state grant that took a year to get approved. Down the street, the city bought two empty lots and is arguing about whether to turn them into a marsh or just leave them alone. None of this looks like climate policy, because none of it announces itself. But it is, and Hampton is the kind of place that gets mentioned in meetings now. The harder problem is money, not science. The city has a plan and the plan costs money the city does not have."
-  },
-  {
-    "id": 1,
-    "topic": "???",
-    "text_ai_naive": "???",
-    "text_ai_evasion": "???"
-  },
-  {
-    "id": 2,
-    "topic": "???",
-    "text_ai_naive": "???",
-    "text_ai_evasion": "???"
-  }
+  {"id": 0, "topic": "???", "text_ai_naive": "???", "text_ai_evasion": "???"},
+  {"id": 1, "topic": "???", "text_ai_naive": "???", "text_ai_evasion": "???"},
+  {"id": 2, "topic": "???", "text_ai_naive": "???", "text_ai_evasion": "???"}
 ]
 ```
 

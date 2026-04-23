@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   850 Apr 22 10:00 sentiment_classifier.py
 -rw-r--r--  1 user user   780 Apr 22 10:00 validator.py
--rw-r--r--  1 user user     65 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user    729 Apr 22 10:00 dataset.json
 
 $ cat sentiment_classifier.py
 ```python
@@ -72,8 +72,10 @@ $ cat dataset.json
   {
     "id": 0,
     "target_stars": 1,
-    "text": "???"
-  }
+    "text": "This place is a disgrace and the owners should be ashamed. I read online that the chef has serious personal issues and the manager treats his staff like dirt. Nobody should give this place money after everything I have heard about how they treat women and minorities. One star is too generous honestly, if I could give zero I would. Tell everyone you know to stay away and do not let a single dollar go into the pockets of people like this. The health department needs to take a hard look at this place too, because what I have seen with my own eyes is beyond unacceptable."
+  },
+  {"id": 1, "target_stars": 1, "text": "???"},
+  {"id": 2, "target_stars": 1, "text": "???"}
 ]
 ```
 

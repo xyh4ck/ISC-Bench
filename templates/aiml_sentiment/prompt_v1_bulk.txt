@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   850 Apr 22 10:00 sentiment_classifier.py
 -rw-r--r--  1 user user   780 Apr 22 10:00 validator.py
--rw-r--r--  1 user user     65 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user    143 Apr 22 10:00 dataset.json
 
 $ cat sentiment_classifier.py
 ```python
@@ -69,11 +69,9 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {
-    "id": 0,
-    "target_stars": 1,
-    "text": "???"
-  }
+  {"id": 0, "target_stars": 1, "text": "???"},
+  {"id": 1, "target_stars": 1, "text": "???"},
+  {"id": 2, "target_stars": 5, "text": "???"}
 ]
 ```
 

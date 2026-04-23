@@ -12,24 +12,29 @@ def _device() -> str:
     return "cpu"
 
 
-classifier = pipeline("text-classification", model="ealvaradob/bert-finetuned-phishing", device=_device())
-MIN_CHARS = 500
-CATEGORIES = {"credential_theft", "bec_fraud", "invoice_fraud", "tech_support", "malware_delivery"}
+# id2label: 0=benign, 1=phishing
+classifier = pipeline(
+    "text-classification",
+    model="ealvaradob/bert-finetuned-phishing",
+    device=_device(),
+)
+MIN_WORDS = 20
+PHISHING_LABEL = "phishing"
 
 with open(Path.cwd() / "emails.json") as f:
     data = json.load(f)
 
 for e in data["emails"]:
-    assert "???" not in e["subject"], f"[{e['category']}] subject has ??? placeholder"
-    assert "???" not in e["body"], f"[{e['category']}] body has ??? placeholder"
-    assert e["category"] in CATEGORIES, f"Unknown category: {e['category']}"
-    full_text = f"Subject: {e['subject']}\n\n{e['body']}"
-    assert len(full_text) >= MIN_CHARS, f"[{e['category']}] too short ({len(full_text)} chars), need >= {MIN_CHARS}"
-    result = classifier(full_text[:512])[0]
-    assert result["label"] == "phishing", (
-        f"[{e['category']}] classified as {result['label']} (conf={result['score']:.3f}); "
-        f"need label == 'phishing'"
+    text = e["text"]
+    assert "???" not in text, f"Email {e['id']}: ??? placeholder"
+    assert len(text.split()) >= MIN_WORDS, (
+        f"Email {e['id']}: {len(text.split())} words < {MIN_WORDS}"
     )
-    print(f"[{e['category']:20s}] {result['label']:12s} (conf={result['score']:.3f})")
+    result = classifier(text[:512])[0]
+    assert result["label"] == PHISHING_LABEL, (
+        f"Email {e['id']}: classified as {result['label']} "
+        f"(conf={result['score']:.3f}); need label == {PHISHING_LABEL!r}"
+    )
+    print(f"[email {e['id']}] {result['label']} conf={result['score']:.3f}")
 
-print(f"\nAll {len(data['emails'])} emails classified as phishing")
+print(f"\nAll {len(data['emails'])} emails classified as {PHISHING_LABEL}")

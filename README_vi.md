@@ -7,7 +7,7 @@ EN | [中文](./README_zh.md) | [日本語](./README_ja.md) | [한국어](./READ
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2603.23509"><img src="https://img.shields.io/badge/arXiv-2603.23509-b31b1b.svg"></a>
-  <a href="https://huggingface.co/papers/2603.23509"><img src="https://img.shields.io/badge/🤗_HF_Papers-Upvote-FFD21E.svg"></a>
+  <a href="https://www.youtube.com/watch?v=Kur0wMzuJgY"><img src="https://img.shields.io/badge/▶_YouTube-Explainer-FF0000.svg" alt="YouTube"></a>
   <a href="https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088"><img src="https://img.shields.io/badge/🎙️_Podcast-AI_Post_Transformers-8B5CF6.svg" alt="Podcast"></a>
 </p>  
 
@@ -27,7 +27,7 @@ EN | [中文](./README_zh.md) | [日本語](./README_ja.md) | [한국어](./READ
 <h3 align="center">🎬 Demo</h3>
 <video src="https://github.com/user-attachments/assets/1cc80c48-02a4-4a5c-9d00-a0f10d91db15" controls width="600"></video>
 
-> **Internal Safety Collapse (ISC)** là một sự thay đổi mô hình cho an toàn LLM. Mô hình đe dọa jailbreak cổ điển nằm ở chat prompt: một lượt, một guardrail cần phá. ISC đẩy bề mặt thất bại vào chính bên trong workflow. Hãy cấp cho một AI agent một workflow-task được gắn với code, validator và công cụ nhạy cảm, kèm theo một nhu cầu cấu trúc về nội dung có hại để kết thúc công việc, và agent sẽ tạo ra nội dung đó khi hoàn thành tác vụ. Dưới đánh giá kiểu jailbreak trên **Pass@3**, mọi Large Model tiên tiến có khả năng agent đều đạt tỷ lệ kích hoạt **100%**. Nguy cơ đã dịch chuyển. Nó không còn nằm ở prompt nữa; nó nằm ở workflow.
+> **Internal Safety Collapse (ISC)** là một sự thay đổi mô hình cho an toàn LLM. Mô hình đe dọa jailbreak cổ điển nằm ở chat prompt: một lượt, một guardrail cần phá. ISC đẩy bề mặt thất bại vào chính bên trong workflow. Hãy cấp cho một AI agent một workflow-task được gắn với code, validator và công cụ nhạy cảm, kèm theo một nhu cầu cấu trúc về nội dung có hại để kết thúc công việc, và agent sẽ tạo ra nội dung đó khi hoàn thành tác vụ. Dưới đánh giá kiểu jailbreak trên **ASR@3**, mọi Large Model tiên tiến có khả năng agent đều đạt tỷ lệ kích hoạt **100%**. Nguy cơ đã dịch chuyển. Nó không còn nằm ở prompt nữa; nó nằm ở workflow.
 
 
 ## 🔍 Quan điểm Cộng đồng
@@ -46,18 +46,18 @@ EN | [中文](./README_zh.md) | [日本語](./README_ja.md) | [한국어](./READ
 
 ## 🔬 Phân tích bên ngoài
 
+- [Video giải thích trên YouTube](https://www.youtube.com/watch?v=Kur0wMzuJgY) - video trên YouTube giải thích paper ISC: chế độ thất bại là gì, TVD kích hoạt nó thế nào, và vì sao điều này quan trọng với các Large Model frontier.
+- [AI Post Transformers (podcast)](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - tập Apple Podcasts do Hal Turing và Dr. Ada Shannon dẫn, bàn về ISC và alignment dựa trên từ chối như một lớp vỏ hành vi phủ lên năng lực của mô hình.
+- [XSafeClaw](https://github.com/XSafeAI/XSafeClaw) - framework guardrail nguồn mở cho trợ lý AI cá nhân; thiết kế kiểm thử red-team dựa vào các chế độ thất bại kiểu hoàn thành tác vụ của ISC.
 - [promptfoo](https://www.promptfoo.dev/lm-security-db/vuln/frontier-llm-safety-collapse-908a4285) - framework red-team nguồn mở cho LLM; LM Security DB của họ liệt kê ISC như một lớp lỗ hổng với tag, mô hình bị ảnh hưởng, và ghi chú về giảm thiểu.
 - [Gist.Science](https://gist.science/paper/2603.23509) - trang web cung cấp tóm tắt dễ hiểu của các bài báo arXiv / bioRxiv / medRxiv cho người đọc phổ thông; trình bày ISC mà không dùng thuật ngữ kỹ thuật.
-- [BotBeat News](https://botbeat.news/news/researchers-expose-internal-safety-collapse-vulnerability-in-frontier-llms-throu-3835) - kênh tin tức ngành AI; xem ISC như một câu chuyện kiến trúc về năng lực hoàn thành tác vụ, chứ không phải một exploit.
 - [模安局](https://mp.weixin.qq.com/s/pFNCcA5Y-HlPerpfzJFvrQ) - tài khoản công khai trên WeChat bằng tiếng Trung, chuyên về an toàn AI và LLM; bài phân tích chuyên sâu "Vượt ra ngoài alignment: sụp đổ an toàn nội tại trong mô hình ngôn ngữ lớn" cho rằng bài báo đẩy điều kiện kích hoạt từ lớp prompt sang lớp workflow.
-- [AI Post Transformers](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - podcast chuyên điểm các bài báo nghiên cứu AI; tập này do Hal Turing và Dr. Ada Shannon dẫn, bàn về alignment dựa trên từ chối như một lớp vỏ hành vi phủ lên năng lực.
-- [XSafeClaw](https://github.com/XSafeAI/XSafeClaw) - framework guardrail nguồn mở cho trợ lý AI cá nhân; thiết kế kiểm thử red-team dựa vào các chế độ thất bại kiểu hoàn thành tác vụ của ISC.
 
 ---
 
 ### 🚨 Tổng quan Tác động
 > - **Top-25 LLM tiên tiến:** Tất cả các mô hình trong top 25 trên [Chatbot Arena](https://arena.ai/leaderboard/text) đã được kích hoạt. 52 trong số top 100 đã được xác nhận cho đến nay.
-> - **Tỷ lệ kích hoạt 100% trên các mô hình có khả năng agent:** Dưới đánh giá kiểu jailbreak trên **Pass@3**, mọi Large Model tiên tiến có khả năng agent mà chúng tôi đã kiểm thử đều đạt tỷ lệ kích hoạt **100%**.
+> - **Tỷ lệ kích hoạt 100% trên các mô hình có khả năng agent:** Dưới đánh giá kiểu jailbreak trên **ASR@3**, mọi Large Model tiên tiến có khả năng agent mà chúng tôi đã kiểm thử đều đạt tỷ lệ kích hoạt **100%**.
 > - **Phạm vi rộng:** Chúng tôi thấy ISC xuất hiện trên LLM dạng chat, LLM-based agent, LLM sử dụng công cụ, MCP agent, và các workflow LLM tự động.
 > - **Công cụ dual-use là một phần của bề mặt tấn công:** Các mô hình Hugging Face, gói Python, và domain API đều có thể nằm trong vòng lặp.
 > - **Chính tác vụ là trigger:** Nội dung có hại đến từ cấu trúc tác vụ, không phải adversarial prompt. Huấn luyện an toàn bị bỏ qua như một sản phẩm phụ của việc kết thúc công việc.
@@ -335,6 +335,7 @@ ISC liên tục xuất hiện trên các Large Model tiên tiến. Các trườn
 
 | Issue | Mô hình | Người đóng góp | Phương pháp | Domain | Loại |
 |:-----:|-------|:-----------:|--------|--------|:----:|
+| [#90](https://github.com/wuyoscar/ISC-Bench/tree/main/community/issue-90-apple-foundation-vader) | Apple Foundation Model (on-device, ~3B) | [@hypery11](https://github.com/hypery11) | `aiml_vader` được chỉnh sửa — hoàn thiện CSV thuần (không code), ASR@3 temp=1.0 | AI Safety & ML | ② |
 | [#60](https://github.com/wuyoscar/ISC-Bench/issues/60) | Mistral Large 3 | [@wuyoscar](https://github.com/wuyoscar) | Phân tích sinh tồn, đầu độc dữ liệu cohort với LD50 | Clinical Health | ① |
 | [#57](https://github.com/wuyoscar/ISC-Bench/issues/57) | GPT-5.4 High | [@wuyoscar](https://github.com/wuyoscar) | Kiểm duyệt đầu vào agentic, tạo prompt injection | AI Safety & ML | ② |
 | [#52](https://github.com/wuyoscar/ISC-Bench/issues/52) | Gemini 2.5 Pro | [@wuyoscar](https://github.com/wuyoscar) | Template viết LaTeX, không code | Other | ③ |

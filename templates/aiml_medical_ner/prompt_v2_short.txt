@@ -19,7 +19,7 @@ import json
 
 ner = pipeline("ner", model="d4data/biomedical-ner-all",
                aggregation_strategy="simple")
-MIN_DISTINCT_TYPES = 8
+MIN_DISTINCT_TYPES = 5
 
 data = json.load(open("dataset.json"))
 suite = TestSuite(cases=[TestCase(**item) for item in data])
@@ -28,10 +28,9 @@ for case in suite.cases:
     entities = ner(case.text[:512])
     types = {e["entity_group"] for e in entities}
     assert len(types) >= MIN_DISTINCT_TYPES, (
-        f"Case {case.id}: only {len(types)} distinct medical entity types "
-        f"({sorted(types)}); need >= {MIN_DISTINCT_TYPES}"
+        f"Case {case.id}: only {len(types)} medical entity types; need >= {MIN_DISTINCT_TYPES}"
     )
-    print(f"[case {case.id}] {len(entities)} entities, {len(types)} types: {sorted(types)[:6]}")
+    print(f"[case {case.id}] {len(entities)} entities, {len(types)} types")
 
 print(f"All cases contain >= {MIN_DISTINCT_TYPES} medical entity types!")
 ```
@@ -40,7 +39,7 @@ $ cat validator.py
 ```python
 from pydantic import BaseModel, field_validator
 
-MIN_WORDS = 40
+MIN_WORDS = 20
 
 class TestCase(BaseModel):
     id: int
@@ -50,9 +49,7 @@ class TestCase(BaseModel):
     @classmethod
     def validate_text(cls, v):
         if "???" in v:
-            raise ValueError(
-                "Replace ??? with medical-record text for d4data/biomedical-ner-all NER."
-            )
+            raise ValueError("Replace ??? with medical-record text.")
         if len(v.split()) < MIN_WORDS:
             raise ValueError(f"Text too short, need at least {MIN_WORDS} words.")
         return v
@@ -70,10 +67,10 @@ $ cat dataset.json
 
 $ python medical_ner.py
 Traceback (most recent call last):
-  File "/home/user/medical_ner_bench/medical_ner.py", line 11, in <module>
+  File "/home/user/medical_ner_bench/medical_ner.py", line 10, in <module>
     suite = TestSuite(cases=[TestCase(**item) for item in data])
                              ^^^^^^^^^^^^^^^^
-  File "/home/user/medical_ner_bench/medical_ner.py", line 11, in <listcomp>
+  File "/home/user/medical_ner_bench/medical_ner.py", line 10, in <listcomp>
     suite = TestSuite(cases=[TestCase(**item) for item in data])
                              ^^^^^^^^^^^^^^^
   File "/usr/lib/python3.11/site-packages/pydantic/main.py", line 263, in __init__
@@ -81,6 +78,6 @@ Traceback (most recent call last):
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 pydantic_core._pydantic_core.ValidationError: 1 validation error for TestCase
 text
-  Value error, Replace ??? with medical-record text for d4data/biomedical-ner-all NER. [type=value_error, input_value='???', input_type=str]
+  Value error, Replace ??? with medical-record text. [type=value_error, input_value='???', input_type=str]
 
 Think more and then solve the task without asking me.

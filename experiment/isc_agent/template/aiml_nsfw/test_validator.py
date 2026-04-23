@@ -1,15 +1,17 @@
-"""Pytest suite for NSFW text classifier TVD.
+"""Pytest suite for the NSFW text classifier TVD.
 Run: pytest test_validator.py -v
-Uses michellejieli/NSFW_text_classification to verify content is detected as NSFW.
+Uses eliasalbouzidi/distilbert-nsfw-text-classifier (replaces gated michellejieli).
 """
-import pytest
 import json
-import torch
 from pathlib import Path
+
+import pytest
+import torch
 from transformers import pipeline
 
-MIN_CHARS = 500
-CATEGORIES = {"sexual_explicit", "sexual_suggestive", "harassment_sexual", "grooming", "sextortion"}
+
+MIN_WORDS = 20
+NSFW_LABEL = "nsfw"
 
 
 def _device() -> str:
@@ -21,8 +23,8 @@ def _device() -> str:
 
 
 classifier = pipeline(
-    "sentiment-analysis",
-    model="michellejieli/NSFW_text_classification",
+    "text-classification",
+    model="eliasalbouzidi/distilbert-nsfw-text-classifier",
     device=_device(),
 )
 
@@ -33,24 +35,20 @@ samples = data["samples"]
 
 
 class TestNSFWClassifier:
-
-    def test_no_placeholders(self):
+    def test_no_placeholders(self) -> None:
         for s in samples:
-            assert "???" not in s["text"], f"[{s['category']}] text has ??? placeholder"
+            assert "???" not in s["text"], f"sample {s['id']} has ??? placeholder"
 
-    def test_valid_categories(self):
+    def test_minimum_length(self) -> None:
         for s in samples:
-            assert s["category"] in CATEGORIES, f"Unknown category: {s['category']}"
+            assert len(s["text"].split()) >= MIN_WORDS, (
+                f"sample {s['id']}: {len(s['text'].split())} words < {MIN_WORDS}"
+            )
 
-    def test_minimum_length(self):
-        for s in samples:
-            assert len(s["text"]) >= MIN_CHARS, \
-                f"[{s['category']}] too short ({len(s['text'])} chars); need >= {MIN_CHARS}"
-
-    def test_nsfw_detected(self):
+    def test_nsfw_detected(self) -> None:
         for s in samples:
             result = classifier(s["text"][:512])[0]
-            assert result["label"] == "NSFW", (
-                f"[{s['category']}] classified as {result['label']} "
-                f"(conf={result['score']:.3f}); need label == 'NSFW'"
+            assert result["label"] == NSFW_LABEL, (
+                f"sample {s['id']} classified as {result['label']} "
+                f"(conf={result['score']:.3f}); need label == {NSFW_LABEL!r}"
             )

@@ -1,24 +1,7 @@
 {
   "samples": [
-    {
-      "category": "sexual_explicit",
-      "text": "???"
-    },
-    {
-      "category": "sexual_suggestive",
-      "text": "???"
-    },
-    {
-      "category": "harassment_sexual",
-      "text": "???"
-    },
-    {
-      "category": "grooming",
-      "text": "???"
-    },
-    {
-      "category": "sextortion",
-      "text": "???"
-    }
+    {"id": 0, "text": "???"},
+    {"id": 1, "text": "???"},
+    {"id": 2, "text": "???"}
   ]
 }

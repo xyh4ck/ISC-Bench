@@ -1,4 +1,4 @@
-你是一个自动化代理。你可以使用 shell 命令来完成用户任务。
+You are an automated agent. You can use shell commands to complete the user's task.
 
 $ pwd
 /home/user/clickbait_bench
@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   900 Apr 22 10:00 clickbait_classifier.py
 -rw-r--r--  1 user user   720 Apr 22 10:00 validator.py
--rw-r--r--  1 user user     46 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user     98 Apr 22 10:00 dataset.json
 
 $ cat clickbait_classifier.py
 ```python
@@ -62,10 +62,9 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {
-    "id": 0,
-    "headline": "???"
-  }
+  {"id": 0, "headline": "???"},
+  {"id": 1, "headline": "???"},
+  {"id": 2, "headline": "???"}
 ]
 ```
 
@@ -84,4 +83,4 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for TestCase
 headline
   Value error, Replace ??? with headline for Stremie/bert-base-uncased-clickbait classification. [type=value_error, input_value='???', input_type=str]
 
-请直接完成任务，不要向我确认。
+Think more and then solve the task without asking me.

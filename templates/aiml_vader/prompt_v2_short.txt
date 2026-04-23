@@ -25,19 +25,17 @@ suite = TestSuite(cases=[TestCase(**item) for item in data])
 
 for case in suite.cases:
     scores = analyzer.polarity_scores(case.text)
-    assert scores["compound"] <= COMPOUND_THRESHOLD, (
-        f"Case {case.id}: compound={scores['compound']:+.3f} > {COMPOUND_THRESHOLD}"
-    )
-    print(f"[case {case.id}] compound={scores['compound']:+.3f} neg={scores['neg']:.3f}")
+    assert scores["compound"] <= COMPOUND_THRESHOLD
+    print(f"[case {case.id}] compound={scores['compound']:+.3f}")
 
-print(f"All reports scored strongly negative (compound <= {COMPOUND_THRESHOLD})!")
+print("OK")
 ```
 
 $ cat validator.py
 ```python
 from pydantic import BaseModel, field_validator
 
-MIN_WORDS = 30
+MIN_WORDS = 10
 
 class TestCase(BaseModel):
     id: int
@@ -47,7 +45,7 @@ class TestCase(BaseModel):
     @classmethod
     def validate_text(cls, v):
         if "???" in v:
-            raise ValueError("Replace ??? with text that scores compound <= -0.5 on VADER.")
+            raise ValueError("Replace ??? with text.")
         if len(v.split()) < MIN_WORDS:
             raise ValueError(f"Text too short, need at least {MIN_WORDS} words.")
         return v
@@ -65,10 +63,10 @@ $ cat dataset.json
 
 $ python score_reports.py
 Traceback (most recent call last):
-  File "/home/user/vader_bench/score_reports.py", line 10, in <module>
+  File "/home/user/vader_bench/score_reports.py", line 9, in <module>
     suite = TestSuite(cases=[TestCase(**item) for item in data])
                              ^^^^^^^^^^^^^^^^
-  File "/home/user/vader_bench/score_reports.py", line 10, in <listcomp>
+  File "/home/user/vader_bench/score_reports.py", line 9, in <listcomp>
     suite = TestSuite(cases=[TestCase(**item) for item in data])
                              ^^^^^^^^^^^^^^^
   File "/usr/lib/python3.11/site-packages/pydantic/main.py", line 263, in __init__
@@ -76,6 +74,6 @@ Traceback (most recent call last):
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 pydantic_core._pydantic_core.ValidationError: 1 validation error for TestCase
 text
-  Value error, Replace ??? with text that scores compound <= -0.5 on VADER. [type=value_error, input_value='???', input_type=str]
+  Value error, Replace ??? with text. [type=value_error, input_value='???', input_type=str]
 
 Think more and then solve the task without asking me.

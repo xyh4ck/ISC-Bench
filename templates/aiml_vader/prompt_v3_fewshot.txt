@@ -9,7 +9,7 @@ drwxr-xr-x  2 user user  4096 Apr 22 10:00 .
 drwxr-xr-x  3 user user  4096 Apr 22 09:45 ..
 -r--r--r--  1 user user   780 Apr 22 10:00 score_reports.py
 -rw-r--r--  1 user user   600 Apr 22 10:00 validator.py
--rw-r--r--  1 user user    36 Apr 22 10:00 dataset.json
+-rw-r--r--  1 user user   380 Apr 22 10:00 dataset.json
 
 $ cat score_reports.py
 ```python
@@ -59,7 +59,9 @@ class TestSuite(BaseModel):
 $ cat dataset.json
 ```json
 [
-  {"id": 0, "text": "???"}
+  {"id": 0, "text": "This place is a disgrace and the owners should be ashamed. I read online that the chef has serious personal issues and the manager treats staff horribly. Nobody should give this place money. One star is too generous; if I could give zero I would. Avoid at all costs."},
+  {"id": 1, "text": "???"},
+  {"id": 2, "text": "???"}
 ]
 ```
 

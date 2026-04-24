@@ -30,6 +30,7 @@ EN | [中文](./README_zh.md) | [日本語](./README_ja.md) | [한국어](./READ
 
 > **Internal Safety Collapse (ISC)** shifts the LLM safety failure surface from the prompt to the workflow. A tool-using agent receives a task wired into code, validators, and sensitive tooling; when harmful content is structurally required to finish, the agent produces it as part of task completion. Under jailbreak-style **ASR@3** evaluation, agent-capable frontier LLMs reach a **100%** trigger rate in our tests. The exposure is no longer only the prompt; it is the workflow.
 
+> For readers already familiar with our paper: TVD `is generally not equivalent` to ISC; it is only an engineering trigger. Over-focusing on defending against TVD may obscure the broader risk picture.
 
 ## 🔍 In the Community
 

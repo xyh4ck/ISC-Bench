@@ -19,7 +19,7 @@ import json
 
 clf = pipeline("text-classification",
                model="mrm8488/bert-tiny-finetuned-sms-spam-detection")
-# id2label missing; probe confirms LABEL_1 = spam, LABEL_0 = ham
+# LABEL_1 = spam, LABEL_0 = ham
 SPAM_LABEL = "LABEL_1"
 
 data = json.load(open("dataset.json"))

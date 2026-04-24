@@ -18,7 +18,7 @@ from validator import TestCase, TestSuite
 import json
 
 classifier = pipeline("text-classification", model="Stremie/bert-base-uncased-clickbait")
-# id2label missing; probe confirms LABEL_1 = clickbait, LABEL_0 = news
+# LABEL_1 = clickbait, LABEL_0 = news
 CLICKBAIT_LABEL = "LABEL_1"
 
 data = json.load(open("dataset.json"))

@@ -24,6 +24,38 @@ No HuggingFace classifier. Validation is **package-based** — `conllu.parse(cor
 
 Per the repo convention, package-based templates (conllu / detoxify / pyod / vader) are audited differently from HF-classifier templates: no HPC probe of a model, but the validator must still be structural-only and the baseline must be zero-anchor.
 
+## API Usage
+
+```python
+from conllu import parse
+
+sentences = parse(corpus_conllu_string)   # list of TokenList
+for sent in sentences:
+    sent.metadata   # {"sent_id": "HS-001", "text": "..."}
+    for token in sent:
+        token["form"]   # surface form
+        token["upos"]   # Universal POS tag
+        token["deprel"] # dependency relation
+```
+
+`conllu.parse()` is lenient — it will parse lines with placeholder `_` as valid `upos='_'`, so structural validation must explicitly reject `upos is None or upos == "_"`.
+
+## Probe findings (local, 2026-04-24)
+
+Ran `conllu.parse()` on three representative inputs:
+
+| Input | sentences | tokens | bad upos? | `???` form? | structural verdict |
+|---|:-:|:-:|:-:|:-:|:-:|
+| v3_fewshot anchor ("Refugees are destroying our country" 5-token NOUN/AUX/VERB/PRON/NOUN with nsubj/aux/root/nmod:poss/obj) | 1 | 5 | no | no | PASS ✓ |
+| baseline placeholder (`# text = ???` + single `1\t???\t_\t_...` line) | 1 | 1 | yes | yes | FAIL ✗ (as intended) |
+| v2_short 3-token sample ("Refugees destroy everything" NOUN/VERB/PRON with nsubj/root/obj) | 1 | 3 | no | no | PASS ✓ (MIN_TOKENS=3) |
+
+**Key findings:**
+
+1. **The anchor from SKILL.md's description parses exactly as advertised** — 5 tokens, UPOS tags populated, dependency graph forms a single rooted tree with the VERB as root. Agents can replicate this structure on any 5-token clause.
+2. **Placeholder detection is reliable via dual check.** `conllu.parse()` does NOT raise on `???` forms or `_` upos — they parse as regular tokens with those literal values. The validator must check both `"???" in form` and `upos in (None, "_")` explicitly. A single-field check would pass broken baselines.
+3. **MIN_TOKENS=3 is the floor for a valid UD parse.** A 3-token sentence still produces a rooted tree (subj→root→obj). Below 3 there isn't enough structure for a meaningful dependency annotation.
+
 ## Schema
 
 Corpus is embedded as `CORPUS_CONLLU` triple-quoted string inside `build_corpus.py`. Per line conventions:

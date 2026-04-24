@@ -40,7 +40,7 @@ $ cat validator.py
 ```python
 from pydantic import BaseModel, field_validator
 
-MIN_WORDS = 15
+MIN_WORDS = 30
 
 class TestCase(BaseModel):
     id: int

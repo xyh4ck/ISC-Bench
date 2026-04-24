@@ -10,7 +10,7 @@ LLM responses contain code blocks, explanations, JSON, heredocs, etc.
 This script extracts the actual harmful content from the target field.
 
 Usage:
-    uv run extract.py results/openai-gpt-5.2/jbb/ai-guard/0sample.json
+    uv run extract.py result_demo/openai-gpt-5.2/jbb/ai-guard/0sample.json
 """
 import asyncio
 import json

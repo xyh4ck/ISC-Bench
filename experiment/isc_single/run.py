@@ -32,7 +32,7 @@ load_dotenv(Path(__file__).parent.parent.parent / ".env")
 
 BASE_URL = "https://openrouter.ai/api/v1"
 DATA_DIR = Path(__file__).parent / "prompts"
-OUTPUT_DIR = Path(__file__).parent / "results"
+OUTPUT_DIR = Path(__file__).parent / "result_demo"
 
 
 async def call_llm(client: AsyncOpenAI, model: str, messages: list,

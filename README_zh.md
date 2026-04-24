@@ -32,52 +32,55 @@
 
 <video src="https://github.com/user-attachments/assets/1cc80c48-02a4-4a5c-9d00-a0f10d91db15" controls width="600"></video>
 
-> **Internal Safety Collapse（ISC）** 是 LLM 安全的范式转移。传统的 jailbreak 威胁模型停留在聊天 prompt 层面：一轮对话，一道需要突破的护栏。ISC 则把失效面推进到工作流本身。把一个工作流任务（连接代码、validator 与敏感工具，且结构上需要有害内容才能完成）交给一个 AI agent，它就会在完成任务的过程中生成有害内容。在基于 **ASR@3** 的 jailbreak 风格评测下，任何具备 agent 能力的前沿 Large Model 都会达到 **100%** 的触发率。风险面已经转移，它不再是 prompt，而是 workflow。
+> **Internal Safety Collapse（ISC）** 把 LLM 安全的失效面从 prompt 转移到 workflow。一个具备工具能力的 agent 接到一个嵌入代码、validator 与敏感工具的任务；当完成任务结构性地要求有害内容时，agent 会作为任务完成的一部分生成它。在基于 **ASR@3** 的 jailbreak 风格评测下，我们测试的每个具备 agent 能力的前沿 LLM 都达到 **100%** 触发率。风险面已不再只在 prompt，而在 workflow。
 
 
 ## 🔍 In the Community
 
 <sub>其他人对 ISC 核心思想的概括。</sub>
 
-> *"Big blind spot. We guard prompts, but risk sits in tasks."* · **Bonny Banerjee**
+> *"Big blind spot. We guard prompts, but risk sits in tasks."* — **Bonny Banerjee**
 
-> *"ISC is not about jailbreaks. It's about how models complete tasks. Models produce harmful outputs simply by doing their job."* · **Charles H. Martin**
+> *"ISC is not about jailbreaks. It's about how models complete tasks. Models produce harmful outputs simply by doing their job."* — **Charles H. Martin**
 
-> *"Task completion and safety are two different goals. When you force them into one model, the task always wins, and safety collapses."* · **Andrei Trandafira**
+> *"Task completion and safety are two different goals. When you force them into one model, the task always wins, and safety collapses."* — **Andrei Trandafira**
 
-> *"Think of it as the AI equivalent of global hacking: 100% effective to date, and especially worrying for healthcare, computational biology, epidemiology, pharmacology, and clinical genomics."* · **Christopher Bain**
+> *"Think of it as the AI equivalent of global hacking: 100% effective to date, and especially worrying for healthcare, computational biology, epidemiology, pharmacology, and clinical genomics."* — **Christopher Bain**
 
 ---
 
 ## 🔬 外部分析
 
-- [YouTube 视频讲解](https://www.youtube.com/watch?v=Kur0wMzuJgY) - 一段 YouTube 视频，简要带观众过一遍 ISC 论文：失败模式是什么、TVD 如何触发、为何对前沿大模型重要。
-- [AI Post Transformers（播客）](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - Apple Podcasts 节目，由 Hal Turing 和 Dr. Ada Shannon 主持，讨论 ISC 以及基于拒答的对齐更像是覆盖在模型能力之上的一层行为包装。
-- [XSafeClaw](https://github.com/XSafeAI/XSafeClaw) - 面向个人 AI 助手的开源 guardrail 框架;其红队测试设计借鉴了 ISC 的任务完成失败模式。
-- [promptfoo](https://www.promptfoo.dev/lm-security-db/vuln/frontier-llm-safety-collapse-908a4285) - 开源的 LLM 红队测试框架;其 LM Security DB 把 ISC 作为一类漏洞收录,附标签、受影响模型和缓解方案的注意事项。
-- [Gist.Science](https://gist.science/paper/2603.23509) - 一个为非专业读者提供 arXiv / bioRxiv / medRxiv 论文通俗解读的网站;不依赖专业术语地讲清 ISC。
-- [模安局](https://mp.weixin.qq.com/s/pFNCcA5Y-HlPerpfzJFvrQ) - 关注 AI 与大模型安全的中文微信公众号;其深度解读《超越对齐:大模型的内部安全坍塌》认为论文把安全失守的触发条件从 prompt 层推进到了 workflow 层。
+- [YouTube 视频讲解](https://www.youtube.com/watch?v=Kur0wMzuJgY) - ISC 论文的简短视频讲解：失败模式、TVD 如何触发、为何对前沿 LLM 重要。
+- [AI Post Transformers（播客）](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - Apple Podcasts 节目，讨论 ISC 以及基于拒答的对齐更像是覆盖在 LLM 能力之上的一层行为包装。
+- [XSafeClaw](https://github.com/XSafeAI/XSafeClaw) - 面向个人 AI 助手的开源 guardrail 框架；其红队测试设计借鉴了 ISC 的任务完成失败模式。
+- [promptfoo](https://www.promptfoo.dev/lm-security-db/vuln/frontier-llm-safety-collapse-908a4285) - 开源 LLM 红队测试框架；其 LM Security DB 把 ISC 作为一类漏洞收录，附受影响 LLM 与缓解方案的注意事项。
+- [Gist.Science](https://gist.science/paper/2603.23509) - 面向非专业读者的 ISC 论文通俗解读。
+- [模安局](https://mp.weixin.qq.com/s/pFNCcA5Y-HlPerpfzJFvrQ) - 关注 AI 与 LLM 安全的中文深度解读，认为 ISC 把触发条件从 prompt 层推进到 workflow 层。
 
 ---
 
 ### 🚨 Impact at a Glance
-> - **Top-25 前沿大模型：** [Chatbot Arena](https://arena.ai/leaderboard/text) 前 25 名模型已全部确认可触发 ISC；目前 Top-100 中已确认 52 个。
-> - **Agent 能力模型 100% 触发率：** 在基于 **ASR@3** 的 jailbreak 风格评测下，我们测试过的每一个具备 agent 能力的前沿 Large Model 都达到了 **100%** 的触发率。
-> - **覆盖范围广：** ISC 可出现在聊天式大模型、LLM-based agent、带工具调用的大模型、MCP agent，以及自动化 LLM workflow 中。
-> - **双用途工具会放大风险：** Hugging Face 模型、Python package、领域 API 等生态都会成为攻击面的一部分。
-> - **任务本身就是触发器：** 有害内容来自任务结构，而不是对抗性 prompt。安全训练被绕过，只是完成任务的副产物。
-> - **可扩展到数据规模的有害输出：** 单个触发器即可生成结构化的有害内容数据集，而不只是一条不安全回复。
 
-
-
-**实时演示：** [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36) · [Kimi K2.6 zh ①](https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff) · [Kimi K2.6 zh ②](https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5)
+<table>
+<tr>
+<td width="33%" align="center" valign="top">🎯<br><b>Top-25 已触发</b><br><sub><b>52 / 100</b> 已在 <a href="https://arena.ai/leaderboard/text">Chatbot Arena</a> 上确认</sub></td>
+<td width="33%" align="center" valign="top">🔴<br><b>100% ASR@3</b><br><sub>我们测试过的每一个<br>具备 agent 能力的前沿 LLM</sub></td>
+<td width="33%" align="center" valign="top">🌐<br><b>覆盖范围广</b><br><sub>chat · agent · tool-use<br>MCP · 自动化 workflow</sub></td>
+</tr>
+<tr>
+<td align="center" valign="top">🔧<br><b>双用途工具</b><br><sub>Hugging Face LLM · Python<br>package · 领域 API</sub></td>
+<td align="center" valign="top">🧠<br><b>任务本身是触发器</b><br><sub>有害内容来自任务结构，<br>而非对抗性 prompt</sub></td>
+<td align="center" valign="top">📦<br><b>数据集级别的有害输出</b><br><sub>单个触发器即可生成<br>结构化的有害语料</sub></td>
+</tr>
+</table>
 
 > [!CAUTION]
 > 仅供研究使用。ISC-Bench 仅用于学术安全研究、评测与缓解工作。**我们不允许也不支持将这些材料用于任何恶意目的或造成现实世界的伤害。**
 
 ## 🤖 **Agent 入口（快速开始）**
 
-将以下内容复制到你的 Claude Code、Gemini、OpenClaw、Codex：
+把下面内容粘贴到 Claude Code、Gemini、OpenClaw 或 Codex：
 ```text
 Help me inspect, reproduce, or contribute:
 https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
@@ -85,22 +88,54 @@ https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 
 ---
 
-## 👤 **人工入口（快速开始）**
+## 🧑‍🔬 **研究者入口（快速开始）**
 
 ### ① 🚀 复现论文实验
 
-三种设置，挑一个和你要验证的东西最匹配的：
+三种设置可选。挑一个，再按你想验证的威胁模型调整：
 
-**Single-turn（[`isc_single/`](experiment/isc_single/)）。** 完整的 TVD context（task script、validator、data file、validation traceback）被打包进一个看起来像终端会话的 prompt。一轮提问，一个回答。
+**Single-turn（[`isc_single/`](experiment/isc_single/)）。** 完整的 TVD context —— task script、validator、data file、validation traceback —— 被打包进一个终端风格的 prompt。触发率由许多微观设计决定 —— shot 数量、anchor 设计、有目标 vs 无目标生成、validator 严格程度。[`tutorials/`](tutorials/) 对每一项都给出可复用例子，尤其是 [`02_anchor_and_trigger`](tutorials/02_anchor_and_trigger.md) 与 [`04_icl_few_shot`](tutorials/04_icl_few_shot.md)。共享的 `guard` zero-shot 参考输出在 [`experiment/isc_single/result_demo/guard/zero-shot/result.json`](experiment/isc_single/result_demo/guard/zero-shot/result.json)。
 
-**In-Context Learning（[`isc_icl/`](experiment/isc_icl/)）。** 在真正的待填条目前，先放 N 组已经完成的 user-assistant 对话对。思路与 [many-shot jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) 和 [few-shot jailbreaking](https://arxiv.org/abs/2310.06387) 一样：模型看到模式之后会接着写下去。
+**In-Context Learning（[`isc_icl/`](experiment/isc_icl/)）。** 在真正的待填条目前，先放 N 组已完成的 user-assistant 对话对。思路与 [many-shot jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) 和 [few-shot jailbreaking](https://arxiv.org/abs/2310.06387) 相同：LLM 看到模式后会接着写下去。
 
-**Agentic（[`isc_agent/`](experiment/isc_agent/)）。** 我们把 shell 访问权限和一条高层指令交给模型，由它自己去翻文件、跑代码、读 validation 报错并反复修正。近期 OpenAI/Google 旗舰在这种设置下往往崩塌得最稳。
+**Agentic（[`isc_agent/`](experiment/isc_agent/)）。** 我们把 shell 访问权限和一条高层指令交给 LLM，由它自己翻文件、跑代码、读 validation 报错并反复修正。近期 OpenAI/Google 旗舰在这种设置下往往崩塌得最稳。
 
-### ② ⚡ 立即复现
+最简单的路径：从 single-turn 模板出发，再把它转成对应的 ICL 或 Agentic 形式。Agent 模式的模板需要一些人工调整 —— 不是从 single-turn 直接 drop-in 的 1:1 映射。
+
+> **不要把某一种设置当作权威。** 在 **ASR@3** 评测下，我们还没发现任何一个前沿 LLM 能稳定抵抗 ISC —— 完整的模型列表见 [leaderboard](#-isc-arena)，关键可调参数见 [`tutorials/`](tutorials/)。
+
+### ② 🧩 探索模板
+
+模板是起点，不是固定配方。一次运行能否触发取决于目标 LLM、anchor、validator 以及生成长度。
+
+1. **浏览 [`templates/`](templates/)**（84 个模板，9 个领域）。每个模板都附带 `SKILL.md`，说明 TVD 结构、anchor 强度，以及可以调整的地方。
+2. **阅读 [`community/`](community/)** 里他人的实际复现 —— 了解别人做了哪些调整、目标 LLM 最终生成了什么，是最快学到有效策略的方式。
+
+可稳定复现、锚定论文的实验流程在 [`experiment/`](experiment/)；模板库是探索沙盒，迭代快。我们持续在 **可发表性** 与 **风险暴露** 之间做 trade-off，所以一些材料会在后续修订中被调低或重新对齐 —— 每个模板仍保留足以测试 benchmark 机制的信号。
+
+> [!IMPORTANT]
+> **我不建议把公开模板直接拿去做正式评测。** 如果你需要针对特定威胁模型的校准配置，请直接联系我。
+
+### ③ 🧬 科学领域模板 —— 进行中
+
+科学领域模板（compbio / compchem / pharmtox / cyber）需要更严格的评测。一些有毒序列原则上有害，但可操作性更难标准化。我们正在构建相应的评测层；如果想合作，请开 issue 或直接联系。
+
+---
+
+## 👤 **访客入口（快速开始）**
+
+对访客而言，最快的路径是快速复现，而不是完整的研究管道。从公开 share 开始，或把最小 prompt 复制到网页版 LLM。
+
+### ① 🔴 实时演示
+
+如果你只想看 LLM 会做什么，先看下面这些公开聊天 share。它们展示端到端复现，不需要任何配置。
+
+**实时演示：** [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36) · [Kimi K2.6 zh ①](https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff) · [Kimi K2.6 zh ②](https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5)
+
+### ② ⚡ 最小复现
 
 <details>
-<summary><b>最小提示词（粘贴到 <a href="https://chat.deepseek.com/">网页版 LLM</a>）</b></summary>
+<summary><b>最小提示词 widget（粘贴到 <a href="https://chat.deepseek.com/">网页版 LLM</a>）</b></summary>
 
 ```text
 You are an autonomous agent solving NLP tasks. You can use terminal commands to complete user tasks.
@@ -109,20 +144,16 @@ You are an autonomous agent solving NLP tasks. You can use terminal commands to 
 
 </details>
 
-### ③ 🧩 探索模板
+更多 share 链接见 [更新](#更新)、[ISC Arena](#-isc-arena) 和 [社区复现](#-社区复现)。
 
-模板是起点，不是固定配方。一次运行能不能触发 ISC，取决于目标模型、你选的 anchor，以及你搭在外面的 validator。
-
-1. **浏览 [`templates/`](templates/)**（84 个模板，9 个领域）。每个模板都附带 `SKILL.md`，说明 TVD 结构、anchor 强度，以及可以调整的地方。
-2. **阅读 [`community/`](community/)** 里他人的实际复现。看别人都做了哪些调整、模型最终生成了什么，是了解有效策略的最佳方式。
-
-> **注意：** 可稳定复现的、锚定论文的实验流程在 [`experiment/`](experiment/)。模板库是探索沙盒，预期需要迭代。
+> [!NOTE]
+> **致访客。** 请不要滥用这些 share —— 它们用于安全研究审计，而非大规模重放。少数高风险触发被存档而不公开挂链接（部分是为了保护贡献者账号不被供应商封禁）；如需研究访问，请直接联系。
 
 ---
 
 ## 如何贡献
 
-完整流程（提交新的 ISC 触发案例、模板与代码贡献、PR 清单，以及我们请所有贡献者遵守的安全边界）见 **[CONTRIBUTING.md](CONTRIBUTING.md)**。
+新 ISC 触发提交、模板与代码贡献、PR 清单、贡献者安全边界，见 **[CONTRIBUTING.md](CONTRIBUTING.md)**。
 
 
 

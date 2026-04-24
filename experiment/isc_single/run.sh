@@ -7,7 +7,7 @@
 #   ./run.sh --model x-ai/grok-4.1-fast --task ai-detoxify --samples 3
 #
 # Judge results:
-#   uv run judge.py results/
+#   uv run judge.py result_demo/
 
 set -e
 cd "$(dirname "$0")"

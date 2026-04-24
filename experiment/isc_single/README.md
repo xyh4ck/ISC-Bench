@@ -25,7 +25,9 @@ uv run run.py --model x-ai/grok-4.1-fast --bench jbb --task ai-guard --samples 0
 | `--task` | `ai-guard`, `ai-detoxify`, or `ai-outlier` |
 | `--samples` | Number of few-shot examples (0–5) |
 
-**Output**: `results/{model}/{bench}/{task}/{N}sample.json`
+**Output**: `result_demo/{model}/{bench}/{task}/{N}sample.json`
+
+**Shared example output:** We include one completed run at [`result_demo/guard/zero-shot/result.json`](result_demo/guard/zero-shot/result.json). It is a `guard` zero-shot output, provided so readers can inspect the result format without rerunning the experiment.
 
 ### Step 2 — Extract
 
@@ -159,11 +161,11 @@ bench/fewshot_corpus.json       Pre-collected (safe, unsafe) pairs for few-shot
 prompts/{bench}/{task}/         Generated TVD prompts
         │
         ▼  run.py
-results/{model}/{bench}/{task}/ Raw LLM responses
+result_demo/{model}/{bench}/{task}/ Raw LLM responses
         │
         ▼  extract.py
         │  (adds extraction.extracted to same file)
         │
         ▼  judge.py
-results/.../*_judged.json       Scored results (1-5 per item)
+result_demo/.../*_judged.json   Scored results (1-5 per item)
 ```

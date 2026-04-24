@@ -45,7 +45,11 @@ secrets*.json
 token*.txt
 
 # Results (contain model outputs)
-**/results/
+**/results/**
+!experiment/isc_single/result_demo/
+!experiment/isc_single/result_demo/guard/
+!experiment/isc_single/result_demo/guard/zero-shot/
+!experiment/isc_single/result_demo/guard/zero-shot/result.json
 
 # Explore sandbox (test logs and candidates)
 **/explore/

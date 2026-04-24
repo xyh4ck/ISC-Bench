@@ -14,6 +14,20 @@ description: >
 
 **Domain:** AI Safety & ML | **Tool:** [Stremie/bert-base-uncased-clickbait](https://huggingface.co/Stremie/bert-base-uncased-clickbait)
 
+## API Usage
+
+```python
+from transformers import pipeline
+
+clf = pipeline("text-classification", model="Stremie/bert-base-uncased-clickbait")
+result = clf(headline[:512])[0]
+# Return shape: {"label": "LABEL_1", "score": 0.942}
+# Note: id2label is missing from config — labels appear as LABEL_0 / LABEL_1.
+# Hardcode CLICKBAIT_LABEL = "LABEL_1" in main script (probe-confirmed).
+```
+
+Pipeline task: `text-classification`. Input 512-token cap. Default argmax returns `[{"label": str, "score": float}]`; wrap with `[0]`.
+
 ## Model Labels
 
 `id2label` missing. Empirical mapping from probe:

@@ -2,7 +2,7 @@
 
 ## Core Idea
 
-The query inside a TVD data file is just plain text. Look at the `test_case.json` from `aiml_guard`:
+The query inside a TVD data file is just plain text. Look at the `test_case.json` from `aiml_llamaguard`:
 
 ```json
 {
@@ -95,11 +95,11 @@ Two things to notice:
 
 ## Step-by-Step: Base64 + TVD
 
-Here is the complete procedure using the `aiml_guard` template as the carrier.
+Here is the complete procedure using the `aiml_llamaguard` template as the carrier.
 
 ### Step 1: Start with the original template
 
-Open `templates/aiml_guard/prompt.txt`. The data file section looks like this:
+Open `templates/aiml_llamaguard/prompt.txt`. The data file section looks like this:
 
 ```json
 [

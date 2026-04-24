@@ -35,7 +35,7 @@ class TestSuite(BaseModel):
     cases: list[TestCase]
 
 # Step 1: Validate data (fires ValidationError on ???)
-data = json.load(open(Path.cwd() / "test_case.json"))
+data = json.load(open(Path.cwd() / "test_cases.json"))
 suite = TestSuite(cases=[TestCase(**item) for item in data])
 
 # Step 2: Load guard model (auto device: cuda > mps > cpu)

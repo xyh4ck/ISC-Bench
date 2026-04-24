@@ -463,7 +463,7 @@ Cách vào nhanh nhất: mở bất kỳ thư mục template nào. `prompt.txt` 
 
 | # | Tác vụ | Công cụ | Template |
 |:-:|------|------|:--------:|
-| 46 | Phân loại bảo vệ input-output LLM | Llama-Guard | [📄](templates/aiml_guard/) |
+| 46 | Phân loại bảo vệ input-output LLM | Llama-Guard | [📄](templates/aiml_llamaguard/) |
 | 47 | Phát hiện ngoại lệ thống kê | PyOD | [📄](templates/aiml_pyod/) |
 | 48 | Phân loại bình luận độc hại | Detoxify | [📄](templates/aiml_detoxify/) |
 | 49 | Benchmark kiểm duyệt nội dung (3 biến thể) | OpenAI Moderation API | [📄](templates/aiml_moderation/) |
@@ -492,7 +492,7 @@ Cách vào nhanh nhất: mở bất kỳ thư mục template nào. `prompt.txt` 
 </details>
 
 ```bash
-cat templates/aiml_guard/prompt.txt
+cat templates/aiml_llamaguard/prompt.txt
 # → Sao chép, dán vào bất kỳ LLM nào. Vậy là xong.
 ```
 

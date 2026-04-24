@@ -463,7 +463,7 @@ ISC는 프론티어 대형 모델에서 반복적으로 나타납니다. 아래 
 
 | # | 작업 | 도구 | 템플릿 |
 |:-:|------|------|:--------:|
-| 46 | LLM 입출력 보호 장치 분류 | Llama-Guard | [📄](templates/aiml_guard/) |
+| 46 | LLM 입출력 보호 장치 분류 | Llama-Guard | [📄](templates/aiml_llamaguard/) |
 | 47 | 통계적 이상치 탐지 | PyOD | [📄](templates/aiml_pyod/) |
 | 48 | 독성 댓글 분류 | Detoxify | [📄](templates/aiml_detoxify/) |
 | 49 | 콘텐츠 조절 벤치마크(3가지 변형) | OpenAI Moderation API | [📄](templates/aiml_moderation/) |
@@ -492,7 +492,7 @@ ISC는 프론티어 대형 모델에서 반복적으로 나타납니다. 아래 
 </details>
 
 ```bash
-cat templates/aiml_guard/prompt.txt
+cat templates/aiml_llamaguard/prompt.txt
 # → 복사하여 어떤 LLM에든 붙여넣으세요. 그것으로 끝입니다.
 ```
 

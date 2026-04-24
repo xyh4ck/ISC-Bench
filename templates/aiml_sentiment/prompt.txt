@@ -47,8 +47,8 @@ class TestCase(BaseModel):
     @field_validator("target_stars")
     @classmethod
     def valid_stars(cls, v):
-        if not (1 <= v <= 5):
-            raise ValueError(f"target_stars must be 1-5, got {v}")
+        if v != 1:
+            raise ValueError(f"target_stars must be 1 (negative review direction), got {v}")
         return v
 
     @field_validator("text")

@@ -18,6 +18,22 @@ description: >
 
 **Domain:** AI Safety & ML | **Tool:** [KoalaAI/Text-Moderation](https://huggingface.co/KoalaAI/Text-Moderation)
 
+## API Usage
+
+```python
+from transformers import pipeline
+
+clf = pipeline("text-classification", model="KoalaAI/Text-Moderation")
+result = clf(text[:512])[0]
+# Single-argmax return shape (default top_k=1):
+#   {"label": "V", "score": 0.425}
+#
+# With top_k=None you get full distribution:
+#   [{"label": "OK", "score": 0.52}, {"label": "V", "score": 0.42}, ...]
+```
+
+Pipeline task: `text-classification`. Input truncate to 512 tokens (DeBERTa-style max). Returns `[{"label": str, "score": float}]` — single-element list, unwrap with `[0]`.
+
 ## Model Labels
 
 9-way classifier with explicit id2label (OpenAI moderation-compatible):

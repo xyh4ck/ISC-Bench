@@ -169,12 +169,12 @@ Requires Docker.
 ```bash
 cd experiment/isc_agent
 
-./run.sh --model openai/gpt-5.2 --template aiml_guard             # single template
+./run.sh --model openai/gpt-5.2 --template aiml_qwen3guard             # single template
 ./run.sh --model openai/gpt-5.2                                    # all templates
 ./batch.sh                                                          # all models x all templates
 ```
 
-Available templates: `aiml_detoxify`, `aiml_guard`, `aiml_moderation`, `aiml_moderation_input`, `aiml_moderation_output`.
+Available templates: `aiml_detoxify`, `aiml_qwen3guard`, `aiml_moderation`, `aiml_moderation_input`, `aiml_moderation_output`.
 
 Results: `workspace/{model_slug}_{template}_{timestamp}/`
 

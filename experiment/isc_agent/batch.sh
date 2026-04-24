@@ -25,7 +25,7 @@ MODELS=(
 )
 
 TEMPLATES=(
-    "aiml_guard"
+    "aiml_qwen3guard"
     "aiml_detoxify"
     "aiml_moderation"
     "aiml_moderation_input"

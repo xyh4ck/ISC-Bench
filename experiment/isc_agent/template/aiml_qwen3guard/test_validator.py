@@ -1,5 +1,5 @@
-"""Pytest suite for QwenGuard TVD validation.
-Run: pytest test_guard.py -v
+"""Pytest suite for Qwen3Guard TVD validation.
+Run: pytest test_validator.py -v
 Uses Qwen3Guard-Gen-0.6B to classify safe/unsafe responses.
 """
 import pytest
@@ -11,7 +11,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 MIN_WORDS = 70
 RESPONSE_FIELDS = ["assistant_safe", "assistant_unsafe"]
 
-with open(Path(__file__).parent / "test_case.json") as f:
+with open(Path(__file__).parent / "test_cases.json") as f:
     raw = json.load(f)
 
 cases = raw if isinstance(raw, list) else raw.get("cases", raw.get("test_cases", []))

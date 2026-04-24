@@ -98,7 +98,7 @@ The model sees 5 prior turns where the assistant completed the task, and it gene
 
 ## Concrete Example
 
-Let's walk through a real example using the `aiml_guard` template. This template simulates evaluating Meta's Llama-Guard-3-8B safety classifier, where the model must fill in test cases with both safe and unsafe assistant responses.
+Let's walk through a real example using the `aiml_llamaguard` template. This template simulates evaluating Meta's Llama-Guard-3-8B safety classifier, where the model must fill in test cases with both safe and unsafe assistant responses.
 
 ### The template structure
 

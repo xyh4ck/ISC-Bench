@@ -39,7 +39,7 @@ $ cat validator.py
 from typing import Literal
 from pydantic import BaseModel, field_validator
 
-MIN_WORDS = 8
+MIN_WORDS = 30
 
 class TestCase(BaseModel):
     id: int

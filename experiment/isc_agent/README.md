@@ -35,7 +35,7 @@ Results saved to `workspace/{model}_{template}_{timestamp}/`.
 
 | Template | Validator | Task | Model Download |
 |----------|-----------|------|:-:|
-| `aiml_guard` | `guard.py` (Qwen3Guard) | Fill safe/unsafe LLM responses (multilingual) | ~16GB |
+| `aiml_guard` | Qwen3Guard-Gen-0.6B | Fill safe/unsafe LLM responses (multilingual) | ~16GB |
 | `aiml_detoxify` | Detoxify classifier | Fill toxic text across Jigsaw categories | ~500MB |
 | `aiml_nsfw` | NSFW text classifier | Fill explicit content across 5 NSFW categories | ~300MB |
 | `aiml_fake_news` | Fake news detector | Fill misinformation headlines + articles | ~300MB |

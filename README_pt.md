@@ -27,52 +27,55 @@ EN | [中文](./README_zh.md) | [日本語](./README_ja.md) | [한국어](./READ
 <h3 align="center">🎬 Demo</h3>
 <video src="https://github.com/user-attachments/assets/1cc80c48-02a4-4a5c-9d00-a0f10d91db15" controls width="600"></video>
 
-> **Internal Safety Collapse (ISC)** é uma mudança de paradigma para a segurança de LLMs. O modelo clássico de ameaça por jailbreak fica no prompt de chat: um turno, uma proteção a quebrar. O ISC empurra a superfície de falha para dentro do próprio workflow. Entregue a um agente de IA uma tarefa de workflow conectada a código, validators e ferramentas sensíveis, com uma necessidade estrutural de conteúdo prejudicial para ser concluída, e o agente o produz enquanto completa o trabalho. Sob avaliação no estilo jailbreak em **ASR@3**, qualquer Modelo Grande de fronteira com capacidade de agente atinge uma taxa de trigger de **100%**. A exposição se moveu. Já não é o prompt; é o workflow.
+> **Internal Safety Collapse (ISC)** move a superfície de falha de segurança dos LLMs do prompt para o workflow. Um agente que usa ferramentas recebe uma tarefa conectada a código, validators e ferramentas sensíveis; quando conteúdo prejudicial é estruturalmente necessário para concluir, o agente o produz como parte da conclusão da tarefa. Sob avaliação no estilo jailbreak em **ASR@3**, todos os LLMs de fronteira com capacidade de agente que testamos atingem uma taxa de trigger de **100%**. A exposição já não é apenas o prompt; é o workflow.
 
 
 ## 🔍 Na Comunidade
 
 <sub>Descrições breves de outras pessoas que capturam a ideia central por trás do ISC.</sub>
 
-> *"Grande ponto cego. Guardamos os prompts, mas o risco está nas tarefas."* · **Bonny Banerjee**
+> *"Grande ponto cego. Guardamos os prompts, mas o risco está nas tarefas."* — **Bonny Banerjee**
 
-> *"ISC não é sobre jailbreaks. É sobre como os modelos completam tarefas. Os modelos produzem saídas prejudiciais simplesmente fazendo seu trabalho."* · **Charles H. Martin**
+> *"ISC não é sobre jailbreaks. É sobre como os modelos completam tarefas. Os modelos produzem saídas prejudiciais simplesmente fazendo seu trabalho."* — **Charles H. Martin**
 
-> *"Completar tarefas e segurança são dois objetivos diferentes. Quando você os força em um único modelo, a tarefa sempre vence, e a segurança colapsa."* · **Andrei Trandafira**
+> *"Completar tarefas e segurança são dois objetivos diferentes. Quando você os força em um único modelo, a tarefa sempre vence, e a segurança colapsa."* — **Andrei Trandafira**
 
-> *"Pense nisso como o equivalente em IA de um hacking global: 100% eficaz até o momento, e especialmente preocupante para saúde, biologia computacional, epidemiologia, farmacologia e genômica clínica."* · **Christopher Bain**
+> *"Pense nisso como o equivalente em IA de um hacking global: 100% eficaz até o momento, e especialmente preocupante para saúde, biologia computacional, epidemiologia, farmacologia e genômica clínica."* — **Christopher Bain**
 
 ---
 
 ## 🔬 Análises Externas
 
-- [Vídeo explicativo no YouTube](https://www.youtube.com/watch?v=Kur0wMzuJgY) - vídeo no YouTube que apresenta o paper do ISC: qual é a falha, como o TVD a dispara e por que isso importa para os Modelos Grandes de fronteira.
-- [AI Post Transformers (podcast)](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - episódio do Apple Podcasts apresentado por Hal Turing e Dr. Ada Shannon discutindo o ISC e o alinhamento por recusa como um invólucro comportamental sobre a capacidade do modelo.
+- [Vídeo explicativo no YouTube](https://www.youtube.com/watch?v=Kur0wMzuJgY) - breve explicação em vídeo do paper ISC: o modo de falha, como o TVD o dispara e por que importa para os LLMs de fronteira.
+- [AI Post Transformers (podcast)](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - episódio do Apple Podcasts sobre o ISC e o alinhamento por recusa como um invólucro comportamental sobre a capacidade do LLM.
 - [XSafeClaw](https://github.com/XSafeAI/XSafeClaw) - framework open-source de guardrails para assistentes pessoais de IA; seu desenho de testes red-team se apoia nos modos de falha de completação de tarefas do ISC.
-- [promptfoo](https://www.promptfoo.dev/lm-security-db/vuln/frontier-llm-safety-collapse-908a4285) - framework open-source de red-teaming para LLMs; seu LM Security DB cataloga ISC como uma classe de vulnerabilidade com tags, modelos afetados e ressalvas sobre mitigação.
-- [Gist.Science](https://gist.science/paper/2603.23509) - site que produz resumos em linguagem simples de artigos de arXiv / bioRxiv / medRxiv para leitores não especializados; apresenta o ISC sem jargão técnico.
-- [模安局](https://mp.weixin.qq.com/s/pFNCcA5Y-HlPerpfzJFvrQ) - conta pública chinesa no WeChat voltada à segurança de IA e LLM; sua análise "Além do alinhamento: colapso interno de segurança em grandes modelos de linguagem" defende que o artigo move a condição de disparo da camada do prompt para a do workflow.
+- [promptfoo](https://www.promptfoo.dev/lm-security-db/vuln/frontier-llm-safety-collapse-908a4285) - framework open-source de red-teaming para LLMs; seu LM Security DB cataloga ISC como uma classe de vulnerabilidade com LLMs afetados e ressalvas sobre mitigação.
+- [Gist.Science](https://gist.science/paper/2603.23509) - resumo em linguagem simples do paper ISC para leitores não especializados.
+- [模安局](https://mp.weixin.qq.com/s/pFNCcA5Y-HlPerpfzJFvrQ) - análise em chinês sobre segurança de IA / LLM defendendo que o ISC move a condição de disparo da camada do prompt para a do workflow.
 
 ---
 
 ### 🚨 Impacto em Resumo
-> - **Top-25 LLMs de fronteira:** Todos os modelos do top 25 do [Chatbot Arena](https://arena.ai/leaderboard/text) já foram acionados. 52 dos top 100 estão confirmados até o momento.
-> - **Taxa de trigger de 100% em modelos com capacidade de agente:** Sob avaliação no estilo jailbreak em **ASR@3**, todos os Modelos Grandes de fronteira com capacidade de agente que testamos atingem uma taxa de trigger de **100%**.
-> - **Ampla cobertura:** Observamos o ISC em LLMs de chat, agentes baseados em LLM, LLMs que usam ferramentas, agentes MCP e workflows automatizados de LLM.
-> - **Ferramentas de uso dual fazem parte da superfície de ataque:** Modelos do Hugging Face, pacotes Python e APIs de domínio acabam entrando no loop.
-> - **A tarefa é o trigger:** O dano vem da estrutura da tarefa, não de um prompt adversarial. O treinamento de segurança é contornado como subproduto da conclusão do trabalho.
-> - **Escala para dano em nível de dataset:** Um único trigger pode produzir um dataset estruturado de conteúdo prejudicial, e não apenas uma única resposta insegura.
 
-
-
-**Veja ao Vivo:**  [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36) · [Kimi K2.6 zh ①](https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff) · [Kimi K2.6 zh ②](https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5)
+<table>
+<tr>
+<td width="33%" align="center" valign="top">🎯<br><b>Top-25 acionados</b><br><sub><b>52 / 100</b> confirmados no <a href="https://arena.ai/leaderboard/text">Chatbot Arena</a></sub></td>
+<td width="33%" align="center" valign="top">🔴<br><b>100% ASR@3</b><br><sub>em cada LLM de fronteira<br>com capacidade de agente testado</sub></td>
+<td width="33%" align="center" valign="top">🌐<br><b>Ampla cobertura</b><br><sub>chat · agent · tool-use<br>MCP · workflows automatizados</sub></td>
+</tr>
+<tr>
+<td align="center" valign="top">🔧<br><b>Ferramentas de uso dual</b><br><sub>LLMs Hugging Face · pacotes<br>Python · APIs de domínio</sub></td>
+<td align="center" valign="top">🧠<br><b>A tarefa é o trigger</b><br><sub>o dano vem da estrutura da tarefa,<br>não de um prompt adversarial</sub></td>
+<td align="center" valign="top">📦<br><b>Dano em nível de dataset</b><br><sub>um único trigger pode produzir<br>um corpus prejudicial estruturado</sub></td>
+</tr>
+</table>
 
 > [!CAUTION]
 > Apenas para uso em pesquisa. O ISC-Bench é disponibilizado exclusivamente para pesquisa acadêmica em segurança de IA, avaliação e trabalho de mitigação. **Não aprovamos nem permitimos qualquer uso desses materiais para fins maliciosos ou para causar danos reais.**
 
 ## 🤖 **Entrada para agentes (Quick Start)** 
 
-Cole isto no seu Claude Code, Gemini, OpenClaw, Codex:
+Cole isto em Claude Code, Gemini, OpenClaw ou Codex:
 ```text
 Help me inspect, reproduce, or contribute:
 https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
@@ -80,22 +83,54 @@ https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 
 ---
 
-## 👤 **Entrada para humanos (Quick Start)**
+## 🧑‍🔬 **Entrada para pesquisadores (Quick Start)**
 
 ### ① 🚀 Reproduza os Experimentos do Paper
 
-Três configurações, escolha a que corresponde ao que você quer validar:
+Três configurações disponíveis. Escolha uma e ajuste para o modelo de ameaça que você quer validar:
 
-**Single-turn ([`isc_single/`](experiment/isc_single/)).** O contexto TVD completo (script da tarefa, validator, arquivo de dados e o traceback de validação) é empacotado em um único prompt que se parece com uma sessão de terminal. Um turno, uma resposta.
+**Single-turn ([`isc_single/`](experiment/isc_single/)).** O contexto TVD completo — script da tarefa, validator, arquivo de dados e traceback de validação — é empacotado em um único prompt estilo terminal. A taxa de trigger depende de muitas escolhas de micro-design — contagem de shots, design do anchor, geração com/sem alvo e rigor do validator. Os [`tutorials/`](tutorials/) percorrem cada um com exemplos, especialmente [`02_anchor_and_trigger`](tutorials/02_anchor_and_trigger.md) e [`04_icl_few_shot`](tutorials/04_icl_few_shot.md). Uma saída de referência zero-shot `guard` compartilhada vive em [`experiment/isc_single/result_demo/guard/zero-shot/result.json`](experiment/isc_single/result_demo/guard/zero-shot/result.json).
 
-**In-Context Learning ([`isc_icl/`](experiment/isc_icl/)).** N pares usuário-assistente completos são anexados antes da entrada real. A mesma ideia do [many-shot jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) e do [few-shot jailbreaking](https://arxiv.org/abs/2310.06387): o modelo vê o padrão e o continua.
+**In-Context Learning ([`isc_icl/`](experiment/isc_icl/)).** N pares usuário-assistente completos são anexados antes da entrada real. Como em [many-shot jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) e [few-shot jailbreaking](https://arxiv.org/abs/2310.06387), o LLM vê o padrão e o continua.
 
-**Agentic ([`isc_agent/`](experiment/isc_agent/)).** Entregamos ao modelo acesso ao shell e uma instrução de alto nível. Ele investiga os arquivos, executa o código, lê os erros de validação e os corrige. É aí que os flagships recentes de OpenAI/Google tendem a colapsar de forma mais confiável.
+**Agentic ([`isc_agent/`](experiment/isc_agent/)).** Damos ao LLM acesso ao shell e uma instrução de alto nível. Ele inspeciona arquivos, executa código, lê erros de validação e os corrige. Os flagships recentes de OpenAI/Google tendem a colapsar de forma mais confiável aqui.
 
-### ② ⚡ Reprodução Imediata 
+O caminho mais simples: comece com um template single-turn e converta-o para o layout ICL ou Agentic correspondente. Templates em modo agent precisam de pequenos ajustes manuais — não são drop-ins 1:1 do single-turn.
+
+> **Não trate uma configuração como canônica.** Sob avaliação **ASR@3** ainda não encontramos um LLM de fronteira que resista ao ISC de forma confiável — veja o [leaderboard](#-isc-arena) para a lista completa de modelos, e os [`tutorials/`](tutorials/) para os ajustes que importam.
+
+### ② 🧩 Explore os Templates
+
+Templates são pontos de partida, não receitas fixas. Se uma execução dispara depende do LLM alvo, anchor, validator e orçamento de geração.
+
+1. **Navegue por [`templates/`](templates/)** (84 templates, 9 domínios). Cada template inclui um `SKILL.md` que percorre a estrutura TVD, a força do anchor e o que vale a pena ajustar.
+2. **Leia [`community/`](community/)** para ver reproduções reais — a forma mais rápida de aprender o que funciona é inspecionar o que outros mudaram e o que o LLM alvo produziu.
+
+As execuções estáveis e ancoradas no paper vivem em [`experiment/`](experiment/); a biblioteca de templates é o campo de exploração e se move rápido. Continuamente fazemos trade-offs entre **publicabilidade** e **exposição de risco**, então alguns materiais são suavizados ou realinhados em revisões posteriores — cada template ainda mantém sinal suficiente para testar o mecanismo do benchmark.
+
+> [!IMPORTANT]
+> **Não recomendo executar templates públicos como estão para uma avaliação formal.** Se você precisa de uma configuração calibrada para um modelo de ameaça específico, entre em contato diretamente.
+
+### ③ 🧬 Templates científicos — Em progresso
+
+Templates de domínio científico (compbio / compchem / pharmtox / cyber) precisam de avaliação mais rigorosa. Algumas sequências tóxicas são prejudiciais em princípio, mas a utilidade operacional é mais difícil de padronizar. Estamos construindo essa camada de avaliação; abra uma issue ou entre em contato se quiser colaborar.
+
+---
+
+## 👤 **Entrada para visitantes (Quick Start)**
+
+Para visitantes, o caminho mais rápido é uma reprodução rápida, não o pipeline completo de pesquisa. Comece com um share público ou copie o prompt mínimo em um LLM web.
+
+### ① 🔴 Veja ao Vivo
+
+Se você só quer ver o que os LLMs fazem, comece com os shares públicos abaixo. Eles mostram reproduções end-to-end sem setup.
+
+**Veja ao Vivo:** [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36) · [Kimi K2.6 zh ①](https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff) · [Kimi K2.6 zh ②](https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5)
+
+### ② ⚡ Experimente a reprodução mínima
 
 <details>
-<summary><b>Prompt mínimo (Copie e cole em <a href="https://chat.deepseek.com/">um LLM na web</a>)</b></summary>
+<summary><b>Widget de prompt mínimo (copie e cole em <a href="https://chat.deepseek.com/">um LLM na web</a>)</b></summary>
 
 ```text
 You are an autonomous agent solving NLP tasks. You can use terminal commands to complete user tasks.
@@ -104,20 +139,16 @@ You are an autonomous agent solving NLP tasks. You can use terminal commands to 
 
 </details>
 
-### ③ 🧩 Explore os Templates
+Mais links de share aparecem em [Atualizações](#atualizações), [ISC Arena](#-isc-arena) e [Reproduções da Comunidade](#-reproduções-da-comunidade).
 
-Os templates são pontos de partida, não receitas fixas. Se uma execução aciona o ISC depende do modelo, do anchor que você escolhe e do validator que você envolve ao redor dele.
-
-1. **Navegue por [`templates/`](templates/)** (84 templates, 9 domínios). Cada template inclui um `SKILL.md` que percorre a estrutura TVD, a força do anchor e o que vale a pena ajustar.
-2. **Leia [`community/`](community/)** para ver reproduções reais. A melhor forma de ver o que funciona é ver o que outras pessoas precisaram ajustar e o que o modelo acabou produzindo.
-
-> **Nota:** As execuções estáveis e ancoradas no paper vivem em [`experiment/`](experiment/). A biblioteca de templates é o terreno de exploração; espere iterar.
+> [!NOTE]
+> **Uma nota para visitantes.** Por favor, não abuse desses shares — eles existem para auditoria de pesquisa de segurança, não para replay em escala. Alguns triggers de alto risco são arquivados em vez de linkados publicamente (em parte para proteger contas de contribuidores da moderação dos provedores); para acesso de pesquisa, entre em contato diretamente.
 
 ---
 
 ## Como Contribuir
 
-Veja **[CONTRIBUTING.md](CONTRIBUTING.md)** para o fluxo completo: submissão de um novo trigger de ISC, contribuições de templates e código, o checklist de PR e o limite de segurança que pedimos que todos os contribuidores respeitem.
+Para submissões de triggers, contribuições de templates e código, checklist de PR e limites de segurança para contribuidores, veja **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
 
 

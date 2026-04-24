@@ -27,52 +27,55 @@ EN | [中文](./README_zh.md) | [日本語](./README_ja.md) | [한국어](./READ
 <h3 align="center">🎬 Demo</h3>
 <video src="https://github.com/user-attachments/assets/1cc80c48-02a4-4a5c-9d00-a0f10d91db15" controls width="600"></video>
 
-> **Internal Safety Collapse (ISC)** là một sự thay đổi mô hình cho an toàn LLM. Mô hình đe dọa jailbreak cổ điển nằm ở chat prompt: một lượt, một guardrail cần phá. ISC đẩy bề mặt thất bại vào chính bên trong workflow. Hãy cấp cho một AI agent một workflow-task được gắn với code, validator và công cụ nhạy cảm, kèm theo một nhu cầu cấu trúc về nội dung có hại để kết thúc công việc, và agent sẽ tạo ra nội dung đó khi hoàn thành tác vụ. Dưới đánh giá kiểu jailbreak trên **ASR@3**, mọi Large Model tiên tiến có khả năng agent đều đạt tỷ lệ kích hoạt **100%**. Nguy cơ đã dịch chuyển. Nó không còn nằm ở prompt nữa; nó nằm ở workflow.
+> **Internal Safety Collapse (ISC)** chuyển bề mặt thất bại an toàn của LLM từ prompt sang workflow. Một agent có khả năng dùng công cụ nhận một task được gắn với code, validator và công cụ nhạy cảm; khi nội dung có hại là yêu cầu cấu trúc để hoàn thành, agent sẽ tạo ra nó như một phần của việc hoàn thành task. Dưới đánh giá kiểu jailbreak trên **ASR@3**, mọi LLM tiên tiến có khả năng agent mà chúng tôi kiểm thử đều đạt tỷ lệ kích hoạt **100%**. Nguy cơ không còn chỉ nằm ở prompt; nó nằm ở workflow.
 
 
 ## 🔍 Quan điểm Cộng đồng
 
 <sub>Những mô tả ngắn từ người khác phù hợp với ý tưởng cốt lõi của ISC.</sub>
 
-> *"Big blind spot. We guard prompts, but risk sits in tasks."* · **Bonny Banerjee**
+> *"Big blind spot. We guard prompts, but risk sits in tasks."* — **Bonny Banerjee**
 
-> *"ISC is not about jailbreaks. It's about how models complete tasks. Models produce harmful outputs simply by doing their job."* · **Charles H. Martin**
+> *"ISC is not about jailbreaks. It's about how models complete tasks. Models produce harmful outputs simply by doing their job."* — **Charles H. Martin**
 
-> *"Task completion and safety are two different goals. When you force them into one model, the task always wins, and safety collapses."* · **Andrei Trandafira**
+> *"Task completion and safety are two different goals. When you force them into one model, the task always wins, and safety collapses."* — **Andrei Trandafira**
 
-> *"Think of it as the AI equivalent of global hacking: 100% effective to date, and especially worrying for healthcare, computational biology, epidemiology, pharmacology, and clinical genomics."* · **Christopher Bain**
+> *"Think of it as the AI equivalent of global hacking: 100% effective to date, and especially worrying for healthcare, computational biology, epidemiology, pharmacology, and clinical genomics."* — **Christopher Bain**
 
 ---
 
 ## 🔬 Phân tích bên ngoài
 
-- [Video giải thích trên YouTube](https://www.youtube.com/watch?v=Kur0wMzuJgY) - video trên YouTube giải thích paper ISC: chế độ thất bại là gì, TVD kích hoạt nó thế nào, và vì sao điều này quan trọng với các Large Model frontier.
-- [AI Post Transformers (podcast)](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - tập Apple Podcasts do Hal Turing và Dr. Ada Shannon dẫn, bàn về ISC và alignment dựa trên từ chối như một lớp vỏ hành vi phủ lên năng lực của mô hình.
+- [Video giải thích trên YouTube](https://www.youtube.com/watch?v=Kur0wMzuJgY) - giải thích ngắn bằng video về paper ISC: chế độ thất bại, TVD kích hoạt nó thế nào, và vì sao điều này quan trọng với các LLM frontier.
+- [AI Post Transformers (podcast)](https://podcasts.apple.com/tr/podcast/internal-safety-collapse-in-frontier-llms/id1835878324?i=1000759288088) - tập Apple Podcasts về ISC và alignment dựa trên từ chối như một lớp vỏ hành vi phủ lên năng lực của LLM.
 - [XSafeClaw](https://github.com/XSafeAI/XSafeClaw) - framework guardrail nguồn mở cho trợ lý AI cá nhân; thiết kế kiểm thử red-team dựa vào các chế độ thất bại kiểu hoàn thành tác vụ của ISC.
-- [promptfoo](https://www.promptfoo.dev/lm-security-db/vuln/frontier-llm-safety-collapse-908a4285) - framework red-team nguồn mở cho LLM; LM Security DB của họ liệt kê ISC như một lớp lỗ hổng với tag, mô hình bị ảnh hưởng, và ghi chú về giảm thiểu.
-- [Gist.Science](https://gist.science/paper/2603.23509) - trang web cung cấp tóm tắt dễ hiểu của các bài báo arXiv / bioRxiv / medRxiv cho người đọc phổ thông; trình bày ISC mà không dùng thuật ngữ kỹ thuật.
-- [模安局](https://mp.weixin.qq.com/s/pFNCcA5Y-HlPerpfzJFvrQ) - tài khoản công khai trên WeChat bằng tiếng Trung, chuyên về an toàn AI và LLM; bài phân tích chuyên sâu "Vượt ra ngoài alignment: sụp đổ an toàn nội tại trong mô hình ngôn ngữ lớn" cho rằng bài báo đẩy điều kiện kích hoạt từ lớp prompt sang lớp workflow.
+- [promptfoo](https://www.promptfoo.dev/lm-security-db/vuln/frontier-llm-safety-collapse-908a4285) - framework red-team nguồn mở cho LLM; LM Security DB liệt kê ISC như một lớp lỗ hổng với LLM bị ảnh hưởng và ghi chú về giảm thiểu.
+- [Gist.Science](https://gist.science/paper/2603.23509) - tóm tắt dễ hiểu của paper ISC cho người đọc phổ thông.
+- [模安局](https://mp.weixin.qq.com/s/pFNCcA5Y-HlPerpfzJFvrQ) - phân tích chuyên sâu tiếng Trung về an toàn AI / LLM, cho rằng ISC đẩy điều kiện kích hoạt từ lớp prompt sang lớp workflow.
 
 ---
 
 ### 🚨 Tổng quan Tác động
-> - **Top-25 LLM tiên tiến:** Tất cả các mô hình trong top 25 trên [Chatbot Arena](https://arena.ai/leaderboard/text) đã được kích hoạt. 52 trong số top 100 đã được xác nhận cho đến nay.
-> - **Tỷ lệ kích hoạt 100% trên các mô hình có khả năng agent:** Dưới đánh giá kiểu jailbreak trên **ASR@3**, mọi Large Model tiên tiến có khả năng agent mà chúng tôi đã kiểm thử đều đạt tỷ lệ kích hoạt **100%**.
-> - **Phạm vi rộng:** Chúng tôi thấy ISC xuất hiện trên LLM dạng chat, LLM-based agent, LLM sử dụng công cụ, MCP agent, và các workflow LLM tự động.
-> - **Công cụ dual-use là một phần của bề mặt tấn công:** Các mô hình Hugging Face, gói Python, và domain API đều có thể nằm trong vòng lặp.
-> - **Chính tác vụ là trigger:** Nội dung có hại đến từ cấu trúc tác vụ, không phải adversarial prompt. Huấn luyện an toàn bị bỏ qua như một sản phẩm phụ của việc kết thúc công việc.
-> - **Có thể gây hại ở quy mô dataset:** Một trigger duy nhất có thể tạo ra một dataset nội dung có hại có cấu trúc, chứ không chỉ là một phản hồi không an toàn.
 
-
-
-**Xem trực tiếp:**  [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36) · [Kimi K2.6 zh ①](https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff) · [Kimi K2.6 zh ②](https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5)
+<table>
+<tr>
+<td width="33%" align="center" valign="top">🎯<br><b>Top-25 đã kích hoạt</b><br><sub><b>52 / 100</b> được xác nhận trên <a href="https://arena.ai/leaderboard/text">Chatbot Arena</a></sub></td>
+<td width="33%" align="center" valign="top">🔴<br><b>100% ASR@3</b><br><sub>trên mọi LLM tiên tiến<br>có khả năng agent đã kiểm thử</sub></td>
+<td width="33%" align="center" valign="top">🌐<br><b>Phạm vi rộng</b><br><sub>chat · agent · tool-use<br>MCP · workflow tự động</sub></td>
+</tr>
+<tr>
+<td align="center" valign="top">🔧<br><b>Công cụ dual-use</b><br><sub>LLM Hugging Face · gói<br>Python · domain API</sub></td>
+<td align="center" valign="top">🧠<br><b>Task chính là trigger</b><br><sub>nội dung có hại đến từ cấu trúc,<br>không phải adversarial prompt</sub></td>
+<td align="center" valign="top">📦<br><b>Gây hại ở quy mô dataset</b><br><sub>một trigger có thể tạo<br>một corpus có cấu trúc</sub></td>
+</tr>
+</table>
 
 > [!CAUTION]
 > Chỉ dành cho mục đích nghiên cứu. ISC-Bench được phát hành dành riêng cho nghiên cứu an toàn AI học thuật, đánh giá, và công việc giảm thiểu. **Chúng tôi không ủng hộ hoặc cho phép bất kỳ việc sử dụng nào các tài liệu này cho mục đích độc hại hoặc gây hại trong thực tế.**
 
 ## 🤖 **Điểm vào cho Agent (Bắt đầu nhanh)** 
 
-Sao chép đoạn này vào Claude Code, Gemini, OpenClaw, Codex:
+Dán đoạn này vào Claude Code, Gemini, OpenClaw, hoặc Codex:
 ```text
 Help me inspect, reproduce, or contribute:
 https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
@@ -80,22 +83,54 @@ https://raw.githubusercontent.com/wuyoscar/ISC-Bench/main/AGENT_README.md
 
 ---
 
-## 👤 **Điểm vào cho Con người (Bắt đầu nhanh)**
+## 🧑‍🔬 **Điểm vào cho Nhà nghiên cứu (Bắt đầu nhanh)**
 
 ### ① 🚀 Tái tạo Các Thí nghiệm trong Bài báo
 
-Ba cài đặt, chọn cài đặt phù hợp với điều bạn muốn xác thực:
+Có ba cài đặt. Chọn một, sau đó điều chỉnh theo mô hình đe dọa bạn muốn xác thực:
 
-**Single-turn ([`isc_single/`](experiment/isc_single/)).** Toàn bộ ngữ cảnh TVD (script tác vụ, validator, file dữ liệu, và validation traceback) được gói vào một prompt duy nhất trông giống một phiên terminal. Một lượt, một câu trả lời.
+**Single-turn ([`isc_single/`](experiment/isc_single/)).** Toàn bộ ngữ cảnh TVD — script tác vụ, validator, file dữ liệu và validation traceback — được gói vào một prompt kiểu terminal. Tỷ lệ kích hoạt phụ thuộc vào nhiều lựa chọn vi thiết kế — số shot, thiết kế anchor, sinh có / không mục tiêu, và độ nghiêm của validator. [`tutorials/`](tutorials/) đi qua từng cái với ví dụ, đặc biệt [`02_anchor_and_trigger`](tutorials/02_anchor_and_trigger.md) và [`04_icl_few_shot`](tutorials/04_icl_few_shot.md). Một output tham chiếu `guard` zero-shot dùng chung nằm ở [`experiment/isc_single/result_demo/guard/zero-shot/result.json`](experiment/isc_single/result_demo/guard/zero-shot/result.json).
 
-**In-Context Learning ([`isc_icl/`](experiment/isc_icl/)).** N cặp user-assistant đã hoàn thành được thêm vào trước entry thật. Ý tưởng tương tự [many-shot jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) và [few-shot jailbreaking](https://arxiv.org/abs/2310.06387): mô hình thấy mẫu và tiếp tục theo.
+**In-Context Learning ([`isc_icl/`](experiment/isc_icl/)).** N cặp user-assistant đã hoàn thành được thêm vào trước entry thật. Giống [many-shot jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking) và [few-shot jailbreaking](https://arxiv.org/abs/2310.06387), LLM thấy mẫu và tiếp tục theo.
 
-**Agentic ([`isc_agent/`](experiment/isc_agent/)).** Chúng tôi cấp cho mô hình quyền truy cập shell và một hướng dẫn cấp cao. Nó mò mẫm các file, chạy code, đọc lỗi validation, và tự sửa. Đây là nơi các flagship gần đây của OpenAI/Google thường sụp đổ đáng tin cậy nhất.
+**Agentic ([`isc_agent/`](experiment/isc_agent/)).** Chúng tôi cấp cho LLM quyền truy cập shell và một hướng dẫn cấp cao. Nó khám phá file, chạy code, đọc lỗi validation, và tự sửa. Các flagship gần đây của OpenAI/Google thường sụp đổ đáng tin cậy nhất ở đây.
 
-### ② ⚡ Tái tạo Nhanh 
+Cách đơn giản nhất: bắt đầu từ template single-turn, sau đó chuyển thành layout ICL hoặc Agentic tương ứng. Template chế độ agent cần điều chỉnh thủ công nhỏ — không phải drop-in 1:1 từ single-turn.
+
+> **Đừng coi một cài đặt là chuẩn.** Dưới đánh giá **ASR@3**, chúng tôi chưa tìm thấy một LLM tiên tiến nào kháng ISC đáng tin cậy — xem danh sách mô hình đầy đủ ở [leaderboard](#-isc-arena), và các tham số đáng chỉnh ở [`tutorials/`](tutorials/).
+
+### ② 🧩 Khám phá Templates
+
+Templates là điểm khởi đầu, không phải công thức cố định. Việc một lần chạy có kích hoạt hay không phụ thuộc vào LLM mục tiêu, anchor, validator, và budget sinh.
+
+1. **Duyệt [`templates/`](templates/)** (84 template, 9 domain). Mỗi template đi kèm một `SKILL.md` hướng dẫn qua cấu trúc TVD, độ mạnh anchor, và những gì đáng điều chỉnh.
+2. **Đọc [`community/`](community/)** để xem các lần tái tạo thực tế — cách nhanh nhất để học cái gì hiệu quả là xem người khác đã đổi gì và LLM mục tiêu đã tạo ra gì.
+
+Các lần chạy ổn định, neo vào bài báo nằm trong [`experiment/`](experiment/); thư viện templates là sân chơi khám phá và thay đổi nhanh. Chúng tôi liên tục đánh đổi giữa **khả năng công bố** và **rủi ro phơi bày**, nên một số tài liệu sẽ được làm dịu hoặc điều chỉnh lại ở các phiên bản sau — mỗi template vẫn giữ đủ tín hiệu để kiểm thử cơ chế benchmark.
+
+> [!IMPORTANT]
+> **Tôi không khuyến nghị chạy template công khai nguyên trạng cho đánh giá chính thức.** Nếu bạn cần cấu hình được hiệu chỉnh cho một mô hình đe dọa cụ thể, vui lòng liên hệ trực tiếp.
+
+### ③ 🧬 Templates khoa học — Đang tiến hành
+
+Templates domain khoa học (compbio / compchem / pharmtox / cyber) cần đánh giá nghiêm ngặt hơn. Một số chuỗi độc về nguyên tắc là có hại, nhưng tính khả thi vận hành khó chuẩn hóa hơn. Chúng tôi đang xây dựng lớp đánh giá đó; mở issue hoặc liên hệ nếu muốn hợp tác.
+
+---
+
+## 👤 **Điểm vào cho Khách tham quan (Bắt đầu nhanh)**
+
+Với khách tham quan, cách nhanh nhất là tái tạo nhanh, không phải pipeline nghiên cứu đầy đủ. Bắt đầu với một share công khai hoặc sao chép prompt tối thiểu vào một LLM web.
+
+### ① 🔴 Xem trực tiếp
+
+Nếu bạn chỉ muốn xem LLM làm gì, bắt đầu với các share chat công khai bên dưới. Chúng cho thấy tái tạo end-to-end không cần setup.
+
+**Xem trực tiếp:** [Kimi](https://www.kimi.com/share/19d2ab75-8f02-88ab-8000-00006acdf337) · [Claude](https://claude.ai/share/cc972f9b-a558-4bca-8bc6-0e6d65590793) · [Qwen3.6-Plus](https://chat.qwen.ai/s/d7adf970-7b2e-4298-8a62-fa560c467139?fev=0.2.36) · [Kimi K2.6 zh ①](https://www.kimi.com/share/19db5b43-c122-86e0-8000-0000aa1d70ff) · [Kimi K2.6 zh ②](https://www.kimi.com/share/19db5b4b-3752-8323-8000-00001e3951e5)
+
+### ② ⚡ Thử tái tạo tối thiểu
 
 <details>
-<summary><b>Prompt tối thiểu (Copy-Paste vào <a href="https://chat.deepseek.com/">một Web LLM</a>)</b></summary>
+<summary><b>Widget prompt tối thiểu (sao chép vào <a href="https://chat.deepseek.com/">một Web LLM</a>)</b></summary>
 
 ```text
 You are an autonomous agent solving NLP tasks. You can use terminal commands to complete user tasks.
@@ -104,20 +139,16 @@ You are an autonomous agent solving NLP tasks. You can use terminal commands to 
 
 </details>
 
-### ③ 🧩 Khám phá Templates
+Thêm link share xuất hiện trong [Cập nhật](#cập-nhật), [ISC Arena](#-isc-arena), và [Các Trường hợp Tái tạo từ Cộng đồng](#-các-trường-hợp-tái-tạo-từ-cộng-đồng).
 
-Templates là điểm khởi đầu, không phải công thức cố định. Việc một lần chạy có kích hoạt hay không phụ thuộc vào mô hình, anchor bạn chọn, và validator bạn xây xung quanh nó.
-
-1. **Duyệt [`templates/`](templates/)** (84 template, 9 domain). Mỗi template đi kèm một `SKILL.md` hướng dẫn qua cấu trúc TVD, độ mạnh anchor, và những gì đáng điều chỉnh.
-2. **Đọc [`community/`](community/)** để xem các lần tái tạo thực tế. Cách tốt nhất để thấy cái gì hiệu quả là xem những gì người khác đã phải điều chỉnh và cuối cùng mô hình đã tạo ra gì.
-
-> **Lưu ý:** Các lần chạy ổn định và neo vào bài báo nằm trong [`experiment/`](experiment/). Thư viện templates là sân chơi để khám phá; hãy chuẩn bị cho việc lặp lại.
+> [!NOTE]
+> **Ghi chú cho khách tham quan.** Vui lòng đừng lạm dụng các share này — chúng tồn tại để kiểm toán nghiên cứu an toàn, không phải để replay ở quy mô lớn. Một số trigger rủi ro cao được lưu trữ thay vì công bố link (một phần để bảo vệ tài khoản của người đóng góp khỏi moderation của provider); nếu cần truy cập nghiên cứu, vui lòng liên hệ trực tiếp.
 
 ---
 
 ## Cách Đóng góp
 
-Xem **[CONTRIBUTING.md](CONTRIBUTING.md)** để biết quy trình đầy đủ: nộp một ISC trigger mới, đóng góp template và code, checklist PR, và ranh giới an toàn mà chúng tôi yêu cầu mọi người đóng góp tôn trọng.
+Để nộp trigger mới, đóng góp template và code, checklist PR, và ranh giới an toàn cho người đóng góp, xem **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
 
 

@@ -7,8 +7,8 @@
 Judge ISC experiment results with GPT-4o.
 
 Usage:
-    uv run judge.py results/openai-gpt-5.2/jbb/ai-guard/0sample.json
-    uv run judge.py results/  # judge all result files
+    uv run judge.py result_demo/openai-gpt-5.2/jbb/ai-guard/0sample.json
+    uv run judge.py result_demo/  # judge all result files
 """
 import asyncio
 import json

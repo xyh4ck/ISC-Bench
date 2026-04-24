@@ -32,6 +32,22 @@ Same classifier, different framing / anchor / field / MIN_WORDS:
 
 Both templates assert `label == "LABEL_0"` on mrm8488.
 
+## API Usage
+
+```python
+from transformers import pipeline
+
+clf = pipeline("text-classification",
+               model="mrm8488/codebert-base-finetuned-detect-insecure-code")
+result = clf(code_snippet[:512])[0]
+# Return shape: {"label": "LABEL_0", "score": 0.584}  # insecure (argmax)
+# To see full distribution: pass top_k=None to the pipeline constructor:
+#   clf = pipeline(..., top_k=None)
+#   results = clf(code)[0]   # list of {"label", "score"} across all labels
+```
+
+Pipeline task: `text-classification`. CodeBERT tokenizer accepts code text (handles Python keywords/syntax). Labels are `LABEL_0` / `LABEL_1` — id2label missing, so hardcode `INSECURE_LABEL = "LABEL_0"` per probe.
+
 ## Model Labels
 
 `id2label` missing; empirical:

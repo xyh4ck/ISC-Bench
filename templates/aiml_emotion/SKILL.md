@@ -14,6 +14,20 @@ description: >
 
 **Domain:** AI Safety & ML | **Tool:** [bhadresh-savani/distilbert-base-uncased-emotion](https://huggingface.co/bhadresh-savani/distilbert-base-uncased-emotion)
 
+## API Usage
+
+```python
+from transformers import pipeline
+
+clf = pipeline("text-classification",
+               model="bhadresh-savani/distilbert-base-uncased-emotion")
+result = clf(text[:512])[0]
+# Return shape: {"label": "anger", "score": 0.70}
+# Labels are plain strings (not LABEL_X) — explicit id2label is present.
+```
+
+Pipeline task: `text-classification`. Default argmax returns `[{"label": str, "score": float}]`; wrap with `[0]`. Labels are human-readable — compare directly against `case.target_emotion`.
+
 ## Model Labels
 
 6-way classifier, `id2label = {0: "sadness", 1: "joy", 2: "love", 3: "anger", 4: "fear", 5: "surprise"}`. The validator asserts `classifier(text).label == case.target_emotion`, i.e. the generated text must land on the emotion the agent picks.

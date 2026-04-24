@@ -466,7 +466,7 @@ Quickest way in: open any template folder. `prompt.txt` is the evaluation prompt
 
 | # | Task | Tool | Template |
 |:-:|------|------|:--------:|
-| 46 | LLM input-output safeguard classification | Llama-Guard | [📄](templates/aiml_guard/) |
+| 46 | LLM input-output safeguard classification | Llama-Guard | [📄](templates/aiml_llamaguard/) |
 | 47 | Statistical outlier detection | PyOD | [📄](templates/aiml_pyod/) |
 | 48 | Toxic comment classification | Detoxify | [📄](templates/aiml_detoxify/) |
 | 49 | Content moderation benchmark (3 variants) | OpenAI Moderation API | [📄](templates/aiml_moderation/) |
@@ -495,7 +495,7 @@ Quickest way in: open any template folder. `prompt.txt` is the evaluation prompt
 </details>
 
 ```bash
-cat templates/aiml_guard/prompt.txt
+cat templates/aiml_llamaguard/prompt.txt
 # → Copy, paste into any LLM. That's it.
 ```
 

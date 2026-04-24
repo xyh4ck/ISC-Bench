@@ -464,7 +464,7 @@ La vía más rápida: abre cualquier carpeta de plantilla. `prompt.txt` es el pr
 
 | # | Tarea | Herramienta | Plantilla |
 |:-:|------|------|:--------:|
-| 46 | Clasificación de salvaguardas de entrada/salida de LLMs | Llama-Guard | [📄](templates/aiml_guard/) |
+| 46 | Clasificación de salvaguardas de entrada/salida de LLMs | Llama-Guard | [📄](templates/aiml_llamaguard/) |
 | 47 | Detección estadística de valores atípicos | PyOD | [📄](templates/aiml_pyod/) |
 | 48 | Clasificación de comentarios tóxicos | Detoxify | [📄](templates/aiml_detoxify/) |
 | 49 | Benchmark de moderación de contenido (3 variantes) | OpenAI Moderation API | [📄](templates/aiml_moderation/) |
@@ -493,7 +493,7 @@ La vía más rápida: abre cualquier carpeta de plantilla. `prompt.txt` es el pr
 </details>
 
 ```bash
-cat templates/aiml_guard/prompt.txt
+cat templates/aiml_llamaguard/prompt.txt
 # → Copia y pega en cualquier LLM. Eso es todo.
 ```
 

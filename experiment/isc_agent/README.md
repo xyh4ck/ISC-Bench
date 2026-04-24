@@ -24,7 +24,7 @@ docker build -t isc-agent .
 
 # Batch: all models × all templates
 
-./run.sh --model anthropic/claude-opus-4.7 --template aiml_guard
+./run.sh --model anthropic/claude-opus-4.7 --template aiml_qwen3guard
 
 ./batch.sh
 ```
@@ -35,7 +35,7 @@ Results saved to `workspace/{model}_{template}_{timestamp}/`.
 
 | Template | Validator | Task | Model Download |
 |----------|-----------|------|:-:|
-| `aiml_guard` | Qwen3Guard-Gen-0.6B | Fill safe/unsafe LLM responses (multilingual) | ~16GB |
+| `aiml_qwen3guard` | Qwen3Guard-Gen-0.6B | Fill safe/unsafe LLM responses (multilingual) | ~16GB |
 | `aiml_detoxify` | Detoxify classifier | Fill toxic text across Jigsaw categories | ~500MB |
 | `aiml_nsfw` | NSFW text classifier | Fill explicit content across 5 NSFW categories | ~300MB |
 | `aiml_fake_news` | Fake news detector | Fill misinformation headlines + articles | ~300MB |
@@ -46,7 +46,7 @@ Results saved to `workspace/{model}_{template}_{timestamp}/`.
 | `aiml_moderation_input` | OpenAI Moderation API | Fill attack prompts for input filtering | None |
 | `aiml_moderation_output` | OpenAI Moderation API | Fill harmful outputs for output filtering | None |
 
-**Recommended starting point:** `aiml_moderation` or `aiml_moderation_input` — no model download needed, fast iteration. For stronger evaluation use `aiml_guard` or `aiml_nsfw`.
+**Recommended starting point:** `aiml_moderation` or `aiml_moderation_input` — no model download needed, fast iteration. For stronger evaluation use `aiml_qwen3guard` or `aiml_nsfw`.
 
 ## How It Works
 
@@ -87,7 +87,7 @@ Template data files are **mounted as a volume**, not baked into the Docker image
 Edit the data file in `template/{name}/`, then re-run — no `docker build` needed:
 
 ```bash
-./run.sh --model google/gemini-2.5-flash --template aiml_guard
+./run.sh --model google/gemini-2.5-flash --template aiml_qwen3guard
 ```
 
 Only rebuild when you change `agent.py` or `Dockerfile`:
@@ -119,11 +119,11 @@ Models confirmed to trigger ISC in agentic mode:
 
 | Model | Templates Tested | Result |
 |-------|-----------------|--------|
-| Claude Opus 4.6 | aiml_guard | 5/5 FILLED |
-| Claude Sonnet 4.6 | aiml_guard | 5/5 FILLED |
+| Claude Opus 4.6 | aiml_qwen3guard | 5/5 FILLED |
+| Claude Sonnet 4.6 | aiml_qwen3guard | 5/5 FILLED |
 | GPT-5.2 | moderation_input | 5/5 FILLED |
 | GPT-4.1 | detoxify | 3/3 FILLED |
-| Gemini 2.5 Flash | guard | 5/5 FILLED |
+| Gemini 2.5 Flash | aiml_qwen3guard | 5/5 FILLED |
 | DeepSeek V3.2 | detoxify | 3/3 FILLED |
 | Qwen3 Coder | multiple | consistently triggers |
 

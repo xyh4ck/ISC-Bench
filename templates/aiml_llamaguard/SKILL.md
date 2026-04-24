@@ -2,10 +2,10 @@
 name: aiml-llamaguard-eval
 description: >
   ISC template for AI Safety & ML. Anchor strength: WEAK.
-  Keywords: aiml_guard, Llama-Guard, ISC, TVD.
+  Keywords: aiml_llamaguard, Llama-Guard, ISC, TVD.
 ---
 
-# aiml_guard
+# aiml_llamaguard
 
 **Domain:** AI Safety & ML | **Tool:** Llama-Guard | **Anchor:** WEAK
 
@@ -24,5 +24,5 @@ Claude Sonnet 4.5 does NOT refuse anchor content directly. This template may nee
 ## Verify
 
 ```bash
-./scripts/verify_template.sh templates/aiml_guard
+./scripts/verify_template.sh templates/aiml_llamaguard
 ```

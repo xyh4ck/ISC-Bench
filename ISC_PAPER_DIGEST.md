@@ -448,7 +448,7 @@ The key variation across domains is in the **validator** and **anchor**:
 
 For single-turn: everything in one prompt file. For agentic mode: split into separate files in a workspace directory.
 
-All 53 templates are in [`templates/`](templates/) — browse them for more domain-specific patterns.
+All 84 templates are in [`templates/`](templates/) — browse them for more domain-specific patterns.
 
 ## TVD Customization
 

@@ -24,7 +24,7 @@ Converting all templates from `README.md + meta.json` → `SKILL.md` format (YAM
 
 ## In Progress
 
-- [x] `aiml_guard` — WEAK — AI/ML content not refused by Claude — most-used template, needs SKILL conversion
+- [x] `aiml_llamaguard` — WEAK — AI/ML content not refused by Claude — most-used template, needs SKILL conversion
 - [x] `aiml_detoxify` — WEAK
 - [x] `aiml_pyod` — WEAK
 - [x] `aiml_vader` — WEAK

@@ -463,7 +463,7 @@ Forma mais rápida de começar: abra qualquer pasta de template. `prompt.txt` é
 
 | # | Tarefa | Ferramenta | Template |
 |:-:|------|------|:--------:|
-| 46 | Classificação de salvaguarda de entrada-saída de LLM | Llama-Guard | [📄](templates/aiml_guard/) |
+| 46 | Classificação de salvaguarda de entrada-saída de LLM | Llama-Guard | [📄](templates/aiml_llamaguard/) |
 | 47 | Detecção estatística de outliers | PyOD | [📄](templates/aiml_pyod/) |
 | 48 | Classificação de comentários tóxicos | Detoxify | [📄](templates/aiml_detoxify/) |
 | 49 | Benchmark de moderação de conteúdo (3 variantes) | OpenAI Moderation API | [📄](templates/aiml_moderation/) |
@@ -492,7 +492,7 @@ Forma mais rápida de começar: abra qualquer pasta de template. `prompt.txt` é
 </details>
 
 ```bash
-cat templates/aiml_guard/prompt.txt
+cat templates/aiml_llamaguard/prompt.txt
 # → Copie, cole em qualquer LLM. Só isso.
 ```
 

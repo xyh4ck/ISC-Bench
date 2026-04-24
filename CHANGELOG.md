@@ -75,7 +75,7 @@ ISC can still be triggered on live production endpoints as of 2026-04-10. Attack
 ### Community Evidence (10 new folders)
 - Multi-template evidence for Gemini 3 Flash (guard_attack_v2 + detoxify + offensive)
 - Multi-template evidence for GPT-5.1 (guard_attack_v2 + detoxify + phishing)
-- Multi-template evidence for Grok 4.1 (guard_attack_v2 + detoxify + aiml_guard)
+- Multi-template evidence for Grok 4.1 (guard_attack_v2 + detoxify + aiml_qwen3guard)
 
 ### Agent Fix
 - Fix `reasoning_effort` bug in `experiment/isc_agent/agent.py`: was applied to all models; now only set when `--thinking` flag is passed

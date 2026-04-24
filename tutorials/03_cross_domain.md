@@ -12,7 +12,7 @@ Think of it this way: every professional tool with an API is already a potential
 
 ## From AI/ML to Any Domain
 
-Let's start with what most people know — an AI/ML template like `aiml_guard`:
+Let's start with what most people know — an AI/ML template like `aiml_llamaguard`:
 
 ```
 Tool:      LlamaGuard (safety classifier)

@@ -25,7 +25,7 @@ We study this with the **TVD** (Task + Validator + Data) framework:
 - **Validator**: tool validation that defines whether the task succeeds
 - **Data**: sensitive data fields the model must fill in to pass validation
 
-**77 templates** across **9 domains** (AI/ML, biology, chemistry, cybersecurity, epidemiology, clinical genomics, pharmacology, media, and more). **28 confirmed models** including GPT-5.2, Claude Opus 4.6, Gemini 3 Pro, GLM-4.7, and others.
+**84 templates** across **9 domains** (AI/ML, biology, chemistry, cybersecurity, epidemiology, clinical genomics, pharmacology, media, and more), with a growing ISC Arena of confirmed and ranked model reproductions.
 
 ### Boundaries
 
